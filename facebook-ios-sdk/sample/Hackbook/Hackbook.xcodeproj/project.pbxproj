@@ -19,7 +19,6 @@
 		30EA737413F5D21B003DC0D2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA737313F5D21B003DC0D2 /* RootViewController.m */; };
 		30EA739813F5D372003DC0D2 /* APICallsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA738E13F5D372003DC0D2 /* APICallsViewController.m */; };
 		30EA739A13F5D372003DC0D2 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA739113F5D372003DC0D2 /* DataSet.m */; };
-		30EA739B13F5D372003DC0D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EA739213F5D372003DC0D2 /* Default.png */; };
 		30EA739C13F5D372003DC0D2 /* APIResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA739413F5D372003DC0D2 /* APIResultsViewController.m */; };
 		30EA739E13F5D372003DC0D2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EA739613F5D372003DC0D2 /* Icon.png */; };
 		30EA739F13F5D372003DC0D2 /* MenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EA739713F5D372003DC0D2 /* MenuButton.png */; };
@@ -36,9 +35,10 @@
 		30EA73F113F5D523003DC0D2 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA73E413F5D523003DC0D2 /* SBJsonParser.m */; };
 		30EA73F213F5D523003DC0D2 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA73E613F5D523003DC0D2 /* SBJsonWriter.m */; };
 		30EA73FC13F5D590003DC0D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA73FB13F5D590003DC0D2 /* CoreLocation.framework */; };
-		30ED588C14358F8A00A226C3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ED588B14358F8A00A226C3 /* Default@2x.png */; };
 		30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ED588E14358F9400A226C3 /* Icon@2x.png */; };
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
+		959863F815DF2D5100577B23 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 959863F715DF2D5100577B23 /* Default.png */; };
+		959863FB15DF2D8500577B23 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959863FA15DF2D8500577B23 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +61,6 @@
 		30EA738E13F5D372003DC0D2 /* APICallsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APICallsViewController.m; sourceTree = "<group>"; };
 		30EA739013F5D372003DC0D2 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
 		30EA739113F5D372003DC0D2 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
-		30EA739213F5D372003DC0D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		30EA739313F5D372003DC0D2 /* APIResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResultsViewController.h; sourceTree = "<group>"; };
 		30EA739413F5D372003DC0D2 /* APIResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResultsViewController.m; sourceTree = "<group>"; };
 		30EA739613F5D372003DC0D2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -91,10 +90,11 @@
 		30EA73E513F5D523003DC0D2 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		30EA73E613F5D523003DC0D2 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		30EA73FB13F5D590003DC0D2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		30ED588B14358F8A00A226C3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		30ED588E14358F9400A226C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		84E7D99414D9CC13006A6299 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFrictionlessRequestSettings.h; path = ../../src/FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
+		959863F715DF2D5100577B23 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		959863FA15DF2D8500577B23 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +173,8 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				30EA739213F5D372003DC0D2 /* Default.png */,
-				30ED588B14358F8A00A226C3 /* Default@2x.png */,
+				959863F715DF2D5100577B23 /* Default.png */,
+				959863FA15DF2D8500577B23 /* Default@2x.png */,
 				30EA739613F5D372003DC0D2 /* Icon.png */,
 				30ED588E14358F9400A226C3 /* Icon@2x.png */,
 				30EA739713F5D372003DC0D2 /* MenuButton.png */,
@@ -280,15 +280,15 @@
 			files = (
 				30EA736813F5D21B003DC0D2 /* InfoPlist.strings in Resources */,
 				30EA737113F5D21B003DC0D2 /* MainWindow.xib in Resources */,
-				30EA739B13F5D372003DC0D2 /* Default.png in Resources */,
 				30EA739E13F5D372003DC0D2 /* Icon.png in Resources */,
 				30EA739F13F5D372003DC0D2 /* MenuButton.png in Resources */,
 				30EA73CB13F5D502003DC0D2 /* FBConnect.bundle in Resources */,
 				30EA73E813F5D523003DC0D2 /* FBDialog.bundle in Resources */,
 				3018B43A13F9B94D00F61944 /* MainWindow-iPad.xib in Resources */,
 				3085CC291415D68A00456CCC /* MenuButton@2x.png in Resources */,
-				30ED588C14358F8A00A226C3 /* Default@2x.png in Resources */,
 				30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */,
+				959863F815DF2D5100577B23 /* Default.png in Resources */,
+				959863FB15DF2D8500577B23 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
