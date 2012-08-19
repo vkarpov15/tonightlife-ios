@@ -433,8 +433,14 @@
             NSLog(@"Tonightlife Token=%@", tonightlifeToken);
             [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
             
-            [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tonight-life.com/mobile/auth.json"]];
+            NSString* eventUrl = [NSString stringWithFormat:@"http://tonight-life.com/mobile/all.json?auth_token=%@", tonightlifeToken];
+            NSData* eventData = [NSData dataWithContentsOfURL:
+                            [NSURL URLWithString: eventUrl]];
             
+            NSDictionary* eventDict = [NSJSONSerialization JSONObjectWithData:eventData
+                                                                options:kNilOptions
+                                                                  error:&error];
+            NSLog(@"Got my events! %@", eventDict);
         });
     } else {
         // Processing permissions information
