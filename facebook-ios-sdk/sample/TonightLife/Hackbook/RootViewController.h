@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 #import "APICallsViewController.h"
 #import "FBConnect.h"
+#import "Event.h"
 
 @interface RootViewController : UIViewController
 <FBRequestDelegate,

@@ -39,6 +39,7 @@
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
 		959863F815DF2D5100577B23 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 959863F715DF2D5100577B23 /* Default.png */; };
 		959863FB15DF2D8500577B23 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 959863FA15DF2D8500577B23 /* Default@2x.png */; };
+		95B3473F15E19EC10024E8F3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B3473E15E19EC10024E8F3 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +49,9 @@
 		30EA735D13F5D21B003DC0D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30EA735F13F5D21B003DC0D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		30EA736113F5D21B003DC0D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		30EA736513F5D21B003DC0D2 /* TonightLife-Info.plist */ = {isa = PBXFileReference; path = "TonightLife-Info.plist"; sourceTree = "<group>"; };
+		30EA736513F5D21B003DC0D2 /* TonightLife-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TonightLife-Info.plist"; sourceTree = "<group>"; };
 		30EA736713F5D21B003DC0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		30EA736913F5D21B003DC0D2 /* TonightLife-Prefix.pch */ = {isa = PBXFileReference; path = "TonightLife-Prefix.pch"; sourceTree = "<group>"; };
+		30EA736913F5D21B003DC0D2 /* TonightLife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TonightLife-Prefix.pch"; sourceTree = "<group>"; };
 		30EA736A13F5D21B003DC0D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30EA736C13F5D21B003DC0D2 /* HackbookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackbookAppDelegate.h; sourceTree = "<group>"; };
 		30EA736D13F5D21B003DC0D2 /* HackbookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackbookAppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +96,8 @@
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		959863F715DF2D5100577B23 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		959863FA15DF2D8500577B23 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		95B3473D15E19EC10024E8F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		95B3473E15E19EC10024E8F3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				30EA739013F5D372003DC0D2 /* DataSet.h */,
 				30EA739113F5D372003DC0D2 /* DataSet.m */,
 				30EA736413F5D21B003DC0D2 /* Supporting Files */,
+				95B3473D15E19EC10024E8F3 /* Event.h */,
+				95B3473E15E19EC10024E8F3 /* Event.m */,
 			);
 			name = TonightLife;
 			path = Hackbook;
@@ -317,6 +322,7 @@
 				30EA73F113F5D523003DC0D2 /* SBJsonParser.m in Sources */,
 				30EA73F213F5D523003DC0D2 /* SBJsonWriter.m in Sources */,
 				84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */,
+				95B3473F15E19EC10024E8F3 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

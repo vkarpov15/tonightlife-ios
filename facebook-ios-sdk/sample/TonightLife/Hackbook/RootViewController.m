@@ -439,10 +439,40 @@
             NSData* eventData = [NSData dataWithContentsOfURL:
                             [NSURL URLWithString: eventUrl]];
             
-            NSDictionary* eventDict = [NSJSONSerialization JSONObjectWithData:eventData
+            NSArray* eventList = [NSJSONSerialization JSONObjectWithData:eventData
                                                                 options:kNilOptions
                                                                   error:&error];
-            NSLog(@"Got my events! %@", eventDict);
+            
+            NSUInteger len = [eventList count];
+            for (NSUInteger i = 0; i < len - 1; ++i) {
+                NSDictionary* event = [eventList objectAtIndex:i];
+                
+                // Very important to use stringWithFormat here, just using NSString* =
+                // [event objectForKey] bugs out in the isEqualToString call because objective-C
+                // is quirky
+                NSString* radarCountStr = [NSString stringWithFormat:@"%@", [event objectForKey:@"user_count"]];
+                NSUInteger radarCount = 0;
+                NSString* nullStr = @"null";
+                if (![radarCountStr isEqualToString:nullStr]) {
+                    radarCount = [radarCountStr integerValue];
+                }
+                Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
+                                                    :[event objectForKey:@"name"]
+                                                    :[event objectForKey:@"description"]
+                                                    :[event objectForKey:@"location"]
+                                                    :[event objectForKey:@"street_address"]
+                                                    :[NSURL URLWithString:[NSString stringWithFormat:@"http://tonight-life.com/", [event objectForKey:@"image_url"]]]
+                                                    :[[event objectForKey:@"latitude"] doubleValue]
+                                                    :[[event objectForKey:@"longitude"] doubleValue]
+                                                    :radarCount
+                                                    :[[event objectForKey:@"featured"] boolValue]
+                                                    :[event objectForKey:@"start_time"]
+                                                    : NO];
+                NSLog(@"Event name is %@", e->name);
+                
+           }
+            
+            //NSLog(@"Got my events! %@", eventList);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self showLoggedIn];
             });
