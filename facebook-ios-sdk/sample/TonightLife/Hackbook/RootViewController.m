@@ -433,7 +433,7 @@
             NSLog(@"Tonightlife Token=%@", tonightlifeToken);
             [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
             
-            
+            [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tonight-life.com/mobile/auth.json"]];
             
         });
     } else {
