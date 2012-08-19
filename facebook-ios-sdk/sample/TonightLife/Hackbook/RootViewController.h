@@ -34,7 +34,6 @@ UITableViewDelegate>{
 
     UIView *headerView;
     UILabel *nameLabel;
-    UIImageView *profilePhotoImageView;
     
     APICallsViewController *pendingApiCallsController;
 }
@@ -45,7 +44,6 @@ UITableViewDelegate>{
 @property (nonatomic, retain) NSMutableArray *mainMenuItems;
 @property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, retain) UILabel *nameLabel;
-@property (nonatomic, retain) UIImageView *profilePhotoImageView;
 
 
 @end

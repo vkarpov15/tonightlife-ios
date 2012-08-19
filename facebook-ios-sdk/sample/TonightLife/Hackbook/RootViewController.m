@@ -27,7 +27,6 @@
 @synthesize mainMenuItems;
 @synthesize headerView;
 @synthesize nameLabel;
-@synthesize profilePhotoImageView;
 
 - (void)dealloc {
     [permissions release];
@@ -36,7 +35,6 @@
     [mainMenuItems release];
     [headerView release];
     [nameLabel release];
-    [profilePhotoImageView release];
     [super dealloc];
 }
 
@@ -56,7 +54,7 @@
     // and since the minimum profile picture size is 180 pixels wide we should be able
     // to get a 100 pixel wide version of the profile picture
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"SELECT uid, name, pic FROM user WHERE uid=me()", @"query",
+                                   @"SELECT uid, name, first_name, last_name FROM user WHERE uid=me()", @"query",
                                    nil];
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[delegate facebook] requestWithMethodName:@"fql.query"
@@ -96,8 +94,6 @@
     
     // Clear personal info
     nameLabel.text = @"";
-    // Get the profile image
-    [profilePhotoImageView setImage:nil];
 }
 
 /**
@@ -174,7 +170,6 @@
                                                     self.view.bounds.size.width,
                                                     self.view.bounds.size.height)];
     [backgroundImageView setImage:[UIImage imageNamed:@"Default.png"]];
-    //[backgroundImageView setAlpha:0.25];
     [self.view addSubview:backgroundImageView];
     
     // Main Menu Table
@@ -190,18 +185,14 @@
     
     // Table header
     headerView = [[UIView alloc]
-                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 100)];
+                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
     headerView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
-    headerView.backgroundColor = [UIColor whiteColor];
-    CGFloat xProfilePhotoOffset = self.view.center.x - 25.0;
-    profilePhotoImageView = [[UIImageView alloc]
-                             initWithFrame:CGRectMake(xProfilePhotoOffset, 20, 50, 50)];
-    profilePhotoImageView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [headerView addSubview:profilePhotoImageView];
+    headerView.backgroundColor = [UIColor blueColor];
+
     nameLabel = [[UILabel alloc]
-                 initWithFrame:CGRectMake(0, 75, self.view.bounds.size.width, 20.0)];
+                 initWithFrame:CGRectMake(40, 5, 140, 20.0)];
     nameLabel.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    nameLabel.textAlignment = UITextAlignmentCenter;
+    nameLabel.textAlignment = UITextAlignmentLeft;
     nameLabel.text = @"";
     [headerView addSubview:nameLabel];
     menuTableView.tableHeaderView = headerView;
@@ -375,36 +366,9 @@
     if ([result objectForKey:@"name"]) {
         // If basic information callback, set the UI objects to
         // display this.
-        nameLabel.text = [result objectForKey:@"name"];
-        // Get the profile image
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[result objectForKey:@"pic"]]]];
+        NSLog(@"My facebook info is %@", result);
+        nameLabel.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];
         
-        // Resize, crop the image to make sure it is square and renders
-        // well on Retina display
-        float ratio;
-        float delta;
-        float px = 100; // Double the pixels of the UIImageView (to render on Retina)
-        CGPoint offset;
-        CGSize size = image.size;
-        if (size.width > size.height) {
-            ratio = px / size.width;
-            delta = (ratio*size.width - ratio*size.height);
-            offset = CGPointMake(delta/2, 0);
-        } else {
-            ratio = px / size.height;
-            delta = (ratio*size.height - ratio*size.width);
-            offset = CGPointMake(0, delta/2);
-        }
-        CGRect clipRect = CGRectMake(-offset.x, -offset.y,
-                                     (ratio * size.width) + delta,
-                                     (ratio * size.height) + delta);
-        UIGraphicsBeginImageContext(CGSizeMake(px, px));
-        UIRectClip(clipRect);
-        [image drawInRect:clipRect];
-        UIImage *imgThumb =   UIGraphicsGetImageFromCurrentImageContext();
-        [imgThumb retain];
-        
-        [profilePhotoImageView setImage:imgThumb];
         [self apiGraphUserPermissions];
         
         // Send off Tabbie Login req
@@ -412,6 +376,7 @@
         NSString* fbToken = [defaults objectForKey:@"FBAccessTokenKey"];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSLog(@"Dispatching tabbie login %@", fbToken);
+            // Send Tabbie login request - synchronous within separate thread
             NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tonight-life.com/mobile/auth.json"]];
             NSString* params = [NSString stringWithFormat:@"fb_token=%@", fbToken];
             [req setHTTPMethod:@"POST"];
@@ -428,6 +393,7 @@
             NSLog(@"Tonightlife Token=%@", tonightlifeToken);
             [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
             
+            // Now that we have token, load events
             NSString* eventUrl = [NSString stringWithFormat:@"http://tonight-life.com/mobile/all.json?auth_token=%@", tonightlifeToken];
             NSData* eventData = [NSData dataWithContentsOfURL:
                             [NSURL URLWithString: eventUrl]];
@@ -435,7 +401,6 @@
             NSArray* eventList = [NSJSONSerialization JSONObjectWithData:eventData
                                                                 options:kNilOptions
                                                                   error:&error];
-            
             NSUInteger len = [eventList count];
             for (NSUInteger i = 0; i < len - 1; ++i) {
                 NSDictionary* event = [eventList objectAtIndex:i];
