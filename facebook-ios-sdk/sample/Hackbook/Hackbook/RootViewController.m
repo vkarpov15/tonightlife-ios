@@ -32,7 +32,6 @@
 - (void)dealloc {
     [permissions release];
     [backgroundImageView release];
-    [loginButton release];
     [menuTableView release];
     [mainMenuItems release];
     [headerView release];
@@ -82,7 +81,6 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     self.backgroundImageView.hidden = YES;
-    loginButton.hidden = YES;
     self.menuTableView.hidden = NO;
     
     [self apiFQLIMe];
@@ -97,7 +95,6 @@
     
     self.menuTableView.hidden = YES;
     self.backgroundImageView.hidden = NO;
-    loginButton.hidden = NO;
     
     // Clear personal info
     nameLabel.text = @"";
@@ -183,23 +180,6 @@
     //[backgroundImageView setAlpha:0.25];
     [self.view addSubview:backgroundImageView];
     
-    // Login Button
-    loginButton = [[UIButton buttonWithType:UIButtonTypeCustom] retain];
-    CGFloat xLoginButtonOffset = self.view.center.x - (318/2);
-    CGFloat yLoginButtonOffset = self.view.bounds.size.height - (58 + 13);
-    loginButton.frame = CGRectMake(xLoginButtonOffset,yLoginButtonOffset,318,58);
-    [loginButton addTarget:self
-                    action:@selector(login)
-          forControlEvents:UIControlEventTouchUpInside];
-    [loginButton setImage:
-     [UIImage imageNamed:@"FBConnect.bundle/images/LoginWithFacebookNormal@2x.png"]
-                 forState:UIControlStateNormal];
-    [loginButton setImage:
-     [UIImage imageNamed:@"FBConnect.bundle/images/LoginWithFacebookPressed@2x.png"]
-                 forState:UIControlStateHighlighted];
-    [loginButton sizeToFit];
-    [self.view addSubview:loginButton];
-    
     // Main Menu Table
     menuTableView = [[UITableView alloc] initWithFrame:self.view.bounds
                                                  style:UITableViewStylePlain];
@@ -246,7 +226,7 @@
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (![[delegate facebook] isSessionValid]) {
-        [self showLoggedOut];
+        [self login];
     } else {
         [self showLoggedIn];
     }

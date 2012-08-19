@@ -27,7 +27,6 @@ UITableViewDelegate>{
     NSArray *permissions;
 
     UIImageView *backgroundImageView;
-    UIButton *loginButton;
     UITableView *menuTableView;
 
     NSMutableArray *mainMenuItems;
