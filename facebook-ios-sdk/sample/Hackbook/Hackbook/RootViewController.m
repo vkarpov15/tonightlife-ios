@@ -411,6 +411,31 @@
         
         [profilePhotoImageView setImage:imgThumb];
         [self apiGraphUserPermissions];
+        
+        // Send off Tabbie Login req
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString* fbToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSLog(@"Dispatching tabbie login %@", fbToken);
+            NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tonight-life.com/mobile/auth.json"]];
+            NSString* params = [NSString stringWithFormat:@"fb_token=%@", fbToken];
+            [req setHTTPMethod:@"POST"];
+            [req setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+            NSURLResponse* response = nil;
+            NSError* error;
+            NSData* data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+            
+            NSDictionary* ret = [NSJSONSerialization JSONObjectWithData:data
+                                                     options:kNilOptions
+                                                       error:&error];
+            
+            NSString* tonightlifeToken = [ret objectForKey:@"token"];
+            NSLog(@"Tonightlife Token=%@", tonightlifeToken);
+            [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
+            
+            
+            
+        });
     } else {
         // Processing permissions information
         HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
