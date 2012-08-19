@@ -78,7 +78,6 @@
  */
 
 - (void)showLoggedIn {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
     
     self.backgroundImageView.hidden = YES;
     self.menuTableView.hidden = NO;
@@ -91,7 +90,6 @@
  */
 
 - (void)showLoggedOut {
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     self.menuTableView.hidden = YES;
     self.backgroundImageView.hidden = NO;
@@ -100,8 +98,6 @@
     nameLabel.text = @"";
     // Get the profile image
     [profilePhotoImageView setImage:nil];
-    
-    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 /**
@@ -136,7 +132,6 @@
     APICallsViewController *controller = [[APICallsViewController alloc]
                                           initWithIndex:[sender tag]];
     pendingApiCallsController = controller;
-    [self.navigationController pushViewController:controller animated:YES];
     [controller release];
 }
 
@@ -223,7 +218,6 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    //[self.navigationController setNavigationBarHidden:YES animated:animated];
     [super viewWillAppear:animated];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -235,7 +229,6 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
 
