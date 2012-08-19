@@ -83,7 +83,7 @@
     self.backgroundImageView.hidden = YES;
     self.menuTableView.hidden = NO;
     
-    [self apiFQLIMe];
+    //[self apiFQLIMe];
 }
 
 /**
@@ -112,7 +112,7 @@
     if (![[delegate facebook] isSessionValid]) {
         [[delegate facebook] authorize:permissions];
     } else {
-        [self showLoggedIn];
+        [self apiFQLIMe];
     }
 }
 
@@ -148,6 +148,8 @@
     [view setBackgroundColor:[UIColor whiteColor]];
     self.view = view;
     [view release];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     // Initialize permissions
     permissions = [[NSArray alloc] initWithObjects:@"offline_access", nil];
@@ -228,7 +230,7 @@
     if (![[delegate facebook] isSessionValid]) {
         [self login];
     } else {
-        [self showLoggedIn];
+        [self apiFQLIMe];
     }
 }
 
@@ -299,7 +301,7 @@
  * Called when the user has logged in successfully.
  */
 - (void)fbDidLogin {
-    [self showLoggedIn];
+    [self apiFQLIMe];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
@@ -441,6 +443,9 @@
                                                                 options:kNilOptions
                                                                   error:&error];
             NSLog(@"Got my events! %@", eventDict);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showLoggedIn];
+            });
         });
     } else {
         // Processing permissions information
