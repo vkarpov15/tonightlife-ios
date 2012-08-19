@@ -452,8 +452,7 @@
                 // is quirky
                 NSString* radarCountStr = [NSString stringWithFormat:@"%@", [event objectForKey:@"user_count"]];
                 NSUInteger radarCount = 0;
-                NSString* nullStr = @"null";
-                if (![radarCountStr isEqualToString:nullStr]) {
+                if (![radarCountStr isEqualToString:@"null"]) {
                     radarCount = [radarCountStr integerValue];
                 }
                 Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
