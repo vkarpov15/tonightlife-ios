@@ -27,6 +27,7 @@
 @synthesize mainMenuItems;
 @synthesize headerView;
 @synthesize nameLabel;
+@synthesize tabs;
 
 - (void)dealloc {
     [permissions release];
@@ -35,6 +36,7 @@
     [mainMenuItems release];
     [headerView release];
     [nameLabel release];
+    [tabs release];
     [super dealloc];
 }
 
@@ -185,7 +187,7 @@
     
     // Table header
     headerView = [[UIView alloc]
-                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 30)];
+                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 80)];
     headerView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
     headerView.backgroundColor = [UIColor blueColor];
 
@@ -195,6 +197,11 @@
     nameLabel.textAlignment = UITextAlignmentLeft;
     nameLabel.text = @"";
     [headerView addSubview:nameLabel];
+    tabs = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, 30, self.view.bounds.size.width, 50)];
+    [tabs insertSegmentWithTitle:@"Top 10" atIndex:0 animated:NO];
+    [tabs insertSegmentWithTitle:@"All" atIndex:1 animated:NO];
+    [tabs insertSegmentWithTitle:@"Radar" atIndex:1 animated:NO];
+    [headerView addSubview:tabs];
     menuTableView.tableHeaderView = headerView;
     
     [self.view addSubview:menuTableView];

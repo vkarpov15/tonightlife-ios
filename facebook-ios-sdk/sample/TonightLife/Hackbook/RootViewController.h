@@ -34,6 +34,7 @@ UITableViewDelegate>{
 
     UIView *headerView;
     UILabel *nameLabel;
+    UISegmentedControl *tabs;
     
     APICallsViewController *pendingApiCallsController;
 }
@@ -44,6 +45,7 @@ UITableViewDelegate>{
 @property (nonatomic, retain) NSMutableArray *mainMenuItems;
 @property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UISegmentedControl *tabs;
 
 
 @end
