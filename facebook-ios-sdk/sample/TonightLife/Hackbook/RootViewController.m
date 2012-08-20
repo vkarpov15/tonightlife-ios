@@ -246,7 +246,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [mainMenuItems count];
+    NSLog(@"I think eventsList count is %d", [eventsList count]);
+    return eventsList.count;
 }
 
 // Customize the appearance of table view cells.
@@ -266,7 +267,9 @@
     [button setBackgroundImage:[[UIImage imageNamed:@"MenuButton.png"]
                                 stretchableImageWithLeftCapWidth:9 topCapHeight:9]
                       forState:UIControlStateNormal];
-    [button setTitle:[mainMenuItems objectAtIndex:indexPath.row]
+    
+    NSString *e = [eventsList objectAtIndex:indexPath.row];
+    [button setTitle:e
             forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -381,6 +384,7 @@
         // Send off Tabbie Login req
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString* fbToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        eventsList = [[NSMutableArray alloc] initWithCapacity:25];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSLog(@"Dispatching tabbie login %@", fbToken);
             // Send Tabbie login request - synchronous within separate thread
@@ -420,25 +424,29 @@
                 if (![radarCountStr isEqualToString:@"null"]) {
                     radarCount = [radarCountStr integerValue];
                 }
-                Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
-                                                    :[event objectForKey:@"name"]
-                                                    :[event objectForKey:@"description"]
-                                                    :[event objectForKey:@"location"]
-                                                    :[event objectForKey:@"street_address"]
+
+                Event* e = [[Event alloc] initEvent :[NSString stringWithFormat:@"%@", [event objectForKey:@"id"]]
+                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"name"]]
+                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"description"]]
+                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"location"]]
+                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"street_address"]]
                                                     :[NSURL URLWithString:[NSString stringWithFormat:@"http://tonight-life.com/", [event objectForKey:@"image_url"]]]
                                                     :[[event objectForKey:@"latitude"] doubleValue]
                                                     :[[event objectForKey:@"longitude"] doubleValue]
                                                     :radarCount
                                                     :[[event objectForKey:@"featured"] boolValue]
-                                                    :[event objectForKey:@"start_time"]
+                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"start_time"]]
                                                     : NO];
                 NSLog(@"Event name is %@", e->name);
-                
+                [eventsList addObject:e->name];
+                [e release];
+                NSLog(@"Number of events is %d", eventsList.count);
            }
             
             //NSLog(@"Got my events! %@", eventList);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self showLoggedIn];
+                [self.menuTableView reloadData];
             });
         });
     } else {

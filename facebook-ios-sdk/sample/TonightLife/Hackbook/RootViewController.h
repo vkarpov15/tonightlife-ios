@@ -36,6 +36,8 @@ UITableViewDelegate>{
     UILabel *nameLabel;
     UISegmentedControl *tabs;
     
+    NSMutableArray* eventsList;
+    
     APICallsViewController *pendingApiCallsController;
 }
 
