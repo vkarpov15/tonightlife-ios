@@ -261,20 +261,25 @@
     }
     
     //create the button
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(20, 20, (cell.contentView.frame.size.width-40), 44);
-    button.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
-    [button setBackgroundImage:[[UIImage imageNamed:@"MenuButton.png"]
-                                stretchableImageWithLeftCapWidth:9 topCapHeight:9]
-                      forState:UIControlStateNormal];
-    
     Event *e = [eventsList objectAtIndex:indexPath.row];
-    [button setTitle:[e name]
-            forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    button.tag = indexPath.row;
-    [cell.contentView addSubview:button];
+    
+    UIView *background = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)] autorelease];
+    background.backgroundColor = [UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0];
+    
+    //NSData *data = [NSData dataWithContentsOfURL:[e image]];
+    UIImage *image = [UIImage imageNamed:@"Icon.png"];
+    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)] autorelease];
+    [imageView setImage:image];
+    UILabel *name = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 70)] autorelease];
+    [name setBackgroundColor:[UIColor clearColor]];
+    [name setTextColor:[UIColor whiteColor]];
+    [name setText:[NSString stringWithFormat:@"%@", e->name]];
+    
+    [cell.contentView addSubview:imageView];
+    [cell.contentView addSubview:name];
+    
+    //[cell.contentView addSubview:button];
+    cell.backgroundView = background;
     
     return cell;
 }
