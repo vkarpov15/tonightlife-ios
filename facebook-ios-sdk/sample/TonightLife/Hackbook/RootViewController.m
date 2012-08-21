@@ -268,8 +268,8 @@
                                 stretchableImageWithLeftCapWidth:9 topCapHeight:9]
                       forState:UIControlStateNormal];
     
-    NSString *e = [eventsList objectAtIndex:indexPath.row];
-    [button setTitle:e
+    Event *e = [eventsList objectAtIndex:indexPath.row];
+    [button setTitle:[e name]
             forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(menuButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -425,21 +425,20 @@
                     radarCount = [radarCountStr integerValue];
                 }
 
-                Event* e = [[Event alloc] initEvent :[NSString stringWithFormat:@"%@", [event objectForKey:@"id"]]
-                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"name"]]
-                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"description"]]
-                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"location"]]
-                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"street_address"]]
+                Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
+                                                    :[event objectForKey:@"name"]
+                                                    :[event objectForKey:@"description"]
+                                                    :[event objectForKey:@"location"]
+                                                    :[event objectForKey:@"street_address"]
                                                     :[NSURL URLWithString:[NSString stringWithFormat:@"http://tonight-life.com/", [event objectForKey:@"image_url"]]]
                                                     :[[event objectForKey:@"latitude"] doubleValue]
                                                     :[[event objectForKey:@"longitude"] doubleValue]
                                                     :radarCount
                                                     :[[event objectForKey:@"featured"] boolValue]
-                                                    :[NSString stringWithFormat:@"%@", [event objectForKey:@"start_time"]]
+                                                    :[event objectForKey:@"start_time"]
                                                     : NO];
-                NSLog(@"Event name is %@", e->name);
-                [eventsList addObject:e->name];
-                [e release];
+                NSLog(@"Event name is %@", [e name]);
+                [eventsList addObject:e];
                 NSLog(@"Number of events is %d", eventsList.count);
            }
             

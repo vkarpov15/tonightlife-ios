@@ -39,4 +39,12 @@
                     :(NSString*) time
                     :(bool) onRadar;
 
+@property (nonatomic,retain,readonly) NSString* eventId;
+@property (nonatomic,retain,readonly) NSString* name;
+@property (nonatomic,retain,readonly) NSString* description;
+@property (nonatomic,retain,readonly) NSString* venueName;
+@property (nonatomic,retain,readonly) NSString* address;
+@property (nonatomic,retain,readonly) NSURL* image;
+@property (nonatomic,retain,readonly) NSString* time;
+
 @end

@@ -11,6 +11,9 @@
 #import "Event.h"
 
 @implementation Event
+
+@synthesize eventId, name, description, venueName, address, image, time;
+
 -(Event*) initEvent :(NSString*) inEventId
                     :(NSString*) inName
                     :(NSString*) inDescription
@@ -25,17 +28,17 @@
                     :(bool) inOnRadar {
     self = [super init];
     if (self) {
-        eventId = inEventId;
-        name = inName;
-        description = inDescription;
-        venueName = inVenueName;
-        address = inAddress;
-        image = inImage;
+        eventId = [inEventId retain];
+        name = [inName retain];
+        description = [inDescription retain];
+        venueName = [inVenueName retain];
+        address = [inAddress retain];
+        image = [inImage retain];
         lat = inLat;
         lon = inLon;
         radarCount = inRadarCount;
         featured = inFeatured;
-        time = inTime;
+        time = [inTime retain];
         onRadar = inOnRadar;
     }
     return self;
