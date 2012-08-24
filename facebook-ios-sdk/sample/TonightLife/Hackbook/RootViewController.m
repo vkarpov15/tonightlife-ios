@@ -237,7 +237,7 @@
 #pragma mark - UITableViewDatasource and UITableViewDelegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return 120.0;
 }
 
 // Customize the number of sections in the table view.
@@ -254,32 +254,35 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    EventTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        
+        UIView *background = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)] autorelease];
+        background.backgroundColor = [UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0];
+        cell.backgroundView = background;
+
     }
     
     //create the button
     Event *e = [eventsList objectAtIndex:indexPath.row];
     
-    UIView *background = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)] autorelease];
-    background.backgroundColor = [UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0];
-    
-    //NSData *data = [NSData dataWithContentsOfURL:[e image]];
     UIImage *image = [UIImage imageNamed:@"Icon.png"];
-    UIImageView *imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)] autorelease];
-    [imageView setImage:image];
-    UILabel *name = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 70)] autorelease];
-    [name setBackgroundColor:[UIColor clearColor]];
-    [name setTextColor:[UIColor whiteColor]];
-    [name setText:[NSString stringWithFormat:@"%@", e->name]];
+    /*UIGraphicsBeginImageContext(CGSizeMake(320, 90));
+    [loadImage drawInRect:CGRectMake(0, 0, 320, 90)];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();*/
     
-    [cell.contentView addSubview:imageView];
-    [cell.contentView addSubview:name];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    imgView.image = image;
+    [cell.imageWrapper addSubview:imgView];
+
+    cell.eventName.text = [NSString stringWithFormat:@"%@", e->name];
     
     //[cell.contentView addSubview:button];
-    cell.backgroundView = background;
+    //[cell setBackgroundColor:[UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0]];
     
     return cell;
 }
