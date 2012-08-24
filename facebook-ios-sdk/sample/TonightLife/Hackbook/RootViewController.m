@@ -268,16 +268,14 @@
     //create the button
     Event *e = [eventsList objectAtIndex:indexPath.row];
     
-    UIImage *image = [UIImage imageNamed:@"Icon.png"];
-    /*UIGraphicsBeginImageContext(CGSizeMake(320, 90));
-    [loadImage drawInRect:CGRectMake(0, 0, 320, 90)];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();*/
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
-    imgView.contentMode = UIViewContentModeScaleAspectFill;
-    imgView.image = image;
-    [cell.imageWrapper addSubview:imgView];
+    //UIImage *image = [UIImage imageNamed:@"Icon.png"];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:e->image]];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
+        imgView.contentMode = UIViewContentModeScaleAspectFill;
+        imgView.image = image;
+        [cell.imageWrapper addSubview:imgView];
+    });
 
     cell.eventName.text = [NSString stringWithFormat:@"%@", e->name];
     
@@ -432,19 +430,23 @@
                 if (![radarCountStr isEqualToString:@"null"]) {
                     radarCount = [radarCountStr integerValue];
                 }
+                
+                NSLog(@"Image url is %@", [event objectForKey:@"image_url"]);
 
                 Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
                                                     :[event objectForKey:@"name"]
                                                     :[event objectForKey:@"description"]
                                                     :[event objectForKey:@"location"]
                                                     :[event objectForKey:@"street_address"]
-                                                    :[NSURL URLWithString:[NSString stringWithFormat:@"http://tonight-life.com/", [event objectForKey:@"image_url"]]]
+                                                    :[NSURL URLWithString:[NSString stringWithFormat:@"http://tonight-life.com%@", [event objectForKey:@"image_url"]]]
                                                     :[[event objectForKey:@"latitude"] doubleValue]
                                                     :[[event objectForKey:@"longitude"] doubleValue]
                                                     :radarCount
                                                     :[[event objectForKey:@"featured"] boolValue]
                                                     :[event objectForKey:@"start_time"]
                                                     : NO];
+                
+                NSLog(@"Image url2 is %@", [e->image absoluteString]);
                 NSLog(@"Event name is %@", [e name]);
                 [eventsList addObject:e];
                 NSLog(@"Number of events is %d", eventsList.count);
