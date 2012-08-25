@@ -26,7 +26,7 @@
 @synthesize menuTableView;
 @synthesize mainMenuItems;
 @synthesize headerView;
-@synthesize nameLabel;
+//@synthesize nameLabel;
 @synthesize tabs;
 @synthesize imageCache;
 
@@ -36,7 +36,7 @@
     [menuTableView release];
     [mainMenuItems release];
     [headerView release];
-    [nameLabel release];
+    //[nameLabel release];
     [tabs release];
     [imageCache release];
     [super dealloc];
@@ -97,7 +97,7 @@
     self.backgroundImageView.hidden = NO;
     
     // Clear personal info
-    nameLabel.text = @"";
+    headerView.usernameOutlet.text = @"";
 }
 
 /**
@@ -175,22 +175,10 @@
     //[self.view addSubview:menuTableView];
     
     // Table header
-    headerView = [[UIView alloc]
-                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 80)];
-    headerView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
-    headerView.backgroundColor = [UIColor blueColor];
+    NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
+    headerView = [nib objectAtIndex:0];
 
-    nameLabel = [[UILabel alloc]
-                 initWithFrame:CGRectMake(40, 5, 140, 20.0)];
-    nameLabel.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    nameLabel.textAlignment = UITextAlignmentLeft;
-    nameLabel.text = @"";
-    [headerView addSubview:nameLabel];
-    tabs = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, 30, self.view.bounds.size.width, 50)];
-    [tabs insertSegmentWithTitle:@"Top 10" atIndex:0 animated:NO];
-    [tabs insertSegmentWithTitle:@"All" atIndex:1 animated:NO];
-    [tabs insertSegmentWithTitle:@"Radar" atIndex:1 animated:NO];
-    [headerView addSubview:tabs];
+    headerView.usernameOutlet.text = @"";
     menuTableView.tableHeaderView = headerView;
     
     [self.view addSubview:menuTableView];
@@ -368,7 +356,8 @@
         // If basic information callback, set the UI objects to
         // display this.
         NSLog(@"My facebook info is %@", result);
-        nameLabel.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];
+        /*nameLabel.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];*/
+        headerView.usernameOutlet.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];
         
         [self apiGraphUserPermissions];
         

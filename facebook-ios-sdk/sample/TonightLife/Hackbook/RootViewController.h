@@ -19,6 +19,7 @@
 #import "FBConnect.h"
 #import "Event.h"
 #import "EventTableCell.h"
+#import "EventListHeader.h"
 
 @interface RootViewController : UIViewController
 <FBRequestDelegate,
@@ -33,8 +34,8 @@ UITableViewDelegate>{
 
     NSMutableArray* mainMenuItems;
 
-    UIView* headerView;
-    UILabel* nameLabel;
+    EventListHeader* headerView;
+    //UILabel* nameLabel;
     UISegmentedControl* tabs;
     
     NSMutableArray* eventsList;
@@ -46,8 +47,8 @@ UITableViewDelegate>{
 @property (nonatomic, retain) UIImageView* backgroundImageView;
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
-@property (nonatomic, retain) UIView* headerView;
-@property (nonatomic, retain) UILabel* nameLabel;
+@property (nonatomic, retain) EventListHeader* headerView;
+//@property (nonatomic, retain) UILabel* nameLabel;
 @property (nonatomic, retain) UISegmentedControl* tabs;
 @property (nonatomic, retain) NSMutableDictionary* imageCache;
 
