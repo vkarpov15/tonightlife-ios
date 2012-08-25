@@ -28,6 +28,7 @@
 @synthesize headerView;
 @synthesize nameLabel;
 @synthesize tabs;
+@synthesize imageCache;
 
 - (void)dealloc {
     [permissions release];
@@ -37,13 +38,14 @@
     [headerView release];
     [nameLabel release];
     [tabs release];
+    [imageCache release];
     [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+    NSLog(@"GOT LOW MEMORY WARNING");
     // Release any cached data, images, etc that aren't in use.
 }
 
@@ -118,21 +120,6 @@
     [[delegate facebook] logout];
 }
 
-/**
- * Helper method called when a menu button is clicked
- */
-- (void)menuButtonClicked:(id)sender {
-    // Each menu button in the UITableViewController is initialized
-    // with a tag representing the table cell row. When the button
-    // is clicked the button is passed along in the sender object.
-    // From this object we can then read the tag property to determine
-    // which menu button was clicked.
-    APICallsViewController *controller = [[APICallsViewController alloc]
-                                          initWithIndex:[sender tag]];
-    pendingApiCallsController = controller;
-    [controller release];
-}
-
 #pragma mark - View lifecycle
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
@@ -141,6 +128,8 @@
     [view setBackgroundColor:[UIColor whiteColor]];
     self.view = view;
     [view release];
+    
+    imageCache = [[NSMutableDictionary alloc] initWithCapacity:25];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -205,8 +194,6 @@
     menuTableView.tableHeaderView = headerView;
     
     [self.view addSubview:menuTableView];
-    
-    pendingApiCallsController = nil;
 }
 
 - (void)viewDidUnload {
@@ -268,19 +255,22 @@
     //create the button
     Event *e = [eventsList objectAtIndex:indexPath.row];
     
-    //UIImage *image = [UIImage imageNamed:@"Icon.png"];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:e->image]];
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
-        imgView.contentMode = UIViewContentModeScaleAspectFill;
-        imgView.image = image;
-        [cell.imageWrapper addSubview:imgView];
+        UIImage* image = [imageCache objectForKey:[e->image absoluteString]];
+        if (nil == image) {
+            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:e->image]];
+            [imageCache setObject:image forKey:[e->image absoluteString]];
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
+            imgView.contentMode = UIViewContentModeScaleAspectFill;
+            imgView.image = image;
+            [cell.imageWrapper addSubview:imgView];
+        });
     });
 
     cell.eventName.text = [NSString stringWithFormat:@"%@", e->name];
-    
-    //[cell.contentView addSubview:button];
-    //[cell setBackgroundColor:[UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0]];
     
     return cell;
 }
@@ -305,8 +295,6 @@
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
-        
-    [pendingApiCallsController userDidGrantPermission];
 }
 
 -(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
@@ -318,15 +306,12 @@
  * Called when the user canceled the authorization dialog.
  */
 -(void)fbDidNotLogin:(BOOL)cancelled {
-    [pendingApiCallsController userDidNotGrantPermission];
 }
 
 /**
  * Called when the request logout has succeeded.
  */
 - (void)fbDidLogout {
-    pendingApiCallsController = nil;
-    
     // Remove saved authorization information if it exists and it is
     // ok to clear it (logout, session invalid, app unauthorized)
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

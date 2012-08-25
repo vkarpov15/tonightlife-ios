@@ -26,29 +26,30 @@ FBDialogDelegate,
 FBSessionDelegate,
 UITableViewDataSource,
 UITableViewDelegate>{
-    NSArray *permissions;
+    NSArray* permissions;
 
-    UIImageView *backgroundImageView;
-    UITableView *menuTableView;
+    UIImageView* backgroundImageView;
+    UITableView* menuTableView;
 
-    NSMutableArray *mainMenuItems;
+    NSMutableArray* mainMenuItems;
 
-    UIView *headerView;
-    UILabel *nameLabel;
-    UISegmentedControl *tabs;
+    UIView* headerView;
+    UILabel* nameLabel;
+    UISegmentedControl* tabs;
     
     NSMutableArray* eventsList;
     
-    APICallsViewController *pendingApiCallsController;
+    NSMutableDictionary* imageCache;
 }
 
-@property (nonatomic, retain) NSArray *permissions;
-@property (nonatomic, retain) UIImageView *backgroundImageView;
-@property (nonatomic, retain) UITableView *menuTableView;
-@property (nonatomic, retain) NSMutableArray *mainMenuItems;
-@property (nonatomic, retain) UIView *headerView;
-@property (nonatomic, retain) UILabel *nameLabel;
-@property (nonatomic, retain) UISegmentedControl *tabs;
+@property (nonatomic, retain) NSArray* permissions;
+@property (nonatomic, retain) UIImageView* backgroundImageView;
+@property (nonatomic, retain) UITableView* menuTableView;
+@property (nonatomic, retain) NSMutableArray* mainMenuItems;
+@property (nonatomic, retain) UIView* headerView;
+@property (nonatomic, retain) UILabel* nameLabel;
+@property (nonatomic, retain) UISegmentedControl* tabs;
+@property (nonatomic, retain) NSMutableDictionary* imageCache;
 
 
 @end
