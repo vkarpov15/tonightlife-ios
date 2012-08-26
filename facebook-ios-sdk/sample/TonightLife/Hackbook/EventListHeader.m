@@ -14,9 +14,9 @@
 
 @synthesize usernameOutlet;
 @synthesize tabSwitcherOutlet;
+@synthesize tabChangeCallback;
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
@@ -26,6 +26,15 @@
 
 -(IBAction) segmentedControlIndexChanged {
     NSLog(@"My index is %d", self.tabSwitcherOutlet.selectedSegmentIndex);
+    if (nil != tabChangeCallback) {
+        if (0 == self.tabSwitcherOutlet.selectedSegmentIndex) {
+            [tabChangeCallback onShortListClick];
+        } else if (1 == self.tabSwitcherOutlet.selectedSegmentIndex) {
+            [tabChangeCallback onAllEventsClick];
+        } else {
+            [tabChangeCallback onLineupClick];
+        }
+    }
 }
 
 @end

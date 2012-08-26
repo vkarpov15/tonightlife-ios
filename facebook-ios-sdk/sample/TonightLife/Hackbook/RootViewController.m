@@ -168,17 +168,18 @@
     // Main Menu Table
     menuTableView = [[UITableView alloc] initWithFrame:self.view.bounds
                                                  style:UITableViewStylePlain];
-    [menuTableView setBackgroundColor:[UIColor whiteColor]];
+    [menuTableView setBackgroundColor:[UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0]];
     menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     menuTableView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
     menuTableView.dataSource = self;
     menuTableView.delegate = self;
     menuTableView.hidden = YES;
-    //[self.view addSubview:menuTableView];
     
     // Table header
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
     headerView = [nib objectAtIndex:0];
+    TabChangeCallback* tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
+    [headerView setTabChangeCallback:tabChangeCallback];
 
     headerView.usernameOutlet.text = @"";
     menuTableView.tableHeaderView = headerView;
@@ -235,10 +236,6 @@
     if (cell == nil) {
         NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        
-        UIView *background = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)] autorelease];
-        background.backgroundColor = [UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0];
-        cell.backgroundView = background;
 
     }
     

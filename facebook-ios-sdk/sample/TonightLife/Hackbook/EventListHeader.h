@@ -9,11 +9,15 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "TabChangeCallback.h"
 
-@interface EventListHeader : UIView
+@interface EventListHeader : UIView {
+    TabChangeCallback* tabChangeCallback;
+}
 
 @property (nonatomic, retain) IBOutlet UILabel* usernameOutlet;
 @property (nonatomic, retain) IBOutlet UISegmentedControl* tabSwitcherOutlet;
+@property (nonatomic, retain) TabChangeCallback* tabChangeCallback;
 
 -(IBAction) segmentedControlIndexChanged;
 

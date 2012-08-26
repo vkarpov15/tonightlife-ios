@@ -21,6 +21,7 @@
 #import "EventTableCell.h"
 #import "EventListHeader.h"
 #import "RadarCommonController.h"
+#import "TabChangeCallback.h"
 
 @interface RootViewController : UIViewController
 <FBRequestDelegate,
