@@ -17,7 +17,6 @@
 		30EA736E13F5D21B003DC0D2 /* HackbookAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA736D13F5D21B003DC0D2 /* HackbookAppDelegate.m */; };
 		30EA737113F5D21B003DC0D2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30EA736F13F5D21B003DC0D2 /* MainWindow.xib */; };
 		30EA737413F5D21B003DC0D2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA737313F5D21B003DC0D2 /* RootViewController.m */; };
-		30EA739A13F5D372003DC0D2 /* DataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EA739113F5D372003DC0D2 /* DataSet.m */; };
 		30EA739E13F5D372003DC0D2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EA739613F5D372003DC0D2 /* Icon.png */; };
 		30EA739F13F5D372003DC0D2 /* MenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 30EA739713F5D372003DC0D2 /* MenuButton.png */; };
 		30EA73CB13F5D502003DC0D2 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 30EA73CA13F5D502003DC0D2 /* FBConnect.bundle */; };
@@ -62,8 +61,6 @@
 		30EA737013F5D21B003DC0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		30EA737213F5D21B003DC0D2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		30EA737313F5D21B003DC0D2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		30EA739013F5D372003DC0D2 /* DataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSet.h; sourceTree = "<group>"; };
-		30EA739113F5D372003DC0D2 /* DataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSet.m; sourceTree = "<group>"; };
 		30EA739613F5D372003DC0D2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		30EA739713F5D372003DC0D2 /* MenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButton.png; sourceTree = "<group>"; };
 		30EA73CA13F5D502003DC0D2 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = ../FBConnect.bundle; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 				9588599C15E6FCDB00C307C0 /* EventTableCell.xib */,
 				9588599F15E6FDBE00C307C0 /* EventTableCell.h */,
 				958859A015E6FDBE00C307C0 /* EventTableCell.m */,
-				30EA739013F5D372003DC0D2 /* DataSet.h */,
-				30EA739113F5D372003DC0D2 /* DataSet.m */,
 				30EA736413F5D21B003DC0D2 /* Supporting Files */,
 			);
 			name = TonightLife;
@@ -334,7 +329,6 @@
 				30EA736B13F5D21B003DC0D2 /* main.m in Sources */,
 				30EA736E13F5D21B003DC0D2 /* HackbookAppDelegate.m in Sources */,
 				30EA737413F5D21B003DC0D2 /* RootViewController.m in Sources */,
-				30EA739A13F5D372003DC0D2 /* DataSet.m in Sources */,
 				30EA73E713F5D523003DC0D2 /* Facebook.m in Sources */,
 				30EA73E913F5D523003DC0D2 /* FBDialog.m in Sources */,
 				30EA73EB13F5D523003DC0D2 /* FBLoginDialog.m in Sources */,

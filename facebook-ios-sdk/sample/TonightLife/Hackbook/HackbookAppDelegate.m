@@ -16,7 +16,6 @@
 
 #import "HackbookAppDelegate.h"
 #import "RootViewController.h"
-#import "DataSet.h"
 
 // Your Facebook APP Id must be set before running this example
 // See http://www.facebook.com/developers/createapp.php
@@ -32,8 +31,6 @@ static NSString* kAppId = @"217386331697217";
 @synthesize navigationController=_navigationController;
 
 @synthesize facebook;
-
-@synthesize apiData;
 
 @synthesize userPermissions;
 
@@ -59,9 +56,6 @@ static NSString* kAppId = @"217386331697217";
         facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
         facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
-    
-    // Initialize API data (for views, etc.)
-    apiData = [[DataSet alloc] init];
     
     // Initialize user permissions
     userPermissions = [[NSMutableDictionary alloc] initWithCapacity:1];
@@ -143,7 +137,6 @@ static NSString* kAppId = @"217386331697217";
     [_window release];
     [_navigationController release];
     [facebook release];
-    [apiData release];
     [userPermissions release];
     [super dealloc];
 }

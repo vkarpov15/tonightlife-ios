@@ -17,7 +17,6 @@
 #import "RootViewController.h"
 #import "HackbookAppDelegate.h"
 #import "FBConnect.h"
-#import "APICallsViewController.h"
 
 @implementation RootViewController
 
@@ -141,10 +140,6 @@
     // Main menu items
     mainMenuItems = [[NSMutableArray alloc] initWithCapacity:1];
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSArray *apiInfo = [[delegate apiData] apiConfigData];
-    for (NSUInteger i=0; i < [apiInfo count]; i++) {
-        [mainMenuItems addObject:[[apiInfo objectAtIndex:i] objectForKey:@"title"]];
-    }
     
     // Set up the view programmatically
     self.view.backgroundColor = [UIColor whiteColor];
