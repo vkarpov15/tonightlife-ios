@@ -39,6 +39,7 @@
     //[nameLabel release];
     [tabs release];
     [imageCache release];
+    [commonController release];
     [super dealloc];
 }
 
@@ -130,6 +131,7 @@
     [view release];
     
     imageCache = [[NSMutableDictionary alloc] initWithCapacity:25];
+    commonController = [[RadarCommonController alloc] initDefault];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
@@ -221,8 +223,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"I think eventsList count is %d", [eventsList count]);
-    return eventsList.count;
+    NSLog(@"I think eventsList count is %d", [[commonController current] count]);
+    return [[commonController current] count];
 }
 
 // Customize the appearance of table view cells.
@@ -231,7 +233,7 @@
     
     EventTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventCell" owner:self options:nil];
+        NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
         
         UIView *background = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 120)] autorelease];
@@ -240,9 +242,9 @@
 
     }
     
-    //create the button
-    Event *e = [eventsList objectAtIndex:indexPath.row];
+    Event *e = [[commonController current] objectAtIndex:indexPath.row];
     
+    // Check imageCache for image, load it from internet if necessary, on separate thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImage* image = [imageCache objectForKey:[e->image absoluteString]];
         if (nil == image) {
@@ -250,6 +252,7 @@
             [imageCache setObject:image forKey:[e->image absoluteString]];
         }
         
+        // Draw image on main thread
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
             imgView.contentMode = UIViewContentModeScaleAspectFill;
@@ -423,6 +426,7 @@
                 NSLog(@"Image url2 is %@", [e->image absoluteString]);
                 NSLog(@"Event name is %@", [e name]);
                 [eventsList addObject:e];
+                [commonController addEvent:e];
                 NSLog(@"Number of events is %d", eventsList.count);
            }
             

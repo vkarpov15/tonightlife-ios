@@ -20,6 +20,7 @@
 #import "Event.h"
 #import "EventTableCell.h"
 #import "EventListHeader.h"
+#import "RadarCommonController.h"
 
 @interface RootViewController : UIViewController
 <FBRequestDelegate,
@@ -39,6 +40,7 @@ UITableViewDelegate>{
     UISegmentedControl* tabs;
     
     NSMutableArray* eventsList;
+    RadarCommonController* commonController;
     
     NSMutableDictionary* imageCache;
 }

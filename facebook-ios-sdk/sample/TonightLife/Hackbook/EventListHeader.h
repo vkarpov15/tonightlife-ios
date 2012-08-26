@@ -13,5 +13,8 @@
 @interface EventListHeader : UIView
 
 @property (nonatomic, retain) IBOutlet UILabel* usernameOutlet;
+@property (nonatomic, retain) IBOutlet UISegmentedControl* tabSwitcherOutlet;
+
+-(IBAction) segmentedControlIndexChanged;
 
 @end
