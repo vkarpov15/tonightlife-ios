@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FBA081E15EC2005002B6318 /* all_events_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA081D15EC2005002B6318 /* all_events_icon.png */; };
+		1FBA082215EC2101002B6318 /* lineup_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA081F15EC2100002B6318 /* lineup_icon.png */; };
+		1FBA082315EC2101002B6318 /* map_tabs_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA082015EC2100002B6318 /* map_tabs_icon.png */; };
+		1FBA082415EC2101002B6318 /* short_list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA082115EC2101002B6318 /* short_list_icon.png */; };
 		3018B43A13F9B94D00F61944 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3018B43813F9B94D00F61944 /* MainWindow-iPad.xib */; };
 		3085CC291415D68A00456CCC /* MenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3085CC281415D68A00456CCC /* MenuButton@2x.png */; };
 		30EA735E13F5D21B003DC0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA735D13F5D21B003DC0D2 /* UIKit.framework */; };
@@ -48,6 +52,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FBA081D15EC2005002B6318 /* all_events_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_events_icon.png; sourceTree = "<group>"; };
+		1FBA081F15EC2100002B6318 /* lineup_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_icon.png; sourceTree = "<group>"; };
+		1FBA082015EC2100002B6318 /* map_tabs_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_tabs_icon.png; sourceTree = "<group>"; };
+		1FBA082115EC2101002B6318 /* short_list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = short_list_icon.png; sourceTree = "<group>"; };
 		3018B43913F9B94D00F61944 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3085CC281415D68A00456CCC /* MenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuButton@2x.png"; sourceTree = "<group>"; };
 		30EA735913F5D21B003DC0D2 /* TonightLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonightLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +200,10 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1FBA081F15EC2100002B6318 /* lineup_icon.png */,
+				1FBA082015EC2100002B6318 /* map_tabs_icon.png */,
+				1FBA082115EC2101002B6318 /* short_list_icon.png */,
+				1FBA081D15EC2005002B6318 /* all_events_icon.png */,
 				9584FF3A15EB232D0082B08E /* zluev.png */,
 				959863F715DF2D5100577B23 /* Default.png */,
 				959863FA15DF2D8500577B23 /* Default@2x.png */,
@@ -324,6 +336,10 @@
 				958859A315E8797600C307C0 /* EventListHeader.xib in Resources */,
 				9584FF3815EB1CDF0082B08E /* BottomTabs.xib in Resources */,
 				9584FF3B15EB232D0082B08E /* zluev.png in Resources */,
+				1FBA081E15EC2005002B6318 /* all_events_icon.png in Resources */,
+				1FBA082215EC2101002B6318 /* lineup_icon.png in Resources */,
+				1FBA082315EC2101002B6318 /* map_tabs_icon.png in Resources */,
+				1FBA082415EC2101002B6318 /* short_list_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
