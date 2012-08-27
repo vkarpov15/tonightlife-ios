@@ -36,7 +36,6 @@ UITableViewDelegate>{
     NSMutableArray* mainMenuItems;
 
     EventListHeader* headerView;
-    //UILabel* nameLabel;
     UISegmentedControl* tabs;
     
     NSMutableArray* eventsList;
@@ -50,7 +49,6 @@ UITableViewDelegate>{
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
 @property (nonatomic, retain) EventListHeader* headerView;
-//@property (nonatomic, retain) UILabel* nameLabel;
 @property (nonatomic, retain) UISegmentedControl* tabs;
 @property (nonatomic, retain) NSMutableDictionary* imageCache;
 
