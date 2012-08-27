@@ -27,12 +27,15 @@
 FBDialogDelegate,
 FBSessionDelegate,
 UITableViewDataSource,
-UITableViewDelegate>{
+UITableViewDelegate,
+UITabBarDelegate>{
     NSArray* permissions;
 
     UIImageView* backgroundImageView;
     UITableView* menuTableView;
 
+    UITabBar* tabBar;
+    
     NSMutableArray* mainMenuItems;
 
     EventListHeader* headerView;

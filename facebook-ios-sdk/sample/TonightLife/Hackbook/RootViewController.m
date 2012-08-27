@@ -83,6 +83,8 @@
     
     self.backgroundImageView.hidden = YES;
     self.menuTableView.hidden = NO;
+    self.headerView.hidden = NO;
+    tabBar.hidden = NO;
     
     //[self apiFQLIMe];
 }
@@ -161,7 +163,7 @@
     [self.view addSubview:backgroundImageView];
     
     // Main Menu Table
-    menuTableView = [[UITableView alloc] initWithFrame:self.view.bounds
+    menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 60)
                                                  style:UITableViewStylePlain];
     [menuTableView setBackgroundColor:[UIColor colorWithRed:35.0/255 green: 35.0/255 blue: 35.0/255 alpha: 1.0]];
     menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -173,13 +175,22 @@
     // Table header
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
     headerView = [nib objectAtIndex:0];
+    headerView.hidden = YES;
     TabChangeCallback* tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
-    [headerView setTabChangeCallback:tabChangeCallback];
 
     headerView.usernameOutlet.text = @"";
-    menuTableView.tableHeaderView = headerView;
     
+    NSArray* tabsNib = [[NSBundle mainBundle] loadNibNamed:@"BottomTabs" owner:self options:nil];
+    tabBar = [tabsNib objectAtIndex:0];
+    [tabBar setFrame:CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)];
+    [tabBar setDelegate:self];
+    [tabBar setSelectedItem:[[tabBar items] objectAtIndex:0]];
+    tabBar.hidden = YES;
+    
+    [self.view addSubview:headerView];
     [self.view addSubview:menuTableView];
+    [self.view addSubview:tabBar];
+    
 }
 
 - (void)viewDidUnload {
@@ -442,6 +453,10 @@
 - (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
     NSLog(@"Err message: %@", [[error userInfo] objectForKey:@"error_msg"]);
     NSLog(@"Err code: %d", [error code]);
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    NSLog(@"didSelectItem: %d", item.tag);
 }
 
 @end
