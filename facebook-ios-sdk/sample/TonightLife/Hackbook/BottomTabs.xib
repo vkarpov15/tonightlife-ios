@@ -31,12 +31,13 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUITabBar" id="182001458">
+			<object class="IBUITabBar" id="32838073">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<string key="NSFrameSize">{320, 49}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -44,28 +45,35 @@
 				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<array class="NSMutableArray" key="IBUIItems">
-					<object class="IBUITabBarItem" id="435382662">
+					<object class="IBUITabBarItem" id="218740219">
+						<string key="IBUITitle">Short List</string>
+						<object class="NSCustomResource" key="IBUIImage" id="834952981">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">zluev.png</string>
+						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="182001458"/>
-						<int key="IBUISystemItemIdentifier">3</int>
+						<reference key="IBUITabBar" ref="32838073"/>
 					</object>
-					<object class="IBUITabBarItem" id="768827522">
+					<object class="IBUITabBarItem" id="483578307">
 						<int key="IBUITag">1</int>
+						<string key="IBUITitle">All Events</string>
+						<reference key="IBUIImage" ref="834952981"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="182001458"/>
-						<int key="IBUISystemItemIdentifier">0</int>
+						<reference key="IBUITabBar" ref="32838073"/>
 					</object>
-					<object class="IBUITabBarItem" id="97555012">
+					<object class="IBUITabBarItem" id="1007427683">
 						<int key="IBUITag">2</int>
+						<string key="IBUITitle">Lineup</string>
+						<reference key="IBUIImage" ref="834952981"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="182001458"/>
-						<int key="IBUISystemItemIdentifier">7</int>
+						<reference key="IBUITabBar" ref="32838073"/>
 					</object>
-					<object class="IBUITabBarItem" id="290524885">
+					<object class="IBUITabBarItem" id="285839108">
 						<int key="IBUITag">3</int>
+						<string key="IBUITitle">Map</string>
+						<reference key="IBUIImage" ref="834952981"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="182001458"/>
-						<int key="IBUISystemItemIdentifier">8</int>
+						<reference key="IBUITabBar" ref="32838073"/>
 					</object>
 				</array>
 			</object>
@@ -93,34 +101,34 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="182001458"/>
+						<reference key="object" ref="32838073"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="768827522"/>
-							<reference ref="435382662"/>
-							<reference ref="97555012"/>
-							<reference ref="290524885"/>
+							<reference ref="483578307"/>
+							<reference ref="218740219"/>
+							<reference ref="1007427683"/>
+							<reference ref="285839108"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">10</int>
-						<reference key="object" ref="768827522"/>
-						<reference key="parent" ref="182001458"/>
+						<reference key="object" ref="483578307"/>
+						<reference key="parent" ref="32838073"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">11</int>
-						<reference key="object" ref="435382662"/>
-						<reference key="parent" ref="182001458"/>
+						<reference key="object" ref="218740219"/>
+						<reference key="parent" ref="32838073"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">12</int>
-						<reference key="object" ref="97555012"/>
-						<reference key="parent" ref="182001458"/>
+						<reference key="object" ref="1007427683"/>
+						<reference key="parent" ref="32838073"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">13</int>
-						<reference key="object" ref="290524885"/>
-						<reference key="parent" ref="182001458"/>
+						<reference key="object" ref="285839108"/>
+						<reference key="parent" ref="32838073"/>
 					</object>
 				</array>
 			</object>
@@ -149,6 +157,10 @@
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">zluev.png</string>
+			<string key="NS.object.0">{24, 26}</string>
+		</object>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>
 </archive>

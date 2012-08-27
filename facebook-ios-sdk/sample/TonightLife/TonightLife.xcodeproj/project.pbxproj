@@ -35,6 +35,7 @@
 		30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ED588E14358F9400A226C3 /* Icon@2x.png */; };
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
 		9584FF3815EB1CDF0082B08E /* BottomTabs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF3715EB1CDF0082B08E /* BottomTabs.xib */; };
+		9584FF3B15EB232D0082B08E /* zluev.png in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF3A15EB232D0082B08E /* zluev.png */; };
 		9588599D15E6FCDB00C307C0 /* EventTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588599C15E6FCDB00C307C0 /* EventTableCell.xib */; };
 		958859A115E6FDBE00C307C0 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859A015E6FDBE00C307C0 /* EventTableCell.m */; };
 		958859A315E8797600C307C0 /* EventListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958859A215E8797600C307C0 /* EventListHeader.xib */; };
@@ -93,6 +94,7 @@
 		84E7D99414D9CC13006A6299 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFrictionlessRequestSettings.h; path = ../../src/FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		9584FF3715EB1CDF0082B08E /* BottomTabs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomTabs.xib; sourceTree = "<group>"; };
+		9584FF3A15EB232D0082B08E /* zluev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zluev.png; sourceTree = "<group>"; };
 		9588599C15E6FCDB00C307C0 /* EventTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableCell.xib; sourceTree = "<group>"; };
 		9588599F15E6FDBE00C307C0 /* EventTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableCell.h; sourceTree = "<group>"; };
 		958859A015E6FDBE00C307C0 /* EventTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableCell.m; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9584FF3A15EB232D0082B08E /* zluev.png */,
 				959863F715DF2D5100577B23 /* Default.png */,
 				959863FA15DF2D8500577B23 /* Default@2x.png */,
 				30EA739613F5D372003DC0D2 /* Icon.png */,
@@ -320,6 +323,7 @@
 				9588599D15E6FCDB00C307C0 /* EventTableCell.xib in Resources */,
 				958859A315E8797600C307C0 /* EventListHeader.xib in Resources */,
 				9584FF3815EB1CDF0082B08E /* BottomTabs.xib in Resources */,
+				9584FF3B15EB232D0082B08E /* zluev.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

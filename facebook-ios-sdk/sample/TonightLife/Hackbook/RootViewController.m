@@ -176,7 +176,7 @@
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
     headerView = [nib objectAtIndex:0];
     headerView.hidden = YES;
-    TabChangeCallback* tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
+    tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
 
     headerView.usernameOutlet.text = @"";
     
@@ -457,6 +457,22 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
     NSLog(@"didSelectItem: %d", item.tag);
+    switch (item.tag) {
+        case 0:
+            [tabChangeCallback onShortListClick];
+            break;
+            
+        case 1:
+            [tabChangeCallback onAllEventsClick];
+            break;
+            
+        case 2:
+            [tabChangeCallback onLineupClick];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

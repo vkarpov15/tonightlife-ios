@@ -45,6 +45,7 @@ UITabBarDelegate>{
     RadarCommonController* commonController;
     
     NSMutableDictionary* imageCache;
+    TabChangeCallback* tabChangeCallback;
 }
 
 @property (nonatomic, retain) NSArray* permissions;
