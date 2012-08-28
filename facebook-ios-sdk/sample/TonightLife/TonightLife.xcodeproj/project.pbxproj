@@ -113,6 +113,9 @@
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		9584FF3715EB1CDF0082B08E /* BottomTabs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomTabs.xib; sourceTree = "<group>"; };
 		9584FF3A15EB232D0082B08E /* zluev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zluev.png; sourceTree = "<group>"; };
+		9584FF4515EC51AA0082B08E /* EventDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailsView.xib; sourceTree = "<group>"; };
+		9584FF4615EC51AA0082B08E /* EventDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 		9588599C15E6FCDB00C307C0 /* EventTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableCell.xib; sourceTree = "<group>"; };
 		9588599F15E6FDBE00C307C0 /* EventTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableCell.h; sourceTree = "<group>"; };
 		958859A015E6FDBE00C307C0 /* EventTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableCell.m; sourceTree = "<group>"; };
@@ -194,6 +197,9 @@
 				30EA736F13F5D21B003DC0D2 /* MainWindow.xib */,
 				30EA737213F5D21B003DC0D2 /* RootViewController.h */,
 				30EA737313F5D21B003DC0D2 /* RootViewController.m */,
+				9584FF4515EC51AA0082B08E /* EventDetailsView.xib */,
+				9584FF4615EC51AA0082B08E /* EventDetailsViewController.h */,
+				9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */,
 				9584FF3715EB1CDF0082B08E /* BottomTabs.xib */,
 				958859BE15E9BD0A00C307C0 /* TabChangeCallback.h */,
 				958859BF15E9BD0B00C307C0 /* TabChangeCallback.m */,

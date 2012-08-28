@@ -9,11 +9,17 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
-@interface EventTableCell : UITableViewCell
+@interface EventTableCell : UITableViewCell {
+    Event* event;
+}
 
+@property (nonatomic, retain) Event* event;
 @property (nonatomic, retain) IBOutlet UILabel *eventName;
 
 @property (nonatomic, retain) IBOutlet UIView *imageWrapper;
+
+- (void)setEvent:(Event*) inEvent;
 
 @end

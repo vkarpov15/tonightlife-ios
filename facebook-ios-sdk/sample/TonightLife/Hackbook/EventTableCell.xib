@@ -74,7 +74,7 @@
 							<object class="IBUIView" id="646542479">
 								<reference key="NSNextResponder" ref="867935995"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{10, 5}, {300, 85}}</string>
+								<string key="NSFrame">{{5, 5}, {310, 85}}</string>
 								<reference key="NSSuperview" ref="867935995"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="115223344"/>
@@ -115,6 +115,7 @@
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MAA</bytes>
 				</object>
+				<array key="IBUIGestureRecognizers" id="0"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<int key="IBUISelectionStyle">2</int>
 				<reference key="IBUIContentView" ref="867935995"/>
@@ -144,7 +145,7 @@
 				<array key="orderedObjects">
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<array key="object" id="0"/>
+						<reference key="object" ref="0"/>
 						<reference key="children" ref="1000"/>
 						<nil key="parent"/>
 					</object>

@@ -234,6 +234,16 @@
     return [[commonController current] count];
 }
 
+- (void)eventClicked:(UITapGestureRecognizer*)tapCallback {
+    NSLog(@"Event clicked!");
+    EventTableCell* cell = [tapCallback view];
+    Event* e = [cell event];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] init];
+    [self.navigationController pushViewController:detailsViewController animated:YES];
+    [detailsViewController release];
+    NSLog(@"%@", [e name]);
+}
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
@@ -246,6 +256,8 @@
     }
     
     Event *e = [[commonController current] objectAtIndex:indexPath.row];
+    [cell setEvent:e];
+    [cell setTag:indexPath.row];
     
     // Check imageCache for image, load it from internet if necessary, on separate thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -257,20 +269,23 @@
         
         // Draw image on main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 300, 85)];
+            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 85)];
             imgView.contentMode = UIViewContentModeScaleAspectFill;
             imgView.image = image;
             [cell.imageWrapper addSubview:imgView];
         });
     });
 
-    cell.eventName.text = [NSString stringWithFormat:@"%@", e->name];
+    UITapGestureRecognizer* tapCallback = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(eventClicked:)];
+    [cell addGestureRecognizer:tapCallback];
     
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    Event *e = [[commonController current] objectAtIndex:indexPath.row];
+    NSLog(@"Selected event %@", [e name]);
 }
 
 - (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {

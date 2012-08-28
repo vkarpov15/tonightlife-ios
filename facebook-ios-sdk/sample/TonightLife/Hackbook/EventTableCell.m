@@ -15,22 +15,23 @@
 
 @synthesize eventName;
 @synthesize imageWrapper;
+@synthesize event;
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setEvent:(Event*) inEvent {
+    event = [inEvent retain];
+    eventName.text = [event name];
+}
+
+// Configure the view for the selected state
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-
     self.backgroundColor = [UIColor clearColor];
     self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"event_table_cell_background.png"]];
 }
