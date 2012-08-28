@@ -379,7 +379,6 @@
         // If basic information callback, set the UI objects to
         // display this.
         NSLog(@"My facebook info is %@", result);
-        /*nameLabel.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];*/
         headerView.usernameOutlet.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];
         
         [self apiGraphUserPermissions];
@@ -416,6 +415,10 @@
                                                                 options:kNilOptions
                                                                   error:&error];
             NSUInteger len = [eventList count];
+            
+            NSArray* radarEvents = [[eventList objectAtIndex:len - 1] objectForKey:@"radar"];
+            NSLog(@"Radar events is %@", radarEvents);
+            
             for (NSUInteger i = 0; i < len - 1; ++i) {
                 NSDictionary* event = [eventList objectAtIndex:i];
                 
@@ -441,9 +444,8 @@
                                                     :radarCount
                                                     :[[event objectForKey:@"featured"] boolValue]
                                                     :[event objectForKey:@"start_time"]
-                                                    : NO];
+                                                    :[radarEvents containsObject:[event objectForKey:@"id"]]];
                 
-                NSLog(@"Image url2 is %@", [e->image absoluteString]);
                 NSLog(@"Event name is %@", [e name]);
                 [eventsList addObject:e];
                 [commonController addEvent:e];
