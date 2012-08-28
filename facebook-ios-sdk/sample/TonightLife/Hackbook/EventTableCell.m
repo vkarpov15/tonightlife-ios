@@ -12,6 +12,7 @@
 
 @implementation EventTableCell
 
+
 @synthesize eventName;
 @synthesize imageWrapper;
 
@@ -29,6 +30,9 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+
+    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"event_table_cell_background.png"]];
 }
 
 @end

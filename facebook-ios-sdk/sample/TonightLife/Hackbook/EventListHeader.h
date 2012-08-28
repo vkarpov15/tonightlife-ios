@@ -13,6 +13,7 @@
 
 @interface EventListHeader : UIView {
     TabChangeCallback* tabChangeCallback;
+    
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* usernameOutlet;

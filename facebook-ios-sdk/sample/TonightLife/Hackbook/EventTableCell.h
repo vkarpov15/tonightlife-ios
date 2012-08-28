@@ -13,6 +13,7 @@
 @interface EventTableCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UILabel *eventName;
+
 @property (nonatomic, retain) IBOutlet UIView *imageWrapper;
 
 @end
