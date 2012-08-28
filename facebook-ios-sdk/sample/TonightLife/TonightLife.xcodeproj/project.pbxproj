@@ -43,6 +43,7 @@
 		30EA73FC13F5D590003DC0D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA73FB13F5D590003DC0D2 /* CoreLocation.framework */; };
 		30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ED588E14358F9400A226C3 /* Icon@2x.png */; };
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
+		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9584FF3815EB1CDF0082B08E /* BottomTabs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF3715EB1CDF0082B08E /* BottomTabs.xib */; };
 		9584FF3B15EB232D0082B08E /* zluev.png in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF3A15EB232D0082B08E /* zluev.png */; };
 		9588599D15E6FCDB00C307C0 /* EventTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9588599C15E6FCDB00C307C0 /* EventTableCell.xib */; };
@@ -318,7 +319,7 @@
 		30EA735013F5D21B003DC0D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 30EA735313F5D21B003DC0D2 /* Build configuration list for PBXProject "TonightLife" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -376,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */,
 				30EA736B13F5D21B003DC0D2 /* main.m in Sources */,
 				30EA736E13F5D21B003DC0D2 /* HackbookAppDelegate.m in Sources */,
 				30EA737413F5D21B003DC0D2 /* RootViewController.m in Sources */,
@@ -468,6 +470,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hackbook/TonightLife-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Hackbook/TonightLife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = TonightLife;
@@ -483,6 +486,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Hackbook/TonightLife-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Hackbook/TonightLife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = TonightLife;
