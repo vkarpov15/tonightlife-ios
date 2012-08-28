@@ -90,7 +90,7 @@
 }
 
 /**
- * Show the logged in menu
+ * Show the logged out menu
  */
 
 - (void)showLoggedOut {
@@ -141,6 +141,8 @@
     
     // Main menu items
     mainMenuItems = [[NSMutableArray alloc] initWithCapacity:1];
+    
+    // TODO inform this error
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     // Set up the view programmatically
@@ -152,7 +154,7 @@
     [[[UIBarButtonItem alloc] initWithTitle:@"Back"
                                       style:UIBarButtonItemStyleBordered
                                      target:nil
-                                     action:nil] autorelease];
+                                     action:nil] autorelease]; // FIXME Can this be released programmatically?
     
     // Background Image
     backgroundImageView = [[UIImageView alloc]
@@ -236,7 +238,7 @@
 
 - (void)eventClicked:(UITapGestureRecognizer*)tapCallback {
     NSLog(@"Event clicked!");
-    EventTableCell* cell = [tapCallback view];
+    EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
     EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] init];
     [self.navigationController pushViewController:detailsViewController animated:YES];
