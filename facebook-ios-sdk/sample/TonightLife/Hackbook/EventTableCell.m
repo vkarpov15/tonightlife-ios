@@ -14,6 +14,7 @@
 
 
 @synthesize eventName;
+@synthesize eventStartTime;
 @synthesize imageWrapper;
 @synthesize event;
 
@@ -27,13 +28,20 @@
 - (void)setEvent:(Event*) inEvent {
     event = [inEvent retain];
     eventName.text = [event name];
+    eventStartTime.text = [event time]; 
+   
+    
 }
 
 // Configure the view for the selected state
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
     self.backgroundColor = [UIColor clearColor];
-    self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"event_table_cell_background.png"]];
+    
+    
+    //self.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"event_table_cell_background.png"]];
 }
+
+
 
 @end

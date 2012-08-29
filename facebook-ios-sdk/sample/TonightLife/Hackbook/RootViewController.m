@@ -167,7 +167,8 @@
     menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)
                                                  style:UITableViewStylePlain];
     [menuTableView setBackgroundColor:[UIColor colorWithRed:0/255 green: 0/255 blue: 0/255 alpha: 1.0]];
-    menuTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    menuTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    menuTableView.separatorColor = [UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:0.1];
     menuTableView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
     menuTableView.dataSource = self;
     menuTableView.delegate = self;
