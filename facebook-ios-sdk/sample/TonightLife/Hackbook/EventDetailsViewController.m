@@ -38,13 +38,14 @@
 	self.navigationItem.title = @"Event Details";
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    
+
     self.eventTitleOutlet.text = [event name];
     self.eventDescriptionOutlet.text = [event description];
     
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 85)];
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     imgView.contentMode = UIViewContentModeScaleAspectFill;
     imgView.image = image;
     [self.imageWrapperOutlet addSubview:imgView];

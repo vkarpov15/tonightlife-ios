@@ -278,7 +278,7 @@
         
         // Draw image on main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 85)];
+            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
             imgView.contentMode = UIViewContentModeScaleAspectFill;
             imgView.image = image;
             [cell.imageWrapper addSubview:imgView];
