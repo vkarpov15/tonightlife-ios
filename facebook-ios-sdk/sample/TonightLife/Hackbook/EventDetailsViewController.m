@@ -28,15 +28,12 @@
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     
-    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Make sure nav bar goes bye-bye
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
