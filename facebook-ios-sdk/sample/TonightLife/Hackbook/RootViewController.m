@@ -240,7 +240,7 @@
     NSLog(@"Event clicked!");
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initWithEventAndImage:e :[imageCache objectForKey:[e->image absoluteString]]];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
     NSLog(@"%@", [e name]);

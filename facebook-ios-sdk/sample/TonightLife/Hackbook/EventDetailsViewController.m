@@ -12,10 +12,22 @@
 
 @implementation EventDetailsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+@synthesize eventTitleOutlet;
+@synthesize imageWrapperOutlet;
+@synthesize eventDescriptionOutlet;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+    }
+    return self;
+}
+
+-(EventDetailsViewController*) initWithEventAndImage:(Event*) e: (UIImage*) img {
+    self = [super initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
+    if (self) {
+        event = e;
+        image = img;
     }
     return self;
 }
@@ -29,6 +41,14 @@
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    self.eventTitleOutlet.text = [event name];
+    self.eventDescriptionOutlet.text = [event description];
+    
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 85)];
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    imgView.image = image;
+    [self.imageWrapperOutlet addSubview:imgView];
 }
 
 - (void)viewDidUnload
