@@ -11,7 +11,7 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string></string>
-		<string>app_icon_retina.png</string>
+		<string>app_icon_ios_retina.png</string>
 		<string>app_icon_ios.png</string>
 	</array>
 	<key>CFBundleIcons</key>
@@ -21,7 +21,7 @@
 			<key>CFBundleIconFiles</key>
 			<array>
 				<string></string>
-				<string>app_icon_retina.png</string>
+				<string>app_icon_ios_retina.png</string>
 				<string>app_icon_ios.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
