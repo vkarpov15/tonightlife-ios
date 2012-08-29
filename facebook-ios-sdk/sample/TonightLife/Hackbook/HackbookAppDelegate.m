@@ -43,6 +43,9 @@ static NSString* kAppId = @"217386331697217";
                                                                blue:51.0/255.0
                                                               alpha:1.0]];
     [navController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+    
+    //Make Status Bar Black
+    [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleBlackTranslucent];
     self.navigationController = navController;
     [rootViewController release];
     [navController release];

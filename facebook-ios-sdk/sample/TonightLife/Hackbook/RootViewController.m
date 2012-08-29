@@ -161,6 +161,8 @@
     [backgroundImageView setImage:[UIImage imageNamed:@"Default.png"]];
     [self.view addSubview:backgroundImageView];
     
+   
+    
     // Main Menu Table
     menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)
                                                  style:UITableViewStylePlain];
@@ -170,6 +172,8 @@
     menuTableView.dataSource = self;
     menuTableView.delegate = self;
     menuTableView.hidden = YES;
+    
+    
     
     // Table header
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
