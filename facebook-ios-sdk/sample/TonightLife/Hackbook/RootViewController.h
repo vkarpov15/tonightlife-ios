@@ -22,6 +22,7 @@
 #import "RadarCommonController.h"
 #import "TabChangeCallback.h"
 #import "EventDetailsViewController.h"
+#import "RadarMapViewController.h"
 
 @interface RootViewController : UIViewController
 <FBRequestDelegate,
@@ -47,6 +48,7 @@ UITabBarDelegate>{
     
     NSMutableDictionary* imageCache;
     TabChangeCallback* tabChangeCallback;
+    RadarMapViewController* mapViewController;
 }
 
 @property (nonatomic, retain) NSArray* permissions;

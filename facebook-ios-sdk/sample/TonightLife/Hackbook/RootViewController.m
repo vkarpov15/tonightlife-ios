@@ -489,6 +489,12 @@
             [tabChangeCallback onLineupClick];
             break;
             
+        case 3:
+            mapViewController = [[RadarMapViewController alloc] initWithNibName:@"RadarMapView" bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:mapViewController animated:YES];
+            [mapViewController release];
+            break;
+            
         default:
             break;
     }

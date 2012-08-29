@@ -23,7 +23,7 @@
     return self;
 }
 
--(EventDetailsViewController*) initWithEventAndImage:(Event*) e: (UIImage*) img {
+- (EventDetailsViewController*) initWithEventAndImage:(Event*) e: (UIImage*) img {
     self = [super initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
     if (self) {
         event = e;
@@ -32,8 +32,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
 	self.navigationItem.title = @"Event Details";
@@ -51,14 +50,12 @@
     [self.imageWrapperOutlet addSubview:imgView];
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end
