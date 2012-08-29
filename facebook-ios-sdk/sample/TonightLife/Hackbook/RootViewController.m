@@ -142,11 +142,8 @@
     // Main menu items
     mainMenuItems = [[NSMutableArray alloc] initWithCapacity:1];
     
-    // TODO inform this error
-    HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
     // Set up the view programmatically
-    self.view.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.title = @"Hackbook for iOS";
     
@@ -193,6 +190,13 @@
     [self.view addSubview:menuTableView];
     [self.view addSubview:tabBar];
     
+    HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (![[delegate facebook] isSessionValid]) {
+        [self login];
+    } else {
+        [self apiFQLIMe];
+    }
+    
 }
 
 - (void)viewDidUnload {
@@ -204,12 +208,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
-    if (![[delegate facebook] isSessionValid]) {
-        [self login];
-    } else {
-        [self apiFQLIMe];
-    }
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

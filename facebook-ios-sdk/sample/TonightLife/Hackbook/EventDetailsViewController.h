@@ -1,13 +1,16 @@
-//
-//  EventDetailsViewController.h
-//  TonightLife
-//
-//  Created by Diego Netto on 8/27/12.
-//  Copyright (c) 2012 Tabbie, Inc. All rights reserved.
-//
+/**
+ *  EventDetailsViewController.h
+ *
+ *  Created on: August 27, 2012
+ *      Author: Valeri Karpov
+ *      
+ *  Controller for EventDetailsView.xib
+ *  
+ */
 
 #import <UIKit/UIKit.h>
 
-@interface EventDetailsViewController : UIViewController
+@interface EventDetailsViewController : UIViewController {
+}
 
 @end

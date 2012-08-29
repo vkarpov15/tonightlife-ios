@@ -38,9 +38,9 @@ static NSString* kAppId = @"217386331697217";
     // Setup view controllers
     RootViewController *rootViewController = [[RootViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-    [navController.navigationBar setTintColor:[UIColor colorWithRed:0/255.0
+    [navController.navigationBar setTintColor:[UIColor colorWithRed:51.0/255.0
                                                               green:51.0/255.0
-                                                               blue:102.0/255.0
+                                                               blue:51.0/255.0
                                                               alpha:1.0]];
     [navController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
     self.navigationController = navController;
