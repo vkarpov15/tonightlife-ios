@@ -59,6 +59,7 @@ UIActionSheetDelegate> {
 
 
 -(IBAction) prefButtonPressed;
+-(void)request:(FBRequest *)request didLoad:(id)result;
 
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) UIImageView* backgroundImageView;
