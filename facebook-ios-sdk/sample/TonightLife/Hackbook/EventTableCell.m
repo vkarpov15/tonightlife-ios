@@ -28,9 +28,6 @@
 - (void)setEvent:(Event*) inEvent {
     event = [inEvent retain];
     eventName.text = [event name];
-    
-    
-
     eventStartTime.text = [event formattedTime];
 }
 
