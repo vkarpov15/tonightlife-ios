@@ -65,7 +65,6 @@ UIActionSheetDelegate> {
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
 @property (nonatomic, retain) EventListHeader* headerView;
-@property (nonatomic, retain) PreferencesMenuViewController* menuController;
 @property (nonatomic, retain) UISegmentedControl* tabs;
 @property (nonatomic, retain) NSMutableDictionary* imageCache;
 
