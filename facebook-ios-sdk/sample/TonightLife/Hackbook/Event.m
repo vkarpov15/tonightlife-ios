@@ -44,4 +44,22 @@
     return self;
 }
 
+-(NSString*) formattedTime {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    assert(dateFormatter!=nil);
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSDate *myDate = [dateFormatter dateFromString:time];
+    [dateFormatter dealloc];
+    
+    NSDateFormatter *visibleDateFormatter = [[NSDateFormatter alloc] init];
+    assert(visibleDateFormatter!=nil);
+    [visibleDateFormatter setDateFormat:@"HH:mm"];
+    NSString* myTime = [visibleDateFormatter stringFromDate:myDate];
+    [visibleDateFormatter dealloc];
+    return myTime;
+}
+
 @end

@@ -39,6 +39,8 @@
                     :(NSString*) time
                     :(bool) onRadar;
 
+-(NSString*) formattedTime;
+
 @property (nonatomic,retain,readonly) NSString* eventId;
 @property (nonatomic,retain,readonly) NSString* name;
 @property (nonatomic,retain,readonly) NSString* description;
