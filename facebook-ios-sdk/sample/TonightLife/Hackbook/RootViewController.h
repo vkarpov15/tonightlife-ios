@@ -51,6 +51,9 @@ UITabBarDelegate>{
     RadarMapViewController* mapViewController;
 }
 
+
+-(IBAction) prefButtonPressed;
+
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) UIImageView* backgroundImageView;
 @property (nonatomic, retain) UITableView* menuTableView;
