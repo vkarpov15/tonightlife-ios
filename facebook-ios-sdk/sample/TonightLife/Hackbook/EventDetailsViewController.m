@@ -15,7 +15,7 @@
 @synthesize eventTitleOutlet;
 @synthesize imageWrapperOutlet;
 @synthesize eventDescriptionOutlet;
-
+@synthesize addToRadarButtonOutlet;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
