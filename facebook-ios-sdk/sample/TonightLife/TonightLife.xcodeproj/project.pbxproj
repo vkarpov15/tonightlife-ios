@@ -52,6 +52,7 @@
 		9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6915EF1A08003FA9BA /* locate_button.png */; };
 		9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6C15EF1A58003FA9BA /* lineup_button.png */; };
 		9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7315EF1EB1003FA9BA /* event_details_background.png */; };
+		9145DE7615EF2E90003FA9BA /* location_marker_tiny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -135,6 +136,7 @@
 		9145DE6915EF1A08003FA9BA /* locate_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_button.png; sourceTree = "<group>"; };
 		9145DE6C15EF1A58003FA9BA /* lineup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button.png; sourceTree = "<group>"; };
 		9145DE7315EF1EB1003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
+		9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker_tiny.png; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */,
 				9145DE7315EF1EB1003FA9BA /* event_details_background.png */,
 				9145DE6C15EF1A58003FA9BA /* lineup_button.png */,
 				9145DE6915EF1A08003FA9BA /* locate_button.png */,
@@ -419,6 +422,7 @@
 				9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */,
 				9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */,
 				9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */,
+				9145DE7615EF2E90003FA9BA /* location_marker_tiny.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
