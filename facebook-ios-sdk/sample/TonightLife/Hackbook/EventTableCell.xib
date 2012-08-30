@@ -126,7 +126,7 @@
 								<string key="NSFrame">{{140, 113}, {160, 21}}</string>
 								<reference key="NSSuperview" ref="867935995"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="45791905"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -143,13 +143,12 @@
 								<reference key="IBUIFont" ref="531701457"/>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
-							<object class="IBUIImageView" id="45791905">
+							<object class="IBUIImageView" id="559200301">
 								<reference key="NSNextResponder" ref="867935995"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{301, 114}, {19, 20}}</string>
+								<string key="NSFrame">{{304, 113}, {11, 19}}</string>
 								<reference key="NSSuperview" ref="867935995"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">4</int>
@@ -255,7 +254,7 @@
 							<reference ref="115223344"/>
 							<reference ref="489845694"/>
 							<reference ref="411253187"/>
-							<reference ref="45791905"/>
+							<reference ref="559200301"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -284,8 +283,8 @@
 						<string key="objectName">eventTime</string>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">20</int>
-						<reference key="object" ref="45791905"/>
+						<int key="objectID">22</int>
+						<reference key="object" ref="559200301"/>
 						<reference key="parent" ref="175734988"/>
 					</object>
 				</array>
@@ -300,14 +299,14 @@
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="2.CustomClassName">EventTableCell</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="20.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">20</int>
+			<int key="maxID">22</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -355,7 +354,7 @@
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">location_marker_tiny.png</string>
-			<string key="NS.object.0">{14, 20}</string>
+			<string key="NS.object.0">{11, 16}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">1181</string>
 	</data>

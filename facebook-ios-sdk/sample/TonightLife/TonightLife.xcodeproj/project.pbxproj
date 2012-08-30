@@ -52,7 +52,8 @@
 		9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6915EF1A08003FA9BA /* locate_button.png */; };
 		9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6C15EF1A58003FA9BA /* lineup_button.png */; };
 		9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7315EF1EB1003FA9BA /* event_details_background.png */; };
-		9145DE7615EF2E90003FA9BA /* location_marker_tiny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */; };
+		9145DE7A15EF2FBC003FA9BA /* location_marker_tiny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */; };
+		9145DE7C15EF3314003FA9BA /* app_icon_ios_retina_real.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -136,7 +137,8 @@
 		9145DE6915EF1A08003FA9BA /* locate_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_button.png; sourceTree = "<group>"; };
 		9145DE6C15EF1A58003FA9BA /* lineup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button.png; sourceTree = "<group>"; };
 		9145DE7315EF1EB1003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
-		9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker_tiny.png; sourceTree = "<group>"; };
+		9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker_tiny.png; sourceTree = "<group>"; };
+		9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ios_retina_real.png; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		30EA734E13F5D21B003DC0D2 = {
 			isa = PBXGroup;
 			children = (
+				9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */,
 				1F9BE26A15EE7E3B001F61FE /* app_icon_ios_retina.png */,
 				95A8B9A515EDE0C4000E02DF /* MapKit.framework */,
 				1FF3EA0215EC5B0A00B952CD /* app_icon_ios.png */,
@@ -256,7 +259,7 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9145DE7515EF2E90003FA9BA /* location_marker_tiny.png */,
+				9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */,
 				9145DE7315EF1EB1003FA9BA /* event_details_background.png */,
 				9145DE6C15EF1A58003FA9BA /* lineup_button.png */,
 				9145DE6915EF1A08003FA9BA /* locate_button.png */,
@@ -422,7 +425,8 @@
 				9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */,
 				9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */,
 				9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */,
-				9145DE7615EF2E90003FA9BA /* location_marker_tiny.png in Resources */,
+				9145DE7A15EF2FBC003FA9BA /* location_marker_tiny.png in Resources */,
+				9145DE7C15EF3314003FA9BA /* app_icon_ios_retina_real.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
