@@ -180,8 +180,8 @@
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
     headerView = [nib objectAtIndex:0];
     headerView.hidden = YES;
-    headerView.backgroundColor = [UIColor clearColor];
-    headerView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ios_app_header.png"]];
+    //headerView.backgroundColor = [UIColor clearColor];
+    headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ios_app_header.png"]];
     menuController = [[PreferencesMenuViewController alloc] init];
     // Connect the button
     [headerView.preferencesButton addTarget:menuController action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
