@@ -28,7 +28,23 @@
 - (void)setEvent:(Event*) inEvent {
     event = [inEvent retain];
     eventName.text = [event name];
-    eventStartTime.text = [event time]; 
+    
+    
+    // TODO I have no idea what the fuck I'm doing #Justin
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    assert(dateFormatter!=nil);
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    NSDate *myDate = [dateFormatter dateFromString:[event time]];
+    [dateFormatter dealloc];
+    
+    NSDateFormatter *visibleDateFormatter = [[NSDateFormatter alloc] init];
+    assert(visibleDateFormatter!=nil);
+    [visibleDateFormatter setDateFormat:@"HH:mm"];
+    eventStartTime.text = [visibleDateFormatter stringFromDate:myDate];
+    [visibleDateFormatter dealloc];
    
     
 }
