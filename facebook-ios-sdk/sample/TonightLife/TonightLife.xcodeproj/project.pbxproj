@@ -47,11 +47,11 @@
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
 		9145DE4B15EEAE2A003FA9BA /* location_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE4A15EEAE2A003FA9BA /* location_marker.png */; };
 		9145DE4E15EEBCC6003FA9BA /* ios_app_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE4D15EEBCC6003FA9BA /* ios_app_header.png */; };
-		9145DE5615EEE57D003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE5515EEE57D003FA9BA /* event_details_background.png */; };
 		9145DE5B15EEF0CA003FA9BA /* lineup_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE5A15EEF0CA003FA9BA /* lineup_button_selected.png */; };
 		9145DE6715EF1839003FA9BA /* RSVP_button_alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6615EF1839003FA9BA /* RSVP_button_alpha.png */; };
 		9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6915EF1A08003FA9BA /* locate_button.png */; };
 		9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE6C15EF1A58003FA9BA /* lineup_button.png */; };
+		9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7315EF1EB1003FA9BA /* event_details_background.png */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -130,11 +130,11 @@
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
 		9145DE4A15EEAE2A003FA9BA /* location_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker.png; sourceTree = "<group>"; };
 		9145DE4D15EEBCC6003FA9BA /* ios_app_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_app_header.png; sourceTree = "<group>"; };
-		9145DE5515EEE57D003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
 		9145DE5A15EEF0CA003FA9BA /* lineup_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button_selected.png; sourceTree = "<group>"; };
 		9145DE6615EF1839003FA9BA /* RSVP_button_alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RSVP_button_alpha.png; sourceTree = "<group>"; };
 		9145DE6915EF1A08003FA9BA /* locate_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locate_button.png; sourceTree = "<group>"; };
 		9145DE6C15EF1A58003FA9BA /* lineup_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button.png; sourceTree = "<group>"; };
+		9145DE7315EF1EB1003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -254,11 +254,11 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9145DE7315EF1EB1003FA9BA /* event_details_background.png */,
 				9145DE6C15EF1A58003FA9BA /* lineup_button.png */,
 				9145DE6915EF1A08003FA9BA /* locate_button.png */,
 				9145DE6615EF1839003FA9BA /* RSVP_button_alpha.png */,
 				9145DE5A15EEF0CA003FA9BA /* lineup_button_selected.png */,
-				9145DE5515EEE57D003FA9BA /* event_details_background.png */,
 				9145DE4D15EEBCC6003FA9BA /* ios_app_header.png */,
 				9145DE4A15EEAE2A003FA9BA /* location_marker.png */,
 				1FF3E9FD15EC536B00B952CD /* event_table_cell_background.png */,
@@ -414,11 +414,11 @@
 				1F9BE26B15EE7E3B001F61FE /* app_icon_ios_retina.png in Resources */,
 				9145DE4B15EEAE2A003FA9BA /* location_marker.png in Resources */,
 				9145DE4E15EEBCC6003FA9BA /* ios_app_header.png in Resources */,
-				9145DE5615EEE57D003FA9BA /* event_details_background.png in Resources */,
 				9145DE5B15EEF0CA003FA9BA /* lineup_button_selected.png in Resources */,
 				9145DE6715EF1839003FA9BA /* RSVP_button_alpha.png in Resources */,
 				9145DE6B15EF1A08003FA9BA /* locate_button.png in Resources */,
 				9145DE6D15EF1A58003FA9BA /* lineup_button.png in Resources */,
+				9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

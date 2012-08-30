@@ -24,6 +24,7 @@
 #import "EventDetailsViewController.h"
 #import "RadarMapViewController.h"
 
+
 @interface RootViewController : UIViewController
 <FBRequestDelegate,
 FBDialogDelegate,
@@ -49,6 +50,7 @@ UITabBarDelegate>{
     NSMutableDictionary* imageCache;
     TabChangeCallback* tabChangeCallback;
     RadarMapViewController* mapViewController;
+
 }
 
 
