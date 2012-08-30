@@ -29,18 +29,13 @@
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
-	if (buttonIndex == 0) {
-		
-		
-    } else if (buttonIndex == 1) {
-		
-		
-    } else if (buttonIndex == 2) {
-		
-		
-    } else if (buttonIndex == 3) {
-		
-		
+	switch (buttonIndex) {
+        case 0:
+            
+        case 1:
+        case 2:
+        default:
+            break;
     }
 	
 }
