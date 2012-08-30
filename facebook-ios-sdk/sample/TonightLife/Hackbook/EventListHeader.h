@@ -10,12 +10,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TabChangeCallback.h"
-#import "PreferencesMenuViewController.h"
 
 @interface EventListHeader : UIView {
     TabChangeCallback* tabChangeCallback;
+    UIButton* preferencesButton;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel* usernameOutlet;
+@property (nonatomic, retain) IBOutlet UIButton* preferencesButton;
 
 @end

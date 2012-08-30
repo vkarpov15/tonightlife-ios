@@ -23,6 +23,7 @@
 @synthesize permissions;
 @synthesize backgroundImageView;
 @synthesize menuTableView;
+@synthesize menuController;
 @synthesize mainMenuItems;
 @synthesize headerView;
 //@synthesize nameLabel;
@@ -182,6 +183,8 @@
     headerView.hidden = YES;
     headerView.backgroundColor = [UIColor clearColor];
     headerView.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ios_app_header.png"]];
+    menuController = [[PreferencesMenuViewController alloc] init];
+    [headerView.preferencesButton addTarget:menuController action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
     tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
 
     headerView.usernameOutlet.text = @"";

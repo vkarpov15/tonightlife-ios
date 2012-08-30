@@ -23,6 +23,7 @@
 #import "TabChangeCallback.h"
 #import "EventDetailsViewController.h"
 #import "RadarMapViewController.h"
+#import "PreferencesMenuViewController.h"
 
 
 @interface RootViewController : UIViewController
@@ -31,7 +32,8 @@ FBDialogDelegate,
 FBSessionDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
-UITabBarDelegate>{
+UITabBarDelegate,
+UIActionSheetDelegate> {
     NSArray* permissions;
 
     UIImageView* backgroundImageView;
@@ -42,6 +44,8 @@ UITabBarDelegate>{
     NSMutableArray* mainMenuItems;
 
     EventListHeader* headerView;
+    PreferencesMenuViewController* menuController;
+    
     UISegmentedControl* tabs;
     
     NSMutableArray* eventsList;
@@ -61,6 +65,7 @@ UITabBarDelegate>{
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
 @property (nonatomic, retain) EventListHeader* headerView;
+@property (nonatomic, retain) PreferencesMenuViewController* menuController;
 @property (nonatomic, retain) UISegmentedControl* tabs;
 @property (nonatomic, retain) NSMutableDictionary* imageCache;
 

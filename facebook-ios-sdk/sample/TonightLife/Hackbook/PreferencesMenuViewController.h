@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PreferencesMenuViewController : UIViewController<UIActionSheetDelegate> {
-    IBOutlet UILabel *label;
-}
+@interface PreferencesMenuViewController : UIViewController<UIActionSheetDelegate>
 
-@property (nonatomic,retain) UILabel *label;
 -(IBAction)showActionSheet:(id)sender;
 
 @end

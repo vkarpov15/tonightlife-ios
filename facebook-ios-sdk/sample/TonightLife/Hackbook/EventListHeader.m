@@ -13,6 +13,7 @@
 @implementation EventListHeader
 
 @synthesize usernameOutlet;
+@synthesize preferencesButton;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -22,7 +23,6 @@
     }
     return self;
 }
-
 
 - (void)dealloc {
     [super dealloc];
