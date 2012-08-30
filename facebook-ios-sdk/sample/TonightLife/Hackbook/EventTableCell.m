@@ -45,8 +45,6 @@
     [visibleDateFormatter setDateFormat:@"HH:mm"];
     eventStartTime.text = [visibleDateFormatter stringFromDate:myDate];
     [visibleDateFormatter dealloc];
-   
-    
 }
 
 // Configure the view for the selected state
