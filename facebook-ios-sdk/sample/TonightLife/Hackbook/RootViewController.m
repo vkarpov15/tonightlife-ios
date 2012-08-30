@@ -40,6 +40,7 @@
     [tabs release];
     [imageCache release];
     [commonController release];
+    [menuController release];
     [super dealloc];
 }
 
