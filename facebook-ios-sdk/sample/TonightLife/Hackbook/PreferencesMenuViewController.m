@@ -16,7 +16,7 @@
 
 -(IBAction)showActionSheet:(id)sender {
 	
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Action Sheet" delegate:self cancelButtonTitle:@"Cancel Button" destructiveButtonTitle:@"Destructive Button" otherButtonTitles:@"Other Button 1", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Preferences" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Refresh", @"Send Feedback", nil];
 	
     popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	
