@@ -15,6 +15,7 @@
 
 @synthesize eventName;
 @synthesize eventStartTime;
+@synthesize eventVenueName;
 @synthesize imageWrapper;
 @synthesize event;
 
@@ -29,6 +30,7 @@
     event = [inEvent retain];
     eventName.text = [event name];
     eventStartTime.text = [event formattedTime];
+    eventVenueName.text = [event venueName];
 }
 
 // Configure the view for the selected state
