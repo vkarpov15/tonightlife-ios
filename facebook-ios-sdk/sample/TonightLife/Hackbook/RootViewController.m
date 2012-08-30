@@ -230,7 +230,7 @@
 #pragma mark - UITableViewDatasource and UITableViewDelegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120.0;
+    return 140.0;
 }
 
 // Customize the number of sections in the table view.

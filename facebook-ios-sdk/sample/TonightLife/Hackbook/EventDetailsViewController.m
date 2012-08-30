@@ -48,6 +48,7 @@
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     imgView.contentMode = UIViewContentModeScaleAspectFill;
     imgView.image = image;
+    // FIXME Deallocate memory
     [self.imageWrapperOutlet addSubview:imgView];
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F8C044A15EF11ED00769B46 /* PreferencesMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */; };
 		1F9BE26B15EE7E3B001F61FE /* app_icon_ios_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BE26A15EE7E3B001F61FE /* app_icon_ios_retina.png */; };
 		1FBA081E15EC2005002B6318 /* all_events_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA081D15EC2005002B6318 /* all_events_icon.png */; };
 		1FBA082215EC2101002B6318 /* lineup_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA081F15EC2100002B6318 /* lineup_icon.png */; };
@@ -70,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F8C044815EF11ED00769B46 /* PreferencesMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesMenuViewController.h; sourceTree = "<group>"; };
+		1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesMenuViewController.m; sourceTree = "<group>"; };
 		1F9BE26A15EE7E3B001F61FE /* app_icon_ios_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ios_retina.png; sourceTree = "<group>"; };
 		1FBA081D15EC2005002B6318 /* all_events_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = all_events_icon.png; sourceTree = "<group>"; };
 		1FBA081F15EC2100002B6318 /* lineup_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_icon.png; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				9552184315EDDAB100A3E4AC /* RadarMapViewController.h */,
 				9552184415EDDAB100A3E4AC /* RadarMapViewController.m */,
 				30EA736413F5D21B003DC0D2 /* Supporting Files */,
+				1F8C044815EF11ED00769B46 /* PreferencesMenuViewController.h */,
+				1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */,
 			);
 			name = TonightLife;
 			path = Hackbook;
@@ -445,6 +450,7 @@
 				958859B815E9961000C307C0 /* RadarCommonController.m in Sources */,
 				958859C015E9BD0B00C307C0 /* TabChangeCallback.m in Sources */,
 				9552184515EDDAB100A3E4AC /* RadarMapViewController.m in Sources */,
+				1F8C044A15EF11ED00769B46 /* PreferencesMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
