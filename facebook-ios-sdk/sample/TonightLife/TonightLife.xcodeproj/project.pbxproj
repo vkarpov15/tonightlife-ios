@@ -82,7 +82,6 @@
 		958859A615E87A2900C307C0 /* EventListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859A515E87A2900C307C0 /* EventListHeader.m */; };
 		958859B815E9961000C307C0 /* RadarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859B715E9961000C307C0 /* RadarCommonController.m */; };
 		958859C015E9BD0B00C307C0 /* TabChangeCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859BF15E9BD0B00C307C0 /* TabChangeCallback.m */; };
-		959863F815DF2D5100577B23 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 959863F715DF2D5100577B23 /* Default.png */; };
 		95A8B9A615EDE0C4000E02DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A8B9A515EDE0C4000E02DF /* MapKit.framework */; };
 		95B3473F15E19EC10024E8F3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B3473E15E19EC10024E8F3 /* Event.m */; };
 /* End PBXBuildFile section */
@@ -188,7 +187,6 @@
 		958859B715E9961000C307C0 /* RadarCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarCommonController.m; sourceTree = "<group>"; };
 		958859BE15E9BD0A00C307C0 /* TabChangeCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabChangeCallback.h; sourceTree = "<group>"; };
 		958859BF15E9BD0B00C307C0 /* TabChangeCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabChangeCallback.m; sourceTree = "<group>"; };
-		959863F715DF2D5100577B23 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		95A8B9A515EDE0C4000E02DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		95B3473D15E19EC10024E8F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		95B3473E15E19EC10024E8F3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 				1FBA082115EC2101002B6318 /* short_list_icon.png */,
 				1FBA081D15EC2005002B6318 /* all_events_icon.png */,
 				9584FF3A15EB232D0082B08E /* zluev.png */,
-				959863F715DF2D5100577B23 /* Default.png */,
 				30EA739613F5D372003DC0D2 /* Icon.png */,
 				30ED588E14358F9400A226C3 /* Icon@2x.png */,
 				30EA739713F5D372003DC0D2 /* MenuButton.png */,
@@ -446,7 +443,6 @@
 				3018B43A13F9B94D00F61944 /* MainWindow-iPad.xib in Resources */,
 				3085CC291415D68A00456CCC /* MenuButton@2x.png in Resources */,
 				30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */,
-				959863F815DF2D5100577B23 /* Default.png in Resources */,
 				9588599D15E6FCDB00C307C0 /* EventTableCell.xib in Resources */,
 				958859A315E8797600C307C0 /* EventListHeader.xib in Resources */,
 				9584FF3815EB1CDF0082B08E /* BottomTabs.xib in Resources */,
