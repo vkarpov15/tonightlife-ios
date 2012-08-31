@@ -14,6 +14,9 @@
 		<string>app_icon_ios_retina.png</string>
 		<string>app_icon_ios.png</string>
 		<string>app_icon_ios_retina_real.png</string>
+		<string>Default.png</string>
+		<string>Default@2x.png</string>
+		<string>Default@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -25,6 +28,9 @@
 				<string>app_icon_ios_retina.png</string>
 				<string>app_icon_ios.png</string>
 				<string>app_icon_ios_retina_real.png</string>
+				<string>Default.png</string>
+				<string>Default@2x.png</string>
+				<string>Default@2x.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
