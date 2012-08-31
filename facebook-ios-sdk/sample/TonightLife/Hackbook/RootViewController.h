@@ -32,8 +32,7 @@ FBDialogDelegate,
 FBSessionDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
-UITabBarDelegate,
-UIActionSheetDelegate> {
+UITabBarDelegate> {
     NSArray* permissions;
 
     UIImageView* backgroundImageView;

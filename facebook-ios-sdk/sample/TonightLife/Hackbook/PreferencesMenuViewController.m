@@ -31,7 +31,6 @@
 	
 	switch (buttonIndex) {
         case 0:
-            
         case 1:
         case 2:
         default:
