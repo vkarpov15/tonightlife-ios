@@ -220,6 +220,7 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.menuTableView reloadData];
     
 }
 
@@ -251,7 +252,7 @@
     NSLog(@"Event clicked!");
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView :e :[imageCache objectForKey:[e->image absoluteString]] :tonightlifeToken];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: [imageCache objectForKey:[e->image absoluteString]]: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
     NSLog(@"%@", [e name]);

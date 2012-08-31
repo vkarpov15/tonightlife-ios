@@ -70,9 +70,9 @@
 - (void)addToLineupClicked:(UITapGestureRecognizer*)tapCallback {
     NSLog(@"Clicked addtolineup");
     
-    if ([commonController addToLineup:event]) {
+    if (!event->onRadar && [commonController addToLineup:event]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            // Dispatch request on separate thread
+            // Dispatch "add to radar" request
             NSString* url = [NSString stringWithFormat:@"http://tonight-life.com/mobile/radar/%@.json", [event eventId]];
             NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
             NSString* params = [NSString stringWithFormat:@"auth_token=%@", tonightlifeToken];
@@ -86,6 +86,24 @@
                                                         options:kNilOptions
                                                           error:&error];
         
+            NSLog(@"Request done %@", ret);
+        });
+    } else if (event->onRadar && [commonController removeFromLineup:event]) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            // Dispatch "remove from radar" request
+            NSString* url = [NSString stringWithFormat:@"http://tonight-life.com/mobile/radar/%@.json?auth_token=%@", [event eventId], tonightlifeToken];
+            NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+            NSString* params = [NSString stringWithFormat:@"auth_token=%@", tonightlifeToken];
+            [req setHTTPMethod:@"DELETE"];
+            //[req setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
+            NSURLResponse* response = nil;
+            NSError* error;
+            NSData* data = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+            
+            NSDictionary* ret = [NSJSONSerialization JSONObjectWithData:data
+                                                                options:kNilOptions
+                                                                  error:&error];
+            
             NSLog(@"Request done %@", ret);
         });
     }

@@ -41,6 +41,7 @@
         [featuredList addObject:e];
     }
     if (e->onRadar) {
+        [radarIds addObject:[e eventId]];
         [radarList addObject:e];
     }
 }

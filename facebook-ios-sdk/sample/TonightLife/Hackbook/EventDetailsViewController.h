@@ -20,7 +20,7 @@
     RadarCommonController* commonController;
 }
 
--(EventDetailsViewController*) initEventDetailsView :(Event*) e :(UIImage*) image :(NSString*) token :(RadarCommonController*) common;
+-(EventDetailsViewController*) initEventDetailsView:(Event*) e :(UIImage*) image :(NSString*) token :(RadarCommonController*) common;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventDescriptionOutlet;
