@@ -183,6 +183,7 @@
     //headerView.backgroundColor = [UIColor clearColor];
     headerView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ios_app_header.png"]];
     menuController = [[PreferencesMenuViewController alloc] init];
+    [menuController setDelegate:self];
     // Connect the button
     [headerView.preferencesButton addTarget:menuController action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
     tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];

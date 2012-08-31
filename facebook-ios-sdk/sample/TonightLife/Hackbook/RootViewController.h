@@ -30,6 +30,7 @@
 <FBRequestDelegate,
 FBDialogDelegate,
 FBSessionDelegate,
+PreferencesMenuDelegate,
 UITableViewDataSource,
 UITableViewDelegate,
 UITabBarDelegate> {
