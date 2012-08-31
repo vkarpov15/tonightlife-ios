@@ -15,13 +15,16 @@
 @interface EventDetailsViewController : UIViewController {
     Event* event;
     UIImage* image;
+    UIImageView* imgView;
+    NSString* tonightlifeToken;
+    RadarCommonController* commonController;
 }
 
--(EventDetailsViewController*) initWithEventAndImage :(Event*) e :(UIImage*) image;
+-(EventDetailsViewController*) initEventDetailsView :(Event*) e :(UIImage*) image :(NSString*) token :(RadarCommonController*) common;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventDescriptionOutlet;
 @property (nonatomic, retain) IBOutlet UIView* imageWrapperOutlet;
-@property (nonatomic, retain) IBOutlet UIImageView* addToRadarButtonOutlet;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* addToLineupButtonOutlet;
 
 @end

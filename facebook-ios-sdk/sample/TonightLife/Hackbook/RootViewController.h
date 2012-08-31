@@ -54,6 +54,8 @@ UITabBarDelegate> {
     NSMutableDictionary* imageCache;
     TabChangeCallback* tabChangeCallback;
     RadarMapViewController* mapViewController;
+    
+    NSString* tonightlifeToken;
 
 }
 

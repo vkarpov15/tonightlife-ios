@@ -19,6 +19,7 @@
     NSMutableArray* eventsList;
     NSMutableArray* radarList;
     NSMutableArray* current;
+    NSMutableSet* radarIds;
 }
 
 @property (nonatomic,retain,readonly) NSMutableDictionary* eventIdToEventMap;
@@ -26,11 +27,14 @@
 @property (nonatomic,retain,readonly) NSMutableArray* eventsList;
 @property (nonatomic,retain,readonly) NSMutableArray* radarList;
 @property (nonatomic,retain,readonly) NSMutableArray* current;
+@property (nonatomic,retain,readonly) NSMutableSet* radarIds;
 
 -(NSInteger) defaultOrdering:(Event*) e1 :(Event*) e2 :(void*) context;
 
 -(RadarCommonController*) initDefault;
 -(void) addEvent: (Event*) e;
+-(BOOL) addToLineup: (Event*) e;
+-(BOOL) removeFromLineup: (Event*) e;
 
 -(void) setCurrentToFeaturedList;
 -(void) setCurrentToAllList;

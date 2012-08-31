@@ -251,7 +251,7 @@
     NSLog(@"Event clicked!");
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initWithEventAndImage:e :[imageCache objectForKey:[e->image absoluteString]]];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView :e :[imageCache objectForKey:[e->image absoluteString]] :tonightlifeToken];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
     NSLog(@"%@", [e name]);
@@ -413,7 +413,7 @@
                                                      options:kNilOptions
                                                        error:&error];
             
-            NSString* tonightlifeToken = [ret objectForKey:@"token"];
+            tonightlifeToken = [ret objectForKey:@"token"];
             NSLog(@"Tonightlife Token=%@", tonightlifeToken);
             [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
             

@@ -27,6 +27,7 @@
         featuredList = [[NSMutableArray alloc] initWithCapacity:25];
         eventsList = [[NSMutableArray alloc] initWithCapacity:25];
         radarList = [[NSMutableArray alloc] initWithCapacity:25];
+        radarIds = [[NSMutableSet alloc] initWithCapacity:25];
         
         current = featuredList;
     }
@@ -42,6 +43,26 @@
     if (e->onRadar) {
         [radarList addObject:e];
     }
+}
+
+-(BOOL) addToLineup: (Event*) e {
+    if ([radarIds containsObject:[e eventId]]) {
+        return NO;
+    }
+    [radarIds addObject:[e eventId]];
+    [radarList addObject:e];
+    e->onRadar = YES;
+    return YES;
+}
+
+-(BOOL) removeFromLineup: (Event*) e {
+    if (![radarIds containsObject:[e eventId]]) {
+        return NO;
+    }
+    [radarIds removeObject:[e eventId]];
+    [radarList removeObject:e];
+    e->onRadar = NO;
+    return YES;
 }
 
 -(void) setCurrentToFeaturedList {
