@@ -8,11 +8,9 @@
 
 #import "PreferencesMenuViewController.h"
 
-@interface PreferencesMenuViewController ()
-
-@end
-
 @implementation PreferencesMenuViewController
+
+@synthesize delegate;
 
 -(IBAction)showActionSheet:(id)sender {
 	

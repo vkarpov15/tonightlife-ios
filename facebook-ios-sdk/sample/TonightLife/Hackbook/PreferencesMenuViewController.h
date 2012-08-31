@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PreferencesMenuViewController : UIViewController<UIActionSheetDelegate>
+@protocol PreferencesMenuDelegate <NSObject>
+
+@optional
+-(void)refreshMe;
+
+@end
+
+@interface PreferencesMenuViewController : UIViewController<UIActionSheetDelegate> {
+    id <PreferencesMenuDelegate> delegate;
+}
 
 -(IBAction)showActionSheet:(id)sender;
+
+@property (nonatomic, retain) id <PreferencesMenuDelegate> delegate;
 
 @end
