@@ -505,7 +505,7 @@
             break;
             
         case 3:
-            mapViewController = [[RadarMapViewController alloc] initWithNibName:@"RadarMapView" bundle:[NSBundle mainBundle]];
+            mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController];
             [self.navigationController pushViewController:mapViewController animated:YES];
             [mapViewController release];
             break;

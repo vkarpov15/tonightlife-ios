@@ -9,7 +9,19 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "Event.h"
+#import "RadarCommonController.h"
 
-@interface RadarMapViewController : UIViewController
+@interface RadarMapViewController : UIViewController {
+    RadarCommonController* commonController;
+    Event* selectedEvent;
+}
+
+-(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common;
+
+-(void) setSelectedEvent: (Event*) e;
+
+@property (nonatomic, retain) IBOutlet MKMapView* mapViewOutlet;
 
 @end

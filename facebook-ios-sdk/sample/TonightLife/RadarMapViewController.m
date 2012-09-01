@@ -10,14 +10,14 @@
 
 #import "RadarMapViewController.h"
 
-@interface RadarMapViewController ()
-
-@end
+// Much easier to deal with miles as opposed to meters for map zoom. Silly iOS
+#define METERS_PER_MILE 1609.344
 
 @implementation RadarMapViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+@synthesize mapViewOutlet;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -25,26 +25,35 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+-(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common {
+    self = [super initWithNibName:@"RadarMapView" bundle:[NSBundle mainBundle]];
+    if (self) {
+        commonController = common;
+        selectedEvent = nil;
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
     [super viewDidLoad];
 	self.navigationItem.title = @"Events Map";
     
     self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.736968, -73.989183), 5 * METERS_PER_MILE, 5 * METERS_PER_MILE)];
+    
 }
 
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return (interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
 }
 
 @end
