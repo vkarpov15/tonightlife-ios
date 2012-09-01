@@ -50,13 +50,13 @@
     assert(dateFormatter!=nil);
     [dateFormatter setLocale:enUSPOSIXLocale];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+    //[dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     NSDate *myDate = [dateFormatter dateFromString:time];
     [dateFormatter dealloc];
     
     NSDateFormatter *visibleDateFormatter = [[NSDateFormatter alloc] init];
     assert(visibleDateFormatter!=nil);
-    [visibleDateFormatter setDateFormat:@"HH:mm"];
+    [visibleDateFormatter setDateFormat:@"h:mm a"];
     NSString* myTime = [visibleDateFormatter stringFromDate:myDate];
     [visibleDateFormatter dealloc];
     return myTime;

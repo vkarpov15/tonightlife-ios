@@ -20,7 +20,7 @@
     self = [super init];
     if (self) {
         self->title = [e name];
-        self->subtitle = [e time];
+        self->subtitle = [[e formattedTime] copy];
         self->coordinate = CLLocationCoordinate2DMake(e->lat, e->lon);
     }
     return self;
