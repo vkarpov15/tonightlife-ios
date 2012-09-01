@@ -44,6 +44,11 @@
     
     [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.736968, -73.989183), 5 * METERS_PER_MILE, 5 * METERS_PER_MILE)];
     
+    for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
+        Event* e = [[commonController eventsList] objectAtIndex:i];
+        [mapViewOutlet addAnnotation:[[TonightlifeMarker alloc] initWithEvent:e]];
+    }
+    
 }
 
 - (void)viewDidUnload {

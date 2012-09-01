@@ -83,6 +83,7 @@
 		958859B815E9961000C307C0 /* RadarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859B715E9961000C307C0 /* RadarCommonController.m */; };
 		958859C015E9BD0B00C307C0 /* TabChangeCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859BF15E9BD0B00C307C0 /* TabChangeCallback.m */; };
 		95A8B9A615EDE0C4000E02DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A8B9A515EDE0C4000E02DF /* MapKit.framework */; };
+		95A8B9BE15F18D40000E02DF /* TonightlifeMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */; };
 		95B3473F15E19EC10024E8F3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B3473E15E19EC10024E8F3 /* Event.m */; };
 /* End PBXBuildFile section */
 
@@ -188,6 +189,8 @@
 		958859BE15E9BD0A00C307C0 /* TabChangeCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabChangeCallback.h; sourceTree = "<group>"; };
 		958859BF15E9BD0B00C307C0 /* TabChangeCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabChangeCallback.m; sourceTree = "<group>"; };
 		95A8B9A515EDE0C4000E02DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		95A8B9BC15F18D3F000E02DF /* TonightlifeMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonightlifeMarker.h; sourceTree = "<group>"; };
+		95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonightlifeMarker.m; sourceTree = "<group>"; };
 		95B3473D15E19EC10024E8F3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		95B3473E15E19EC10024E8F3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +281,8 @@
 				9552184115EDDA4A00A3E4AC /* RadarMapView.xib */,
 				9552184315EDDAB100A3E4AC /* RadarMapViewController.h */,
 				9552184415EDDAB100A3E4AC /* RadarMapViewController.m */,
+				95A8B9BC15F18D3F000E02DF /* TonightlifeMarker.h */,
+				95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */,
 				30EA736413F5D21B003DC0D2 /* Supporting Files */,
 				1F8C044815EF11ED00769B46 /* PreferencesMenuViewController.h */,
 				1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */,
@@ -515,6 +520,7 @@
 				958859C015E9BD0B00C307C0 /* TabChangeCallback.m in Sources */,
 				9552184515EDDAB100A3E4AC /* RadarMapViewController.m in Sources */,
 				1F8C044A15EF11ED00769B46 /* PreferencesMenuViewController.m in Sources */,
+				95A8B9BE15F18D40000E02DF /* TonightlifeMarker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

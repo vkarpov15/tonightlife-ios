@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "Event.h"
 #import "RadarCommonController.h"
+#import "TonightlifeMarker.h"
 
 @interface RadarMapViewController : UIViewController {
     RadarCommonController* commonController;
