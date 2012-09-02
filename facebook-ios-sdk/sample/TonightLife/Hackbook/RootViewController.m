@@ -505,7 +505,7 @@
             break;
             
         case 3:
-            mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController];
+            mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
             [self.navigationController pushViewController:mapViewController animated:YES];
             [mapViewController release];
             break;

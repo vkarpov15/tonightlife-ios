@@ -25,10 +25,12 @@
     return self;
 }
 
--(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common {
+-(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (NSMutableDictionary*) cache {
     self = [super initWithNibName:@"RadarMapView" bundle:[NSBundle mainBundle]];
     if (self) {
         commonController = common;
+        tonightlifeToken = token;
+        imageCache = cache;
         selectedEvent = nil;
     }
     return self;
@@ -91,7 +93,9 @@
 
 - (void) onAnnotationClicked:(UIButton*) sender {
     Event* e = [[commonController eventsList] objectAtIndex:[sender tag]];
-    NSLog(@"CLIIIIICK %@", e->name);
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: [imageCache objectForKey:[e->image absoluteString]]: tonightlifeToken: commonController];
+    [self.navigationController pushViewController:detailsViewController animated:YES];
+    [detailsViewController release];
 }
 
 @end
