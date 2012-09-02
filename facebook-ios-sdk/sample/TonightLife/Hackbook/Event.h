@@ -9,6 +9,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "TonightLifeTime.h"
 
 @interface Event : NSObject {
     @public
@@ -22,7 +23,7 @@
     double lon;
     int radarCount;
     bool featured;
-    NSString* time;
+    TonightLifeTime* time;
     bool onRadar;
     NSMutableDictionary* rsvp;
 }
@@ -41,7 +42,10 @@
                     :(bool) onRadar
                     :(NSMutableDictionary*) rsvp;
 
--(NSString*) formattedTime;
+-(void) formatTime: (NSString*) time;
+
+-(NSComparisonResult) compareTimes:(Event*) other;
+-(NSComparisonResult) compareRadarCounts:(Event*) other;
 
 @property (nonatomic,retain,readonly) NSString* eventId;
 @property (nonatomic,retain,readonly) NSString* name;
@@ -49,7 +53,7 @@
 @property (nonatomic,retain,readonly) NSString* venueName;
 @property (nonatomic,retain,readonly) NSString* address;
 @property (nonatomic,retain,readonly) NSURL* image;
-@property (nonatomic,retain,readonly) NSString* time;
+@property (nonatomic,retain,readonly) TonightLifeTime* time;
 @property (nonatomic,retain,readonly) NSMutableDictionary* rsvp;
 
 @end

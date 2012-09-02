@@ -18,13 +18,13 @@
 @synthesize coordinate;
 @synthesize index;
 
-- (TonightlifeMarker*) initWithEvent: (Event*) e: (NSUInteger) index {
+- (TonightlifeMarker*) initWithEvent: (Event*) e: (NSUInteger) ind {
     self = [super init];
     if (self) {
         [self setEvent:e];
-        self.index = index;
+        self.index = ind;
         self->title = [e name];
-        self->subtitle = [[e formattedTime] copy];
+        self->subtitle = [[[e time] makeYourTime] copy];
         self->coordinate = CLLocationCoordinate2DMake(e->lat, e->lon);
     }
     return self;

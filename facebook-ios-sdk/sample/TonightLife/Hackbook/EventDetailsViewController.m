@@ -60,6 +60,11 @@
     [addToLineupButtonOutlet setAction:@selector(addToLineupClicked:)];
     [locateButtonOutlet setAction:@selector(onLocateClicked:)];
     [rsvpButtonOutlet setAction:@selector(onRsvpClicked:)];
+    if (nil == [[event rsvp] objectForKey:@"url"] && nil == [[event rsvp] objectForKey:@"email"]) {
+        [rsvpButtonOutlet setEnabled:NO];
+    } else {
+        [rsvpButtonOutlet setEnabled:YES];
+    }
 }
 
 - (void)viewDidUnload {
@@ -123,7 +128,7 @@
         NSString* url = [[event rsvp] objectForKey:@"url"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     } else {
-        [rsvpButtonOutlet setEnabled:NO];
+        return;
     }
 }
 

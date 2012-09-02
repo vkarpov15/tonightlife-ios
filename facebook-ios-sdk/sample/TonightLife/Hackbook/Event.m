@@ -39,29 +39,36 @@
         lon = inLon;
         radarCount = inRadarCount;
         featured = inFeatured;
-        time = [inTime retain];
+        [self formatTime:inTime];
         onRadar = inOnRadar;
         rsvp = [inRsvp retain];
     }
     return self;
 }
 
--(NSString*) formattedTime {
+-(void) formatTime: (NSString*) t {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    assert(dateFormatter!=nil);
     [dateFormatter setLocale:enUSPOSIXLocale];
     [dateFormatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"];
     //[dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-    NSDate *myDate = [dateFormatter dateFromString:time];
+    NSDate *myDate = [dateFormatter dateFromString:t];
     [dateFormatter dealloc];
     
-    NSDateFormatter *visibleDateFormatter = [[NSDateFormatter alloc] init];
-    assert(visibleDateFormatter!=nil);
-    [visibleDateFormatter setDateFormat:@"h:mm a"];
-    NSString* myTime = [visibleDateFormatter stringFromDate:myDate];
-    [visibleDateFormatter dealloc];
-    return myTime;
+    time = [[TonightLifeTime alloc] initWithNsDate:myDate];
+}
+
+-(NSComparisonResult) compareTimes:(Event*) other {
+    return [time compare:[other time]];
+}
+
+-(NSComparisonResult) compareRadarCounts:(Event*) other {
+    if (radarCount > other->radarCount) {
+        return NSOrderedDescending;
+    } else if (radarCount < other->radarCount) {
+        return NSOrderedAscending;
+    }
+    return NSOrderedSame;
 }
 
 @end

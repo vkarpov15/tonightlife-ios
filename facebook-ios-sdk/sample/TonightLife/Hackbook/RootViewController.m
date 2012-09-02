@@ -218,6 +218,7 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     // Reload common controller data since it may have changed
+    [commonController order];
     [self.menuTableView reloadData];
     // Get back headerView, because RadarMapView might have jacked it
     [self.view addSubview:headerView];
@@ -469,9 +470,11 @@
                 [commonController addEvent:e];
                 NSLog(@"Number of events is %d", eventsList.count);
            }
+            [commonController order];
             
             //NSLog(@"Got my events! %@", eventList);
             dispatch_async(dispatch_get_main_queue(), ^{
+                
                 [self showLoggedIn];
                 [self.menuTableView reloadData];
             });

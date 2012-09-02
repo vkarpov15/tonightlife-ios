@@ -79,7 +79,9 @@
 }
 
 -(void) order {
-    //[eventsList sortUsingFunction:self->defaultOrdering context:nil];
+    [featuredList sortUsingSelector:@selector(compareRadarCounts:)];
+    [eventsList sortUsingSelector:@selector(compareTimes:)];
+    [radarList sortUsingSelector:@selector(compareTimes:)];
 }
 
 @end
