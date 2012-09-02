@@ -111,7 +111,7 @@
         
         annotationView.enabled = YES;
         annotationView.canShowCallout = YES;
-        annotationView.image = [UIImage imageNamed:@"location_marker.png"];
+        annotationView.image = [UIImage imageNamed:@"marker.png"];
         annotationView.centerOffset = CGPointMake(0, -5);
         
         UIButton* rightButton = [UIButton buttonWithType:
