@@ -128,6 +128,9 @@
     if (nil != [[event rsvp] objectForKey:@"url"]) {
         NSString* url = [[event rsvp] objectForKey:@"url"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    } else if (nil != [[event rsvp] objectForKey:@"email"]) {
+        NSString* email = [[event rsvp] objectForKey:@"email"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[NSString alloc] initWithFormat:@"mailto:%@", email]]];
     } else {
         return;
     }
