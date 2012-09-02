@@ -77,8 +77,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // Make sure navigation controller is hidden
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    if (nil == header) {
+        // Make sure navigation controller is showing if launched from EventDetailsView
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    } else {
+        // Make sure nav controller is hidden if launched from root view
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -115,7 +120,7 @@
 
 - (void) onAnnotationClicked:(UIButton*) sender {
     Event* e = [[commonController eventsList] objectAtIndex:[sender tag]];
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: [imageCache objectForKey:[e->image absoluteString]]: tonightlifeToken: commonController];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
 }

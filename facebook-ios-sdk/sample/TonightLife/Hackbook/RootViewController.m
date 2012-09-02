@@ -256,7 +256,7 @@
     while (nil == [imageCache objectForKey:[e->image absoluteString]]) {
         // Spin until image has loaded
     }
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: [imageCache objectForKey:[e->image absoluteString]]: tonightlifeToken: commonController];
+    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
     NSLog(@"%@", [e name]);

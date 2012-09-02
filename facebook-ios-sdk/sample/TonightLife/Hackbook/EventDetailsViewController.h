@@ -10,21 +10,25 @@
 
 #import <UIKit/UIKit.h>
 #import "RadarCommonController.h"
+#import "RadarMapViewController.h"
 #import "Event.h"
 
 @interface EventDetailsViewController : UIViewController {
     Event* event;
-    UIImage* image;
     UIImageView* imgView;
     NSString* tonightlifeToken;
     RadarCommonController* commonController;
+    NSMutableDictionary* imageCache;
 }
 
--(EventDetailsViewController*) initEventDetailsView:(Event*) e :(UIImage*) image :(NSString*) token :(RadarCommonController*) common;
+-(EventDetailsViewController*) initEventDetailsView:(Event*) e :(NSMutableDictionary*) imageCache :(NSString*) token :(RadarCommonController*) common;
+
+-(void) onLocateClicked:(id) sender;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventDescriptionOutlet;
 @property (nonatomic, retain) IBOutlet UIView* imageWrapperOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* addToLineupButtonOutlet;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* locateButtonOutlet;
 
 @end

@@ -16,6 +16,7 @@
 @synthesize imageWrapperOutlet;
 @synthesize eventDescriptionOutlet;
 @synthesize addToLineupButtonOutlet;
+@synthesize locateButtonOutlet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,11 +25,11 @@
     return self;
 }
 
-- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(UIImage *)img :(NSString *)token :(RadarCommonController*) common {
+- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(NSMutableDictionary*) cache :(NSString *)token :(RadarCommonController*) common {
     self = [super initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
     if (self) {
         event = e;
-        image = img;
+        imageCache = cache;
         tonightlifeToken = token;
         commonController = common;
     }
@@ -51,11 +52,12 @@
     // Initialize the event image
     imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     imgView.contentMode = UIViewContentModeScaleAspectFill;
-    imgView.image = image;
+    imgView.image = [imageCache objectForKey:[event->image absoluteString]];
     [self.imageWrapperOutlet addSubview:imgView];
     
     // Handle lineup button clicks
     [addToLineupButtonOutlet setAction:@selector(addToLineupClicked:)];
+    [locateButtonOutlet setAction:@selector(onLocateClicked:)];
 }
 
 - (void)viewDidUnload {
@@ -106,7 +108,12 @@
             NSLog(@"Request done %@", ret);
         });
     }
-    
+}
+
+-(void) onLocateClicked:(id) sender {
+    RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
+    [self.navigationController pushViewController:mapViewController animated:NO];
+    [mapViewController release];
 }
 
 @end
