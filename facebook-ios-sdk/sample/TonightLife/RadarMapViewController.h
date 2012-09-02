@@ -29,11 +29,11 @@
 
 -(void) setHeaderViewAndTabs: (UIView*) header: (UITabBar*) tabs;
 
-//-(void) setSelectedEvent: (Event*) e;
+-(void) setSelectedEvent: (Event*) e;
 
-- (void)viewWillAppear:(BOOL)animated;
+-(void)viewWillAppear: (BOOL)animated;
 
-- (void) onAnnotationClicked:(UIButton*) sender;
+-(void) onAnnotationClicked: (UIButton*) sender;
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapViewOutlet;
 

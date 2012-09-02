@@ -38,6 +38,10 @@
     return self;
 }
 
+-(void) setSelectedEvent: (Event*) e {
+    selectedEvent = e;
+}
+
 -(void) setHeaderViewAndTabs: (UIView*) inHeader: (UITabBar*) inTabs {
     header = inHeader;
     tabs = inTabs;
@@ -46,7 +50,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.736968, -73.989183), 5 * METERS_PER_MILE, 5 * METERS_PER_MILE)];
+    if (nil == selectedEvent) {
+        [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.736968, -73.989183), 5 * METERS_PER_MILE, 5 * METERS_PER_MILE)];
+    } else {
+        [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(selectedEvent->lat, selectedEvent->lon), 1 * METERS_PER_MILE, 1 * METERS_PER_MILE)];
+    }
     
     for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
         Event* e = [[commonController eventsList] objectAtIndex:i];

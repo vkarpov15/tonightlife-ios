@@ -119,6 +119,7 @@
 
 -(void) onLocateClicked:(id) sender {
     RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
+    [mapViewController setSelectedEvent:event];
     [self.navigationController pushViewController:mapViewController animated:NO];
     [mapViewController release];
 }
