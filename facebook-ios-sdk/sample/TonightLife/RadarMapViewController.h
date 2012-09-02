@@ -14,14 +14,16 @@
 #import "RadarCommonController.h"
 #import "TonightlifeMarker.h"
 
-@interface RadarMapViewController : UIViewController {
+@interface RadarMapViewController : UIViewController <MKMapViewDelegate> {
     RadarCommonController* commonController;
     Event* selectedEvent;
 }
 
 -(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common;
 
--(void) setSelectedEvent: (Event*) e;
+//-(void) setSelectedEvent: (Event*) e;
+
+- (void) onAnnotationClicked:(UIButton*) sender;
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapViewOutlet;
 

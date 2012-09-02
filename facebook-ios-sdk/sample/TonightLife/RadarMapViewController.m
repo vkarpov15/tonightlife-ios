@@ -46,7 +46,7 @@
     
     for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
         Event* e = [[commonController eventsList] objectAtIndex:i];
-        [mapViewOutlet addAnnotation:[[TonightlifeMarker alloc] initWithEvent:e]];
+        [mapViewOutlet addAnnotation:[[TonightlifeMarker alloc] initWithEvent:e:i]];
     }
     
 }
@@ -59,6 +59,39 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait) || (interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (MKAnnotationView*) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    static NSString* identifier = @"TonightlifeMarker";
+    if ([annotation isKindOfClass:[TonightlifeMarker class]]) {
+        TonightlifeMarker* marker = annotation;
+        MKPinAnnotationView* annotationView = (MKPinAnnotationView*) [mapViewOutlet dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if (nil == annotationView) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        annotationView.enabled = YES;
+        annotationView.canShowCallout = YES;
+        annotationView.image = [UIImage imageNamed:@"location_marker.png"];
+        annotationView.centerOffset = CGPointMake(0, -5);
+        
+        UIButton* rightButton = [UIButton buttonWithType:
+                                 UIButtonTypeDetailDisclosure];
+        [rightButton setTag:[marker index]];
+        [rightButton addTarget:self action:@selector(onAnnotationClicked:)
+              forControlEvents:UIControlEventTouchUpInside];
+        annotationView.rightCalloutAccessoryView = rightButton;
+        
+        return annotationView;
+    }
+    return nil;
+}
+
+- (void) onAnnotationClicked:(UIButton*) sender {
+    Event* e = [[commonController eventsList] objectAtIndex:[sender tag]];
+    NSLog(@"CLIIIIICK %@", e->name);
 }
 
 @end
