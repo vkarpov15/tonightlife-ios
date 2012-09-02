@@ -17,6 +17,7 @@
 @synthesize eventDescriptionOutlet;
 @synthesize addToLineupButtonOutlet;
 @synthesize locateButtonOutlet;
+@synthesize rsvpButtonOutlet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,6 +59,7 @@
     // Handle lineup button clicks
     [addToLineupButtonOutlet setAction:@selector(addToLineupClicked:)];
     [locateButtonOutlet setAction:@selector(onLocateClicked:)];
+    [rsvpButtonOutlet setAction:@selector(onRsvpClicked:)];
 }
 
 - (void)viewDidUnload {
@@ -114,6 +116,15 @@
     RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
     [self.navigationController pushViewController:mapViewController animated:NO];
     [mapViewController release];
+}
+
+-(void) onRsvpClicked:(id) sender {
+    if (nil != [[event rsvp] objectForKey:@"url"]) {
+        NSString* url = [[event rsvp] objectForKey:@"url"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    } else {
+        [rsvpButtonOutlet setEnabled:NO];
+    }
 }
 
 @end

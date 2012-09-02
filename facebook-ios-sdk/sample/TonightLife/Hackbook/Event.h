@@ -24,6 +24,7 @@
     bool featured;
     NSString* time;
     bool onRadar;
+    NSMutableDictionary* rsvp;
 }
 
 -(Event*) initEvent :(NSString*) eventId
@@ -37,7 +38,8 @@
                     :(int) radarCount
                     :(bool) featured
                     :(NSString*) time
-                    :(bool) onRadar;
+                    :(bool) onRadar
+                    :(NSMutableDictionary*) rsvp;
 
 -(NSString*) formattedTime;
 
@@ -48,5 +50,6 @@
 @property (nonatomic,retain,readonly) NSString* address;
 @property (nonatomic,retain,readonly) NSURL* image;
 @property (nonatomic,retain,readonly) NSString* time;
+@property (nonatomic,retain,readonly) NSMutableDictionary* rsvp;
 
 @end

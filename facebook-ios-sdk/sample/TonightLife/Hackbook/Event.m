@@ -12,7 +12,7 @@
 
 @implementation Event
 
-@synthesize eventId, name, description, venueName, address, image, time;
+@synthesize eventId, name, description, venueName, address, image, time, rsvp;
 
 -(Event*) initEvent :(NSString*) inEventId
                     :(NSString*) inName
@@ -25,7 +25,8 @@
                     :(int) inRadarCount
                     :(bool) inFeatured
                     :(NSString*) inTime
-                    :(bool) inOnRadar {
+                    :(bool) inOnRadar
+                    :(NSMutableDictionary*) inRsvp {
     self = [super init];
     if (self) {
         eventId = [inEventId retain];
@@ -40,6 +41,7 @@
         featured = inFeatured;
         time = [inTime retain];
         onRadar = inOnRadar;
+        rsvp = [inRsvp retain];
     }
     return self;
 }

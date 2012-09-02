@@ -460,7 +460,9 @@
                                                     :radarCount
                                                     :[[event objectForKey:@"featured"] boolValue]
                                                     :[event objectForKey:@"start_time"]
-                                                    :[radarEvents containsObject:[event objectForKey:@"id"]]];
+                                                    :[radarEvents containsObject:[event objectForKey:@"id"]]
+                                                    :[event objectForKey:@"rsvp"]];
+                NSLog(@"RSVP is %@", [event objectForKey:@"rsvp"]);
                 
                 NSLog(@"Event name is %@", [e name]);
                 [eventsList addObject:e];
