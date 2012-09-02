@@ -20,9 +20,14 @@
     Event* selectedEvent;
     NSString* tonightlifeToken;
     NSMutableDictionary* imageCache;
+    
+    UIView* header;
+    UITabBar* tabs;
 }
 
 -(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (NSMutableDictionary*) cache;
+
+-(void) setHeaderViewAndTabs: (UIView*) header: (UITabBar*) tabs;
 
 //-(void) setSelectedEvent: (Event*) e;
 

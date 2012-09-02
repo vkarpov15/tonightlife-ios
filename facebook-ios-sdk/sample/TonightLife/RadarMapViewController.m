@@ -32,17 +32,19 @@
         tonightlifeToken = token;
         imageCache = cache;
         selectedEvent = nil;
+        header = nil;
+        tabs = nil;
     }
     return self;
 }
 
+-(void) setHeaderViewAndTabs: (UIView*) inHeader: (UITabBar*) inTabs {
+    header = inHeader;
+    tabs = inTabs;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.navigationItem.title = @"Events Map";
-    
-    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.736968, -73.989183), 5 * METERS_PER_MILE, 5 * METERS_PER_MILE)];
     
@@ -51,6 +53,18 @@
         [mapViewOutlet addAnnotation:[[TonightlifeMarker alloc] initWithEvent:e:i]];
     }
     
+    if (nil == header) {
+        // Not launching with header and tabs (i.e. launched from clicking on tab, not in EventDetailsView
+        self.navigationItem.title = @"Events Map";
+        
+        self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
+        
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    } else {
+        // Launched from clicking on tab - populate with tabs and header
+        [self.view addSubview:header];
+        [self.view addSubview:tabs];
+    }
 }
 
 - (void)viewDidUnload {

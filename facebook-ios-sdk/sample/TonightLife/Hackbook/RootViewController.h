@@ -46,8 +46,6 @@ UITabBarDelegate> {
     EventListHeader* headerView;
     PreferencesMenuViewController* menuController;
     
-    UISegmentedControl* tabs;
-    
     NSMutableArray* eventsList;
     RadarCommonController* commonController;
     
@@ -68,7 +66,6 @@ UITabBarDelegate> {
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
 @property (nonatomic, retain) EventListHeader* headerView;
-@property (nonatomic, retain) UISegmentedControl* tabs;
 @property (nonatomic, retain) NSMutableDictionary* imageCache;
 
 

@@ -93,7 +93,6 @@
             // Dispatch "remove from radar" request
             NSString* url = [NSString stringWithFormat:@"http://tonight-life.com/mobile/radar/%@.json?auth_token=%@", [event eventId], tonightlifeToken];
             NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-            NSString* params = [NSString stringWithFormat:@"auth_token=%@", tonightlifeToken];
             [req setHTTPMethod:@"DELETE"];
             //[req setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
             NSURLResponse* response = nil;

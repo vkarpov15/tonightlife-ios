@@ -25,7 +25,6 @@
 @synthesize menuTableView;
 @synthesize mainMenuItems;
 @synthesize headerView;
-@synthesize tabs;
 @synthesize imageCache;
 
 - (void)dealloc {
@@ -34,8 +33,6 @@
     [menuTableView release];
     [mainMenuItems release];
     [headerView release];
-    //[nameLabel release];
-    [tabs release];
     [imageCache release];
     [commonController release];
     [menuController release];
@@ -220,7 +217,11 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    // Reload common controller data since it may have changed
     [self.menuTableView reloadData];
+    // Get back headerView, because RadarMapView might have jacked it
+    [self.view addSubview:headerView];
+    [self.view addSubview:tabBar];
     
 }
 
@@ -493,20 +494,24 @@
     NSLog(@"didSelectItem: %d", item.tag);
     switch (item.tag) {
         case 0:
+            [self.navigationController popToRootViewControllerAnimated:NO];
             [tabChangeCallback onShortListClick];
             break;
             
         case 1:
+            [self.navigationController popToRootViewControllerAnimated:NO];
             [tabChangeCallback onAllEventsClick];
             break;
             
         case 2:
+            [self.navigationController popToRootViewControllerAnimated:NO];
             [tabChangeCallback onLineupClick];
             break;
             
         case 3:
             mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
-            [self.navigationController pushViewController:mapViewController animated:YES];
+            [mapViewController setHeaderViewAndTabs:headerView: self->tabBar];
+            [self.navigationController pushViewController:mapViewController animated:NO];
             [mapViewController release];
             break;
             
