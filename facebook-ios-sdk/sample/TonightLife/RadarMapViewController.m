@@ -61,7 +61,8 @@
         
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     } else {
-        // Launched from clicking on tab - populate with tabs and header
+        // Launched from clicking on tab - populate with tabs and header, no navigation
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
         [self.view addSubview:header];
         [self.view addSubview:tabs];
     }
@@ -70,6 +71,13 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Make sure navigation controller is hidden
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 

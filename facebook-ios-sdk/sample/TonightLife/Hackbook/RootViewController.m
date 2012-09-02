@@ -509,6 +509,7 @@
             break;
             
         case 3:
+            [self.navigationController popToRootViewControllerAnimated:NO];
             mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
             [mapViewController setHeaderViewAndTabs:headerView: self->tabBar];
             [self.navigationController pushViewController:mapViewController animated:NO];

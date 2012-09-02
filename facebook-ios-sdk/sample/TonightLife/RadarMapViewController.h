@@ -31,6 +31,8 @@
 
 //-(void) setSelectedEvent: (Event*) e;
 
+- (void)viewWillAppear:(BOOL)animated;
+
 - (void) onAnnotationClicked:(UIButton*) sender;
 
 @property (nonatomic, retain) IBOutlet MKMapView* mapViewOutlet;
