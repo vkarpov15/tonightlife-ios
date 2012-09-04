@@ -17,7 +17,6 @@
 		1F8C046B15F03C2E00769B46 /* lineup_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C045D15F03C2E00769B46 /* lineup_button@2x.png */; };
 		1F8C046C15F03C2E00769B46 /* lineup_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C045E15F03C2E00769B46 /* lineup_icon@2x.png */; };
 		1F8C046D15F03C2E00769B46 /* locate_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C045F15F03C2E00769B46 /* locate_button@2x.png */; };
-		1F8C046E15F03C2E00769B46 /* location_marker_tiny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C046015F03C2E00769B46 /* location_marker_tiny@2x.png */; };
 		1F8C046F15F03C2E00769B46 /* map_tabs_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C046115F03C2E00769B46 /* map_tabs_icon@2x.png */; };
 		1F8C047015F03C2E00769B46 /* preferences_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C046215F03C2E00769B46 /* preferences_button@2x.png */; };
 		1F8C047115F03C2E00769B46 /* RSVP_button_alpha@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8C046315F03C2E00769B46 /* RSVP_button_alpha@2x.png */; };
@@ -61,6 +60,7 @@
 		30EA73FC13F5D590003DC0D2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA73FB13F5D590003DC0D2 /* CoreLocation.framework */; };
 		30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30ED588E14358F9400A226C3 /* Icon@2x.png */; };
 		84E7D99614D9CC13006A6299 /* FBFrictionlessRequestSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */; };
+		91159E5E15F6A9ED00C1AEFA /* location_marker_tiny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91159E5D15F6A9ED00C1AEFA /* location_marker_tiny@2x.png */; };
 		9145DE4B15EEAE2A003FA9BA /* location_marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE4A15EEAE2A003FA9BA /* location_marker.png */; };
 		9145DE4E15EEBCC6003FA9BA /* ios_app_header.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE4D15EEBCC6003FA9BA /* ios_app_header.png */; };
 		9145DE5B15EEF0CA003FA9BA /* lineup_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE5A15EEF0CA003FA9BA /* lineup_button_selected.png */; };
@@ -103,7 +103,6 @@
 		1F8C045D15F03C2E00769B46 /* lineup_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_button@2x.png"; sourceTree = "<group>"; };
 		1F8C045E15F03C2E00769B46 /* lineup_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_icon@2x.png"; sourceTree = "<group>"; };
 		1F8C045F15F03C2E00769B46 /* locate_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locate_button@2x.png"; sourceTree = "<group>"; };
-		1F8C046015F03C2E00769B46 /* location_marker_tiny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_marker_tiny@2x.png"; sourceTree = "<group>"; };
 		1F8C046115F03C2E00769B46 /* map_tabs_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_tabs_icon@2x.png"; sourceTree = "<group>"; };
 		1F8C046215F03C2E00769B46 /* preferences_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences_button@2x.png"; sourceTree = "<group>"; };
 		1F8C046315F03C2E00769B46 /* RSVP_button_alpha@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RSVP_button_alpha@2x.png"; sourceTree = "<group>"; };
@@ -165,6 +164,7 @@
 		30ED588E14358F9400A226C3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		84E7D99414D9CC13006A6299 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFrictionlessRequestSettings.h; path = ../../src/FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
 		84E7D99514D9CC13006A6299 /* FBFrictionlessRequestSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFrictionlessRequestSettings.m; path = ../../src/FBFrictionlessRequestSettings.m; sourceTree = "<group>"; };
+		91159E5D15F6A9ED00C1AEFA /* location_marker_tiny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_marker_tiny@2x.png"; sourceTree = "<group>"; };
 		9145DE4A15EEAE2A003FA9BA /* location_marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker.png; sourceTree = "<group>"; };
 		9145DE4D15EEBCC6003FA9BA /* ios_app_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ios_app_header.png; sourceTree = "<group>"; };
 		9145DE5A15EEF0CA003FA9BA /* lineup_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button_selected.png; sourceTree = "<group>"; };
@@ -303,6 +303,7 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91159E5D15F6A9ED00C1AEFA /* location_marker_tiny@2x.png */,
 				91FE4DBF15F3B0D1000C628A /* marker.png */,
 				91FE4DBD15F3B0B8000C628A /* marker@2x.png */,
 				91FE4DBA15F3B065000C628A /* map_icon.png */,
@@ -315,7 +316,6 @@
 				1F8C045D15F03C2E00769B46 /* lineup_button@2x.png */,
 				1F8C045E15F03C2E00769B46 /* lineup_icon@2x.png */,
 				1F8C045F15F03C2E00769B46 /* locate_button@2x.png */,
-				1F8C046015F03C2E00769B46 /* location_marker_tiny@2x.png */,
 				1F8C046115F03C2E00769B46 /* map_tabs_icon@2x.png */,
 				1F8C046215F03C2E00769B46 /* preferences_button@2x.png */,
 				1F8C046315F03C2E00769B46 /* RSVP_button_alpha@2x.png */,
@@ -495,7 +495,6 @@
 				1F8C046B15F03C2E00769B46 /* lineup_button@2x.png in Resources */,
 				1F8C046C15F03C2E00769B46 /* lineup_icon@2x.png in Resources */,
 				1F8C046D15F03C2E00769B46 /* locate_button@2x.png in Resources */,
-				1F8C046E15F03C2E00769B46 /* location_marker_tiny@2x.png in Resources */,
 				1F8C046F15F03C2E00769B46 /* map_tabs_icon@2x.png in Resources */,
 				1F8C047015F03C2E00769B46 /* preferences_button@2x.png in Resources */,
 				1F8C047115F03C2E00769B46 /* RSVP_button_alpha@2x.png in Resources */,
@@ -505,6 +504,7 @@
 				91FE4DBB15F3B065000C628A /* map_icon.png in Resources */,
 				91FE4DBE15F3B0B8000C628A /* marker@2x.png in Resources */,
 				91FE4DC015F3B0D1000C628A /* marker.png in Resources */,
+				91159E5E15F6A9ED00C1AEFA /* location_marker_tiny@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +616,7 @@
 				INFOPLIST_FILE = "Hackbook/TonightLife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = TonightLife;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -632,7 +632,7 @@
 				INFOPLIST_FILE = "Hackbook/TonightLife-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = TonightLife;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
