@@ -70,12 +70,13 @@
 		9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7315EF1EB1003FA9BA /* event_details_background.png */; };
 		9145DE7A15EF2FBC003FA9BA /* location_marker_tiny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */; };
 		9145DE7C15EF3314003FA9BA /* app_icon_ios_retina_real.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */; };
+		91AFFBB115F7BA9E002A9536 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AFFBB015F7BA9E002A9536 /* refresh.png */; };
+		91AFFBB415F7BAE6002A9536 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AFFBB315F7BAE6002A9536 /* refresh@2x.png */; };
 		91FE4DBB15F3B065000C628A /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBA15F3B065000C628A /* map_icon.png */; };
 		91FE4DBE15F3B0B8000C628A /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBD15F3B0B8000C628A /* marker@2x.png */; };
 		91FE4DC015F3B0D1000C628A /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBF15F3B0D1000C628A /* marker.png */; };
 		95273AB315F6DFAF0066CFF2 /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */; };
 		95273ABA15F6E0C80066CFF2 /* AsyncImageCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */; };
-		95273ABC15F6E5150066CFF2 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 95273ABB15F6E5150066CFF2 /* refresh.png */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -176,6 +177,8 @@
 		9145DE7315EF1EB1003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
 		9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker_tiny.png; sourceTree = "<group>"; };
 		9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ios_retina_real.png; sourceTree = "<group>"; };
+		91AFFBB015F7BA9E002A9536 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		91AFFBB315F7BAE6002A9536 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
 		91FE4DBA15F3B065000C628A /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_icon.png; sourceTree = "<group>"; };
 		91FE4DBD15F3B0B8000C628A /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
 		91FE4DBF15F3B0D1000C628A /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
@@ -183,7 +186,6 @@
 		95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
 		95273AB815F6E0C80066CFF2 /* AsyncImageCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageCallback.h; sourceTree = "<group>"; };
 		95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageCallback.m; sourceTree = "<group>"; };
-		95273ABB15F6E5150066CFF2 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = ../../../../../Downloads/refresh.png; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -306,6 +308,8 @@
 		30EA736413F5D21B003DC0D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91AFFBB315F7BAE6002A9536 /* refresh@2x.png */,
+				91AFFBB015F7BA9E002A9536 /* refresh.png */,
 				91159E5D15F6A9ED00C1AEFA /* location_marker_tiny@2x.png */,
 				91FE4DBF15F3B0D1000C628A /* marker.png */,
 				91FE4DBD15F3B0B8000C628A /* marker@2x.png */,
@@ -336,7 +340,6 @@
 				1FBA082B15EC4203002B6318 /* preferences_button.png */,
 				1FBA081F15EC2100002B6318 /* lineup_icon.png */,
 				1FBA082015EC2100002B6318 /* map_tabs_icon.png */,
-				95273ABB15F6E5150066CFF2 /* refresh.png */,
 				1FBA082115EC2101002B6318 /* short_list_icon.png */,
 				1FBA081D15EC2005002B6318 /* all_events_icon.png */,
 				9584FF3A15EB232D0082B08E /* zluev.png */,
@@ -513,7 +516,8 @@
 				91FE4DBE15F3B0B8000C628A /* marker@2x.png in Resources */,
 				91FE4DC015F3B0D1000C628A /* marker.png in Resources */,
 				91159E5E15F6A9ED00C1AEFA /* location_marker_tiny@2x.png in Resources */,
-				95273ABC15F6E5150066CFF2 /* refresh.png in Resources */,
+				91AFFBB115F7BA9E002A9536 /* refresh.png in Resources */,
+				91AFFBB415F7BAE6002A9536 /* refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
