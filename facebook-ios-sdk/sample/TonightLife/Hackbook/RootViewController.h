@@ -64,6 +64,8 @@ UITabBarDelegate> {
 
 -(void) reloadMainTableView;
 
+-(void) loadEventsFromServer;
+
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) UIImageView* backgroundImageView;
 @property (nonatomic, retain) UITableView* menuTableView;

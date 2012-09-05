@@ -29,6 +29,8 @@
 	
 	switch (buttonIndex) {
         case 0:
+            NSLog(@"Clicked 0!");
+            break;
         case 1:
         case 2:
         default:

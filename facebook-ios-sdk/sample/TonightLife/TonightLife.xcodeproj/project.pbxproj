@@ -290,14 +290,14 @@
 				9588599C15E6FCDB00C307C0 /* EventTableCell.xib */,
 				9588599F15E6FDBE00C307C0 /* EventTableCell.h */,
 				958859A015E6FDBE00C307C0 /* EventTableCell.m */,
+				1F8C044815EF11ED00769B46 /* PreferencesMenuViewController.h */,
+				1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */,
 				9552184115EDDA4A00A3E4AC /* RadarMapView.xib */,
 				9552184315EDDAB100A3E4AC /* RadarMapViewController.h */,
 				9552184415EDDAB100A3E4AC /* RadarMapViewController.m */,
 				95A8B9BC15F18D3F000E02DF /* TonightlifeMarker.h */,
 				95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */,
 				30EA736413F5D21B003DC0D2 /* Supporting Files */,
-				1F8C044815EF11ED00769B46 /* PreferencesMenuViewController.h */,
-				1F8C044915EF11ED00769B46 /* PreferencesMenuViewController.m */,
 			);
 			name = TonightLife;
 			path = Hackbook;
