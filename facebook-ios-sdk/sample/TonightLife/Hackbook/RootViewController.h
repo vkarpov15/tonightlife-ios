@@ -55,7 +55,7 @@ UITabBarDelegate> {
     RadarMapViewController* mapViewController;
     
     NSString* tonightlifeToken;
-
+    bool loggedIn;
 }
 
 

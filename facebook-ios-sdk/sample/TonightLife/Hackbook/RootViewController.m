@@ -82,6 +82,7 @@
     self.menuTableView.hidden = NO;
     self.headerView.hidden = NO;
     tabBar.hidden = NO;
+    loggedIn = YES;
     
     //[self apiFQLIMe];
 }
@@ -94,6 +95,7 @@
     
     self.menuTableView.hidden = YES;
     self.backgroundImageView.hidden = NO;
+    loggedIn = NO;
     
     // Clear personal info
     headerView.usernameOutlet.text = @"";
@@ -122,6 +124,7 @@
 #pragma mark - View lifecycle
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+    loggedIn = NO;
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen
                                                   mainScreen].applicationFrame];
     [view setBackgroundColor:[UIColor whiteColor]];
@@ -223,12 +226,16 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    // Reload common controller data since it may have changed
-    [commonController order];
-    [self.menuTableView reloadData];
-    // Get back headerView, because RadarMapView might have jacked it
-    [self.view addSubview:headerView];
-    [self.view addSubview:tabBar];
+    
+    if (loggedIn) {
+        // Reload common controller data since it may have changed, but only if we're logged in
+        // otherwise, no point, and causes the emptyTableView to show up
+        [commonController order];
+        [self reloadMainTableView];
+        // Get back headerView, because RadarMapView might have jacked it
+        [self.view addSubview:headerView];
+        [self.view addSubview:tabBar];
+    }
     
 }
 
