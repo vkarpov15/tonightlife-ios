@@ -37,6 +37,7 @@ UITabBarDelegate> {
 
     UIImageView* backgroundImageView;
     UITableView* menuTableView;
+    UILabel* emptyTableView;
 
     UITabBar* tabBar;
     
@@ -57,6 +58,8 @@ UITabBarDelegate> {
 
 -(IBAction) prefButtonPressed;
 -(void)request:(FBRequest *)request didLoad:(id)result;
+
+-(void) reloadMainTableView;
 
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) UIImageView* backgroundImageView;

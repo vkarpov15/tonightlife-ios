@@ -171,6 +171,12 @@
     menuTableView.delegate = self;
     menuTableView.hidden = YES;
     
+    emptyTableView = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
+    emptyTableView.hidden = YES;
+    [emptyTableView setBackgroundColor:[UIColor colorWithRed:0/255 green: 0/255 blue: 0/255 alpha: 1.0]];
+    [emptyTableView setTextColor:[UIColor whiteColor]];
+    [emptyTableView setTextAlignment:UITextAlignmentCenter];
+    emptyTableView.text = @"No Events To Show";
     
     
     // Table header
@@ -195,6 +201,7 @@
     
     [self.view addSubview:headerView];
     [self.view addSubview:menuTableView];
+    [self.view addSubview:emptyTableView];
     [self.view addSubview:tabBar];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -478,7 +485,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self showLoggedIn];
-                [self.menuTableView reloadData];
+                [self reloadMainTableView];
             });
         });
     } else {
@@ -502,23 +509,20 @@
     switch (item.tag) {
         case 0:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            //[tabChangeCallback onShortListClick];
             [commonController setCurrentToFeaturedList];
-            [menuTableView reloadData];
+            [self reloadMainTableView];
             break;
             
         case 1:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            //[tabChangeCallback onAllEventsClick];
             [commonController setCurrentToAllList];
-            [menuTableView reloadData];
+            [self reloadMainTableView];
             break;
             
         case 2:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            //[tabChangeCallback onLineupClick];
             [commonController setCurrentToRadarList];
-            [menuTableView reloadData];
+            [self reloadMainTableView];
             break;
             
         case 3:
@@ -532,6 +536,18 @@
         default:
             break;
     }
+}
+
+-(void) reloadMainTableView {
+    [menuTableView reloadData];
+    if ([[commonController current] count] == 0) {
+        emptyTableView.hidden = NO;
+        menuTableView.hidden = YES;
+    } else {
+        emptyTableView.hidden = YES;
+        menuTableView.hidden = NO;
+    }
+    
 }
 
 @end
