@@ -73,6 +73,9 @@
 		91FE4DBB15F3B065000C628A /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBA15F3B065000C628A /* map_icon.png */; };
 		91FE4DBE15F3B0B8000C628A /* marker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBD15F3B0B8000C628A /* marker@2x.png */; };
 		91FE4DC015F3B0D1000C628A /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 91FE4DBF15F3B0D1000C628A /* marker.png */; };
+		95273AB315F6DFAF0066CFF2 /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */; };
+		95273ABA15F6E0C80066CFF2 /* AsyncImageCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */; };
+		95273ABC15F6E5150066CFF2 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 95273ABB15F6E5150066CFF2 /* refresh.png */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -177,6 +180,11 @@
 		91FE4DBA15F3B065000C628A /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_icon.png; sourceTree = "<group>"; };
 		91FE4DBD15F3B0B8000C628A /* marker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker@2x.png"; sourceTree = "<group>"; };
 		91FE4DBF15F3B0D1000C628A /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		95273AB115F6DFAF0066CFF2 /* ImageCacheController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheController.h; sourceTree = "<group>"; };
+		95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheController.m; sourceTree = "<group>"; };
+		95273AB815F6E0C80066CFF2 /* AsyncImageCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageCallback.h; sourceTree = "<group>"; };
+		95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageCallback.m; sourceTree = "<group>"; };
+		95273ABB15F6E5150066CFF2 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = ../../../../../Downloads/refresh.png; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -333,6 +341,7 @@
 				1FBA082B15EC4203002B6318 /* preferences_button.png */,
 				1FBA081F15EC2100002B6318 /* lineup_icon.png */,
 				1FBA082015EC2100002B6318 /* map_tabs_icon.png */,
+				95273ABB15F6E5150066CFF2 /* refresh.png */,
 				1FBA082115EC2101002B6318 /* short_list_icon.png */,
 				1FBA081D15EC2005002B6318 /* all_events_icon.png */,
 				9584FF3A15EB232D0082B08E /* zluev.png */,
@@ -392,8 +401,12 @@
 		958859AC15E8801F00C307C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				95273AB815F6E0C80066CFF2 /* AsyncImageCallback.h */,
+				95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */,
 				95B3473D15E19EC10024E8F3 /* Event.h */,
 				95B3473E15E19EC10024E8F3 /* Event.m */,
+				95273AB115F6DFAF0066CFF2 /* ImageCacheController.h */,
+				95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */,
 				958859B615E9961000C307C0 /* RadarCommonController.h */,
 				958859B715E9961000C307C0 /* RadarCommonController.m */,
 				95A8B9C015F33DA6000E02DF /* TonightLifeTime.h */,
@@ -505,6 +518,7 @@
 				91FE4DBE15F3B0B8000C628A /* marker@2x.png in Resources */,
 				91FE4DC015F3B0D1000C628A /* marker.png in Resources */,
 				91159E5E15F6A9ED00C1AEFA /* location_marker_tiny@2x.png in Resources */,
+				95273ABC15F6E5150066CFF2 /* refresh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +553,8 @@
 				1F8C044A15EF11ED00769B46 /* PreferencesMenuViewController.m in Sources */,
 				95A8B9BE15F18D40000E02DF /* TonightlifeMarker.m in Sources */,
 				95A8B9C215F33DA7000E02DF /* TonightLifeTime.m in Sources */,
+				95273AB315F6DFAF0066CFF2 /* ImageCacheController.m in Sources */,
+				95273ABA15F6E0C80066CFF2 /* AsyncImageCallback.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

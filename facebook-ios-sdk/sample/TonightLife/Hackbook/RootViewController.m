@@ -278,6 +278,12 @@
     [cell setEvent:e];
     [cell setTag:indexPath.row];
     
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
+    NSLog(@"Number of subviews is %d", [[cell.imageWrapper subviews] count]);
+    [cell.imageWrapper addSubview:imgView];
+    imgView.contentMode = UIViewContentModeCenter;
+    imgView.image = [UIImage imageNamed:@"refresh"];
+    
     // Check imageCache for image, load it from internet if necessary, on separate thread
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIImage* image = [imageCache objectForKey:[e->image absoluteString]];
@@ -288,10 +294,10 @@
         
         // Draw image on main thread
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
+            
             imgView.contentMode = UIViewContentModeScaleAspectFill;
             imgView.image = image;
-            [cell.imageWrapper addSubview:imgView];
+            
         });
     });
 
