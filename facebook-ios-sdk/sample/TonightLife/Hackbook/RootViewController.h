@@ -46,7 +46,6 @@ UITabBarDelegate> {
     EventListHeader* headerView;
     PreferencesMenuViewController* menuController;
     
-    NSMutableArray* eventsList;
     RadarCommonController* commonController;
     
     NSMutableDictionary* imageCache;

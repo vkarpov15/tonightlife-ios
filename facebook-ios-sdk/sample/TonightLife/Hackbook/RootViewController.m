@@ -403,7 +403,6 @@
         // Send off Tabbie Login req
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSString* fbToken = [defaults objectForKey:@"FBAccessTokenKey"];
-        eventsList = [[NSMutableArray alloc] initWithCapacity:25];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSLog(@"Dispatching tabbie login %@", fbToken);
             // Send Tabbie login request - synchronous within separate thread
@@ -466,10 +465,8 @@
                 NSLog(@"RSVP is %@", [event objectForKey:@"rsvp"]);
                 
                 NSLog(@"Event name is %@", [e name]);
-                [eventsList addObject:e];
                 [commonController addEvent:e];
-                NSLog(@"Number of events is %d", eventsList.count);
-           }
+            }
             [commonController order];
             
             //NSLog(@"Got my events! %@", eventList);
