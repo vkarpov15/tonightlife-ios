@@ -20,7 +20,6 @@
 #import "EventTableCell.h"
 #import "EventListHeader.h"
 #import "RadarCommonController.h"
-#import "TabChangeCallback.h"
 #import "EventDetailsViewController.h"
 #import "RadarMapViewController.h"
 #import "PreferencesMenuViewController.h"
@@ -49,7 +48,6 @@ UITabBarDelegate> {
     RadarCommonController* commonController;
     
     NSMutableDictionary* imageCache;
-    TabChangeCallback* tabChangeCallback;
     RadarMapViewController* mapViewController;
     
     NSString* tonightlifeToken;

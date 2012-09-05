@@ -9,10 +9,8 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "TabChangeCallback.h"
 
 @interface EventListHeader : UIView {
-    TabChangeCallback* tabChangeCallback;
     UIButton* preferencesButton;
 }
 

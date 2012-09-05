@@ -183,7 +183,6 @@
     [menuController setDelegate:self];
     // Connect the button
     [headerView.preferencesButton addTarget:menuController action:@selector(showActionSheet:) forControlEvents:UIControlEventTouchUpInside];
-    tabChangeCallback = [[TabChangeCallback alloc] initCallback:menuTableView :commonController];
 
     headerView.usernameOutlet.text = @"";
     
@@ -503,17 +502,23 @@
     switch (item.tag) {
         case 0:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            [tabChangeCallback onShortListClick];
+            //[tabChangeCallback onShortListClick];
+            [commonController setCurrentToFeaturedList];
+            [menuTableView reloadData];
             break;
             
         case 1:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            [tabChangeCallback onAllEventsClick];
+            //[tabChangeCallback onAllEventsClick];
+            [commonController setCurrentToAllList];
+            [menuTableView reloadData];
             break;
             
         case 2:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            [tabChangeCallback onLineupClick];
+            //[tabChangeCallback onLineupClick];
+            [commonController setCurrentToRadarList];
+            [menuTableView reloadData];
             break;
             
         case 3:
