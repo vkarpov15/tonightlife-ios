@@ -128,7 +128,7 @@
     self.view = view;
     [view release];
     
-    imageCache = [[NSMutableDictionary alloc] initWithCapacity:25];
+    imageCache = [[ImageCacheController alloc] initDefault]; //[[NSMutableDictionary alloc] initWithCapacity:25];
     commonController = [[RadarCommonController alloc] initDefault];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -260,9 +260,6 @@
     NSLog(@"Event clicked!");
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
-    while (nil == [imageCache objectForKey:[e->image absoluteString]]) {
-        // Spin until image has loaded
-    }
     EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
@@ -290,22 +287,8 @@
     imgView.contentMode = UIViewContentModeCenter;
     imgView.image = [UIImage imageNamed:@"refresh"];
     
-    // Check imageCache for image, load it from internet if necessary, on separate thread
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage* image = [imageCache objectForKey:[e->image absoluteString]];
-        if (nil == image) {
-            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:e->image]];
-            [imageCache setObject:image forKey:[e->image absoluteString]];
-        }
-        
-        // Draw image on main thread
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            imgView.contentMode = UIViewContentModeScaleAspectFill;
-            imgView.image = image;
-            
-        });
-    });
+    AsyncImageCallback* callback = [[AsyncImageCallback alloc] initWithImageView:imgView];
+    [imageCache setImage: e->image: callback];
 
     UITapGestureRecognizer* tapCallback = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(eventClicked:)];
     [cell addGestureRecognizer:tapCallback];

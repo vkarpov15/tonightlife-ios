@@ -12,11 +12,16 @@
 
 @implementation AsyncImageCallback 
 
+- (AsyncImageCallback*) initWithImageView: (UIImageView*) imgView {
+    self = [super init];
+    if (self) {
+        imageView = imgView;
+    }
+    return self;
+}
+
 - (void) setImage:(UIImage*) image {
-    // Only call this from global queue thread
-    dispatch_async(dispatch_get_main_queue(), ^{
-        imageView.image = image;
-    });
+    imageView.image = image;
 }
 
 @end

@@ -14,6 +14,8 @@
     UIImageView* imageView;
 }
 
+- (AsyncImageCallback*) initWithImageView: (UIImageView*) imgView;
+
 - (void) setImage:(UIImage*) image;
 
 @end

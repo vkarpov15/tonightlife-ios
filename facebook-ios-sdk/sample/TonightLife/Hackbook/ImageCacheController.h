@@ -10,9 +10,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsyncImageCallback.h"
+
 @interface ImageCacheController : NSObject {
     NSMutableDictionary* urlToImage;
     NSMutableSet* outstandingCalls;
 }
+
+-(ImageCacheController*) initDefault;
+
+-(void) setImage: (NSURL*) url: (AsyncImageCallback*) callback;
 
 @end

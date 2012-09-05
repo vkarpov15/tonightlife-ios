@@ -25,7 +25,7 @@
     return self;
 }
 
--(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (NSMutableDictionary*) cache {
+-(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (ImageCacheController*) cache {
     self = [super initWithNibName:@"RadarMapView" bundle:[NSBundle mainBundle]];
     if (self) {
         commonController = common;

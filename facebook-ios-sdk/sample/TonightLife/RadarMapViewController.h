@@ -14,18 +14,19 @@
 #import "RadarCommonController.h"
 #import "TonightlifeMarker.h"
 #import "EventDetailsViewController.h"
+#import "ImageCacheController.h"
 
 @interface RadarMapViewController : UIViewController <MKMapViewDelegate> {
     RadarCommonController* commonController;
     Event* selectedEvent;
     NSString* tonightlifeToken;
-    NSMutableDictionary* imageCache;
+    ImageCacheController* imageCache;
     
     UIView* header;
     UITabBar* tabs;
 }
 
--(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (NSMutableDictionary*) cache;
+-(RadarMapViewController*) initWithCommonController: (RadarCommonController*) common: (NSString*) token: (ImageCacheController*) cache;
 
 -(void) setHeaderViewAndTabs: (UIView*) header: (UITabBar*) tabs;
 

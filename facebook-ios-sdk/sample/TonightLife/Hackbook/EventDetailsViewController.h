@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "RadarCommonController.h"
 #import "RadarMapViewController.h"
+#import "ImageCacheController.h"
 #import "Event.h"
 
 @interface EventDetailsViewController : UIViewController {
@@ -18,10 +19,10 @@
     UIImageView* imgView;
     NSString* tonightlifeToken;
     RadarCommonController* commonController;
-    NSMutableDictionary* imageCache;
+    ImageCacheController* imageCache;
 }
 
--(EventDetailsViewController*) initEventDetailsView:(Event*) e :(NSMutableDictionary*) imageCache :(NSString*) token :(RadarCommonController*) common;
+-(EventDetailsViewController*) initEventDetailsView:(Event*) e :(ImageCacheController*) imageCache :(NSString*) token :(RadarCommonController*) common;
 
 -(void) onLocateClicked:(id) sender;
 -(void) onRsvpClicked:(id) sender;

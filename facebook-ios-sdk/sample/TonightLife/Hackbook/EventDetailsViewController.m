@@ -26,7 +26,7 @@
     return self;
 }
 
-- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(NSMutableDictionary*) cache :(NSString *)token :(RadarCommonController*) common {
+- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(ImageCacheController*) cache :(NSString *)token :(RadarCommonController*) common {
     self = [super initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
     if (self) {
         event = e;
@@ -56,7 +56,8 @@
     // Initialize the event image
     imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     imgView.contentMode = UIViewContentModeScaleAspectFill;
-    imgView.image = [imageCache objectForKey:[event->image absoluteString]];
+    //imgView.image = [imageCache objectForKey:[event->image absoluteString]];
+    [imageCache setImage:event->image :[[AsyncImageCallback alloc] initWithImageView:imgView]];
     [self.imageWrapperOutlet addSubview:imgView];
     
     // Handle lineup button clicks

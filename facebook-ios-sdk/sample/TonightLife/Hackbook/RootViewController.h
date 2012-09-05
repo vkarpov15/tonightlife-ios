@@ -23,6 +23,8 @@
 #import "EventDetailsViewController.h"
 #import "RadarMapViewController.h"
 #import "PreferencesMenuViewController.h"
+#import "AsyncImageCallback.h"
+#import "ImageCacheController.h"
 
 
 @interface RootViewController : UIViewController
@@ -48,7 +50,8 @@ UITabBarDelegate> {
     
     RadarCommonController* commonController;
     
-    NSMutableDictionary* imageCache;
+    //NSMutableDictionary* imageCache;
+    ImageCacheController* imageCache;
     RadarMapViewController* mapViewController;
     
     NSString* tonightlifeToken;
@@ -66,7 +69,7 @@ UITabBarDelegate> {
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
 @property (nonatomic, retain) EventListHeader* headerView;
-@property (nonatomic, retain) NSMutableDictionary* imageCache;
+@property (nonatomic, retain) ImageCacheController* imageCache;
 
 
 @end
