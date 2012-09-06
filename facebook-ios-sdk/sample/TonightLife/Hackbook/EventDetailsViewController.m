@@ -60,6 +60,7 @@
     [imageCache setImage:event->image :[[AsyncImageCallback alloc] initWithImageView:imgView]];
     [self.imageWrapperOutlet addSubview:imgView];
     
+       
     // Handle lineup button clicks
     [addToLineupButtonOutlet setAction:@selector(addToLineupClicked:)];
     [locateButtonOutlet setAction:@selector(onLocateClicked:)];

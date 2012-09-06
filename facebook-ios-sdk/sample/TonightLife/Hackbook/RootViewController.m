@@ -250,7 +250,7 @@
 #pragma mark - UITableViewDatasource and UITableViewDelegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 140.0;
+    return 180.0;
 }
 
 // Customize the number of sections in the table view.
@@ -289,8 +289,9 @@
     
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     [cell.imageWrapper addSubview:imgView];
-    imgView.contentMode = UIViewContentModeCenter;
-    imgView.image = [UIImage imageNamed:@"refresh"];
+    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    imgView.image = [UIImage imageNamed:@"refresh"] ;
+    
     
     AsyncImageCallback* callback = [[AsyncImageCallback alloc] initWithImageView:imgView];
     [imageCache setImage: e->image: callback];
