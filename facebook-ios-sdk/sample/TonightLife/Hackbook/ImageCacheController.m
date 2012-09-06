@@ -17,13 +17,13 @@
     if (self) {
         urlToImage = [[NSMutableDictionary alloc] initWithCapacity:25];
         outstandingCalls = [[NSMutableDictionary alloc] initWithCapacity:25];
+        urlToCallbacks = [[NSMutableDictionary alloc] initWithCapacity:25];
     }
     return self;
 }
 
 -(void) loadImageAsync: (NSURL*) url {
     [outstandingCalls setObject:[NSMutableData data] forKey:[url absoluteString]];
-    [urlToCallbacks setObject:[[NSMutableArray alloc] initWithCapacity:25] forKey:[url absoluteString]];
     NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:
                             [NSURLRequest requestWithURL:url] delegate:self];
     
@@ -38,10 +38,14 @@
     UIImage* image = [urlToImage objectForKey:[url absoluteString]];
     
     if (nil == image) {
+        if (nil == [urlToCallbacks objectForKey:[url absoluteString]]) {
+            // Make sure we've alloced a callback array BEFORE starting async load
+            [urlToCallbacks setObject:[[NSMutableArray alloc] initWithCapacity:25] forKey:[url absoluteString]];
+        }
+        
         if (nil == [outstandingCalls objectForKey:[url absoluteString]]) {
-            // This is our first callback for this image
-            [self loadImageAsync:url];
             [[urlToCallbacks objectForKey:[url absoluteString]] addObject:callback];
+            [self loadImageAsync:url];
         } else {
             [[urlToCallbacks objectForKey:[url absoluteString]] addObject:callback];
         }
@@ -74,7 +78,15 @@
         for (NSUInteger i = 0; i < [callbacks count]; ++i) {
             AsyncImageCallback* callback = [callbacks objectAtIndex:i];
             [callback setImage:img];
+            // free callback
+            [callback release];
         }
+        // clean up callbacks array
+        [urlToCallbacks removeObjectForKey:url];
+        [callbacks release];
+        NSMutableData* data = [outstandingCalls objectForKey:url];
+        [outstandingCalls removeObjectForKey:url];
+        [data release];
     });
 }
 
