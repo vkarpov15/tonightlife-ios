@@ -264,7 +264,6 @@
 }
 
 - (void)eventClicked:(UITapGestureRecognizer*)tapCallback {
-    NSLog(@"Event clicked!");
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
     EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
@@ -289,7 +288,6 @@
     [cell setTag:indexPath.row];
     
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
-    NSLog(@"Number of subviews is %d", [[cell.imageWrapper subviews] count]);
     [cell.imageWrapper addSubview:imgView];
     imgView.contentMode = UIViewContentModeCenter;
     imgView.image = [UIImage imageNamed:@"refresh"];
@@ -306,7 +304,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Event *e = [[commonController current] objectAtIndex:indexPath.row];
-    NSLog(@"Selected event %@", [e name]);
 }
 
 - (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
@@ -397,7 +394,6 @@
     if ([result objectForKey:@"name"]) {
         // If basic information callback, set the UI objects to
         // display this.
-        NSLog(@"My facebook info is %@", result);
         headerView.usernameOutlet.text = [NSString stringWithFormat:@"%@ %@.", [result objectForKey:@"first_name"], [[result objectForKey:@"last_name"] substringToIndex:1]];
         
         [self apiGraphUserPermissions];
@@ -446,7 +442,6 @@
     NSUInteger len = [eventList count];
     
     NSArray* radarEvents = [[eventList objectAtIndex:len - 1] objectForKey:@"radar"];
-    NSLog(@"Radar events is %@", radarEvents);
     
     for (NSUInteger i = 0; i < len - 1; ++i) {
         NSDictionary* event = [eventList objectAtIndex:i];
@@ -459,8 +454,6 @@
         if (![radarCountStr isEqualToString:@"null"]) {
             radarCount = [radarCountStr integerValue];
         }
-        
-        NSLog(@"Image url is %@", [event objectForKey:@"image_url"]);
         
         Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
                                             :[event objectForKey:@"name"]
@@ -475,15 +468,17 @@
                                             :[event objectForKey:@"start_time"]
                                             :[radarEvents containsObject:[event objectForKey:@"id"]]
                                             :[event objectForKey:@"rsvp"]];
-        NSLog(@"RSVP is %@", [event objectForKey:@"rsvp"]);
-        
-        NSLog(@"Event name is %@", [e name]);
         [commonController addEvent:e];
     }
     [commonController order];
     
     //NSLog(@"Got my events! %@", eventList);
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
+            Event* e = [[commonController eventsList] objectAtIndex:i];
+            [imageCache preload:e->image];
+        }
         
         [self showLoggedIn];
         [self reloadMainTableView];

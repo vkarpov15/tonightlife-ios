@@ -13,25 +13,68 @@
 @implementation ImageCacheController
 
 -(ImageCacheController*) initDefault {
-    urlToImage = [[NSMutableDictionary alloc] initWithCapacity:25];
-    outstandingCalls = [[NSMutableSet alloc] initWithCapacity:25];
+    self = [super init];
+    if (self) {
+        urlToImage = [[NSMutableDictionary alloc] initWithCapacity:25];
+        outstandingCalls = [[NSMutableDictionary alloc] initWithCapacity:25];
+    }
+    return self;
+}
+
+-(void) loadImageAsync: (NSURL*) url {
+    [outstandingCalls setObject:[NSMutableData data] forKey:[url absoluteString]];
+    [urlToCallbacks setObject:[[NSMutableArray alloc] initWithCapacity:25] forKey:[url absoluteString]];
+    NSURLConnection* conn = [[NSURLConnection alloc] initWithRequest:
+                            [NSURLRequest requestWithURL:url] delegate:self];
+    
+    [conn release];
+}
+
+-(void) preload: (NSURL*) url {
+    [self loadImageAsync:url];
 }
 
 -(void) setImage: (NSURL*) url: (AsyncImageCallback*) callback {
-    // Check imageCache for image, load it from internet if necessary, on separate thread
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage* image = [urlToImage objectForKey:[url absoluteString]];
-        if (nil == image) {
-            image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-            [urlToImage setObject:image forKey:[url absoluteString]];
+    UIImage* image = [urlToImage objectForKey:[url absoluteString]];
+    
+    if (nil == image) {
+        if (nil == [outstandingCalls objectForKey:[url absoluteString]]) {
+            // This is our first callback for this image
+            [self loadImageAsync:url];
+            [[urlToCallbacks objectForKey:[url absoluteString]] addObject:callback];
+        } else {
+            [[urlToCallbacks objectForKey:[url absoluteString]] addObject:callback];
         }
-        
-        // Draw image on main thread
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Setting image for %@", [url absoluteString]);
-            [callback setImage:image];
-            [callback release];
-        });
+    } else {
+        [callback setImage:image];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [[outstandingCalls objectForKey:[[[connection currentRequest] URL] absoluteString]] appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Download failed!");
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    // Only handle callbacks in main UI thread!
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString* url = [[[connection currentRequest] URL] absoluteString];
+        NSLog(@"Loaded image %@", url);
+        UIImage* img = [[UIImage alloc] initWithData:[outstandingCalls objectForKey:url]];
+        [urlToImage setObject:img forKey:url];
+        NSMutableArray* callbacks = [urlToCallbacks objectForKey:url];
+        if (nil == callbacks) {
+            NSLog(@"No callbacks!");
+            return;
+        }
+        NSLog(@"Callbacks = %d", [callbacks count]);
+        for (NSUInteger i = 0; i < [callbacks count]; ++i) {
+            AsyncImageCallback* callback = [callbacks objectAtIndex:i];
+            [callback setImage:img];
+        }
     });
 }
 

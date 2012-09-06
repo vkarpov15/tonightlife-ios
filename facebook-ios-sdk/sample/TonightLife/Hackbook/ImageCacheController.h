@@ -12,13 +12,17 @@
 
 #import "AsyncImageCallback.h"
 
-@interface ImageCacheController : NSObject {
+@interface ImageCacheController : NSObject<NSURLConnectionDelegate> {
     NSMutableDictionary* urlToImage;
-    NSMutableSet* outstandingCalls;
+    NSMutableDictionary* outstandingCalls;
+    NSMutableDictionary* urlToCallbacks;
 }
 
 -(ImageCacheController*) initDefault;
 
+-(void) loadImageAsync: (NSURL*) url;
+
+-(void) preload: (NSURL*) url;
 -(void) setImage: (NSURL*) url: (AsyncImageCallback*) callback;
 
 @end
