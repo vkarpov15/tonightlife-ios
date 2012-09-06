@@ -10,8 +10,7 @@
 
 @protocol PreferencesMenuDelegate <NSObject>
 
-@optional
--(void)refreshMe;
+- (void) loadEventsFromServer;
 
 @end
 
@@ -19,7 +18,7 @@
     id <PreferencesMenuDelegate> delegate;
 }
 
--(IBAction)showActionSheet:(id)sender;
+- (IBAction) showActionSheet:(id)sender;
 
 @property (nonatomic, retain) id <PreferencesMenuDelegate> delegate;
 

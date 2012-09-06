@@ -22,6 +22,7 @@
 
 - (void) setImage:(UIImage*) image {
     imageView.image = image;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
 }
 
 @end

@@ -289,7 +289,7 @@
     
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     [cell.imageWrapper addSubview:imgView];
-    imgView.contentMode = UIViewContentModeScaleAspectFill;
+    imgView.contentMode = UIViewContentModeCenter;
     imgView.image = [UIImage imageNamed:@"refresh"] ;
     
     
@@ -304,7 +304,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Event *e = [[commonController current] objectAtIndex:indexPath.row];
+    // Nothing to do here for now, we use UITapGestureRecognizer above
 }
 
 - (void)storeAuthData:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {

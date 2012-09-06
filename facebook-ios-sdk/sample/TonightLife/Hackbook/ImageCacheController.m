@@ -71,19 +71,20 @@
         [urlToImage setObject:img forKey:url];
         NSMutableArray* callbacks = [urlToCallbacks objectForKey:url];
         if (nil == callbacks) {
-            NSLog(@"No callbacks!");
             return;
         }
-        NSLog(@"Callbacks = %d", [callbacks count]);
+        
         for (NSUInteger i = 0; i < [callbacks count]; ++i) {
             AsyncImageCallback* callback = [callbacks objectAtIndex:i];
             [callback setImage:img];
             // free callback
             [callback release];
         }
+        
         // clean up callbacks array
         [urlToCallbacks removeObjectForKey:url];
         [callbacks release];
+        // clean up data
         NSMutableData* data = [outstandingCalls objectForKey:url];
         [outstandingCalls removeObjectForKey:url];
         [data release];
