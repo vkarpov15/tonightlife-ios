@@ -25,13 +25,15 @@
 }
 
 
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+-(void) actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	
 	switch (buttonIndex) {
         case 0:
             [delegate loadEventsFromServer];
             break;
         case 1:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[NSString alloc] initWithFormat:@"mailto:founders@tonight-life.com?subject=TonightLife%20iPhone%20Feedback"]]];
+            break;
         case 2:
         default:
             break;
