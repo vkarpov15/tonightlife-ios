@@ -12,9 +12,12 @@
 
 @interface AsyncImageCallback : NSObject {
     UIImageView* imageView;
+    UIActivityIndicatorView* activityIndicator;
 }
 
 - (AsyncImageCallback*) initWithImageView: (UIImageView*) imgView;
+
+- (void) setActivityIndicator: (UIActivityIndicatorView*) indicator;
 
 - (void) setImage:(UIImage*) image;
 

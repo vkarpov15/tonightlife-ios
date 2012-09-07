@@ -16,6 +16,7 @@
     self = [super init];
     if (self) {
         imageView = imgView;
+        activityIndicator = nil;
     }
     return self;
 }
@@ -23,6 +24,14 @@
 - (void) setImage:(UIImage*) image {
     imageView.image = image;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
+    if (nil != activityIndicator) {
+        [activityIndicator stopAnimating];
+    }
+    imageView.hidden = NO;
+}
+
+- (void) setActivityIndicator: (UIActivityIndicatorView*) indicator {
+    activityIndicator = indicator;
 }
 
 @end

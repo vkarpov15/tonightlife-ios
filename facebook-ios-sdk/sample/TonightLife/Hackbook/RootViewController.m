@@ -287,10 +287,13 @@
     [cell setEvent:e];
     [cell setTag:indexPath.row];
     
+    [[cell activityIndicatorOutlet] startAnimating];
+    
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
+    imgView.hidden = YES;
     [cell.imageWrapper addSubview:imgView];
-    imgView.contentMode = UIViewContentModeCenter;
-    imgView.image = [UIImage imageNamed:@"refresh"] ;
+    /*imgView.contentMode = UIViewContentModeCenter;
+    imgView.image = [UIImage imageNamed:@"refresh"];*/
     
     
     AsyncImageCallback* callback = [[AsyncImageCallback alloc] initWithImageView:imgView];
