@@ -135,7 +135,22 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     } else if (nil != [[event rsvp] objectForKey:@"email"]) {
         NSString* email = [[event rsvp] objectForKey:@"email"];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[[NSString alloc] initWithFormat:@"mailto:%@", email]]];
+        NSString* mailto = [[NSString alloc] initWithFormat:@"mailto:%@", email];
+        NSURL* url = [NSURL URLWithString:mailto];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        } else {
+            NSString* msg = [[NSString alloc] initWithFormat:@"Sorry, we can't seem to launch your iPhone's email client. Please sent an email to %@ to RSVP for this event!", email];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No email client found" 
+                                                            message:msg
+                                                           delegate:nil 
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            [alert release];
+            [msg release];
+        }
+        [mailto release];
     } else {
         return;
     }

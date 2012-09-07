@@ -474,6 +474,7 @@
                                             :[radarEvents containsObject:[event objectForKey:@"id"]]
                                             :[event objectForKey:@"rsvp"]];
         [commonController addEvent:e];
+        NSLog(@"RSVP is %@ for %@", [event objectForKey:@"rsvp"], [event objectForKey:@"name"]);
     }
     [commonController order];
     
