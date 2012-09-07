@@ -444,6 +444,7 @@
     
     NSArray* radarEvents = [[eventList objectAtIndex:len - 1] objectForKey:@"radar"];
     
+    [commonController clearAll];
     for (NSUInteger i = 0; i < len - 1; ++i) {
         NSDictionary* event = [eventList objectAtIndex:i];
         

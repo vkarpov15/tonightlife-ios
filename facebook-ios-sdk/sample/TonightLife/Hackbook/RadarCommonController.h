@@ -36,6 +36,8 @@
 -(BOOL) addToLineup: (Event*) e;
 -(BOOL) removeFromLineup: (Event*) e;
 
+-(void) clearAll;
+
 -(void) setCurrentToFeaturedList;
 -(void) setCurrentToAllList;
 -(void) setCurrentToRadarList;

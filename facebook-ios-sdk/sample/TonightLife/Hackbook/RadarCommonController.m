@@ -66,6 +66,14 @@
     return YES;
 }
 
+-(void) clearAll {
+    [eventIdToEventMap removeAllObjects];
+    [eventsList removeAllObjects];
+    [featuredList removeAllObjects];
+    [radarList removeAllObjects];
+    [radarIds removeAllObjects];
+}
+
 -(void) setCurrentToFeaturedList {
     current = featuredList;
 }
