@@ -63,7 +63,8 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    // Only handle callbacks in main UI thread!
+    // Only handle callbacks in main UI thread! This makes sure UIThread is
+    // done adding callbacks
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString* url = [[[connection currentRequest] URL] absoluteString];
         NSLog(@"Loaded image %@", url);
@@ -85,9 +86,7 @@
         [urlToCallbacks removeObjectForKey:url];
         [callbacks release];
         // clean up data
-        NSMutableData* data = [outstandingCalls objectForKey:url];
         [outstandingCalls removeObjectForKey:url];
-        [data release];
     });
 }
 

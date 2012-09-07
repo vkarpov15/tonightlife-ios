@@ -58,7 +58,12 @@
     
     for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
         Event* e = [[commonController eventsList] objectAtIndex:i];
-        [mapViewOutlet addAnnotation:[[TonightlifeMarker alloc] initWithEvent:e:i]];
+        TonightlifeMarker* marker = [[TonightlifeMarker alloc] initWithEvent:e:i];
+        [mapViewOutlet addAnnotation:marker];
+        if (nil != selectedEvent && e == selectedEvent) {
+            NSLog(@"Opening annotation for %@!", [e name]);
+            [mapViewOutlet selectAnnotation:marker animated:YES];
+        }
     }
     
     if (nil == header) {
