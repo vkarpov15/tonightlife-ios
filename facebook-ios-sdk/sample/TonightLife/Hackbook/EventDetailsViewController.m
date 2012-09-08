@@ -19,6 +19,16 @@
 @synthesize locateButtonOutlet;
 @synthesize rsvpButtonOutlet;
 
+- (void) dealloc {
+    [eventTitleOutlet release];
+    [imageWrapperOutlet release];
+    [eventDescriptionOutlet release];
+    [addToLineupButtonOutlet release];
+    [locateButtonOutlet release];
+    [rsvpButtonOutlet release];
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
