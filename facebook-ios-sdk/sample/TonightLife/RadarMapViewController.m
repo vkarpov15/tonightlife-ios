@@ -17,6 +17,12 @@
 
 @synthesize mapViewOutlet;
 
+- (void) dealloc {
+    [mapViewOutlet release];
+    [self.navigationItem.backBarButtonItem release];
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -70,7 +76,7 @@
         // Not launching with header and tabs (i.e. launched from clicking on tab, not in EventDetailsView
         self.navigationItem.title = @"Events Map";
         
-        self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
         
         [self.navigationController setNavigationBarHidden:NO animated:YES];
     } else {
@@ -83,8 +89,13 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    // Make sure navigation controller is hidden - parent view will unhide if necessary
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    // Make sure we free up out map outlet
+    //[mapViewOutlet release];
+    // Make sure we free up the back button we allocated
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,7 +120,7 @@
         TonightlifeMarker* marker = annotation;
         MKPinAnnotationView* annotationView = (MKPinAnnotationView*) [mapViewOutlet dequeueReusableAnnotationViewWithIdentifier:identifier];
         if (nil == annotationView) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier] autorelease];
         } else {
             annotationView.annotation = annotation;
         }
