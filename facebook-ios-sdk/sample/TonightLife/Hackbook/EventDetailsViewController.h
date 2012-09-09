@@ -28,6 +28,7 @@
 -(void) onRsvpClicked:(id) sender;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
+@property (nonatomic, retain) IBOutlet UITextView* eventStartTimeOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventDescriptionOutlet;
 @property (nonatomic, retain) IBOutlet UIView* imageWrapperOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* addToLineupButtonOutlet;
