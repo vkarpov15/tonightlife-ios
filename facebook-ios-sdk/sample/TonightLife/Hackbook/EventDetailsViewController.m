@@ -18,6 +18,7 @@
 @synthesize addToLineupButtonOutlet;
 @synthesize locateButtonOutlet;
 @synthesize rsvpButtonOutlet;
+@synthesize eventStartTimeOutlet;
 
 - (void) dealloc {
     [eventTitleOutlet release];
@@ -26,6 +27,8 @@
     [addToLineupButtonOutlet release];
     [locateButtonOutlet release];
     [rsvpButtonOutlet release];
+    [eventStartTimeOutlet release];
+    
     [super dealloc];
 }
 
@@ -61,7 +64,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     self.eventTitleOutlet.text = [event name];
+    self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
+   
     
     // Initialize the event image
     imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
