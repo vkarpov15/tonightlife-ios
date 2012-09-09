@@ -36,6 +36,7 @@
     [imageCache release];
     [commonController release];
     [menuController release];
+    [mapViewController release];
     [super dealloc];
 }
 
@@ -195,6 +196,9 @@
     [self.view addSubview:tabBar];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
+    [mapViewController setHeaderViewAndTabs:headerView: self->tabBar];
+    
     if (![[delegate facebook] isSessionValid]) {
         [self login];
     } else {
@@ -510,10 +514,7 @@
             
         case 3:
             [self.navigationController popToRootViewControllerAnimated:NO];
-            mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
-            [mapViewController setHeaderViewAndTabs:headerView: self->tabBar];
             [self.navigationController pushViewController:mapViewController animated:NO];
-            [mapViewController release];
             break;
             
         default:

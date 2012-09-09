@@ -71,20 +71,6 @@
             [mapViewOutlet selectAnnotation:marker animated:YES];
         }
     }
-    
-    if (nil == header) {
-        // Not launching with header and tabs (i.e. launched from clicking on tab, not in EventDetailsView
-        self.navigationItem.title = @"Events Map";
-        
-        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
-        
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    } else {
-        // Launched from clicking on tab - populate with tabs and header, no navigation
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
-        [self.view addSubview:header];
-        [self.view addSubview:tabs];
-    }
 }
 
 - (void)viewDidUnload {
@@ -107,6 +93,20 @@
     } else {
         // Make sure nav controller is hidden if launched from root view
         [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+    
+    if (nil == header) {
+        // Not launching with header and tabs (i.e. launched from clicking on tab, not in EventDetailsView
+        self.navigationItem.title = @"Events Map";
+        
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+        
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    } else {
+        // Launched from clicking on tab - populate with tabs and header, no navigation
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        [self.view addSubview:header];
+        [self.view addSubview:tabs];
     }
 }
 
