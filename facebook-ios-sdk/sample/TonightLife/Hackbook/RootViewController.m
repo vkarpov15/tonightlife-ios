@@ -124,6 +124,7 @@
 #pragma mark - View lifecycle
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+    NSLog(@"I'm loading my view!");
     loggedIn = NO;
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen
                                                   mainScreen].applicationFrame];
@@ -138,20 +139,6 @@
     
     // Initialize permissions
     permissions = [[NSArray alloc] initWithObjects:@"offline_access", nil];
-    
-    // Main menu items
-    mainMenuItems = [[NSMutableArray alloc] initWithCapacity:1];
-    
-    // Set up the view programmatically
-    //self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.navigationItem.title = @"Hackbook for iOS";
-    
-    self.navigationItem.backBarButtonItem =
-    [[[UIBarButtonItem alloc] initWithTitle:@"Back"
-                                      style:UIBarButtonItemStyleBordered
-                                     target:nil
-                                     action:nil] autorelease]; // FIXME Can this be released programmatically?
     
     // Background Image
     backgroundImageView = [[UIImageView alloc]

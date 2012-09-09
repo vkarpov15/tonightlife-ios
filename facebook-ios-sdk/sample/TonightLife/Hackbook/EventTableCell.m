@@ -12,13 +12,22 @@
 
 @implementation EventTableCell
 
-
 @synthesize eventName;
 @synthesize eventStartTime;
 @synthesize eventVenueName;
 @synthesize imageWrapper;
 @synthesize event;
 @synthesize activityIndicatorOutlet;
+
+- (void) dealloc {
+    // DO NOT release event here
+    [eventName release];
+    [eventStartTime release];
+    [eventVenueName release];
+    [imageWrapper release];
+    [activityIndicatorOutlet release];
+    [super dealloc];
+}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

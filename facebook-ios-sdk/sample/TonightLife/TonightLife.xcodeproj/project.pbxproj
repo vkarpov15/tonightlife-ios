@@ -275,6 +275,7 @@
 		30EA736313F5D21B003DC0D2 /* TonightLife */ = {
 			isa = PBXGroup;
 			children = (
+				952C434615FC10B4003CF842 /* Interfaces */,
 				958859AC15E8801F00C307C0 /* Model */,
 				3018B43713F9B94B00F61944 /* iPad */,
 				30EA736C13F5D21B003DC0D2 /* HackbookAppDelegate.h */,
@@ -396,11 +397,18 @@
 			path = ../../src/JSON;
 			sourceTree = "<group>";
 		};
-		958859AC15E8801F00C307C0 /* Model */ = {
+		952C434615FC10B4003CF842 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				95273AB815F6E0C80066CFF2 /* AsyncImageCallback.h */,
 				95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */,
+			);
+			name = Interfaces;
+			sourceTree = "<group>";
+		};
+		958859AC15E8801F00C307C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				95B3473D15E19EC10024E8F3 /* Event.h */,
 				95B3473E15E19EC10024E8F3 /* Event.m */,
 				95273AB115F6DFAF0066CFF2 /* ImageCacheController.h */,
