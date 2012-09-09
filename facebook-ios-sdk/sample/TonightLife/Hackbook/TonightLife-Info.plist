@@ -10,13 +10,9 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string></string>
-		<string>app_icon_ios_retina.png</string>
 		<string>app_icon_ios.png</string>
 		<string>app_icon_ios_retina_real.png</string>
-		<string>Default.png</string>
-		<string>Default@2x.png</string>
-		<string>Default@2x.png</string>
+		<string>app_icon_ios_retina.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -24,13 +20,9 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string></string>
-				<string>app_icon_ios_retina.png</string>
 				<string>app_icon_ios.png</string>
 				<string>app_icon_ios_retina_real.png</string>
-				<string>Default.png</string>
-				<string>Default@2x.png</string>
-				<string>Default@2x.png</string>
+				<string>app_icon_ios_retina.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
