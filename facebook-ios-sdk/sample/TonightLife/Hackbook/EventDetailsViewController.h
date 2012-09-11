@@ -13,6 +13,7 @@
 #import "RadarMapViewController.h"
 #import "ImageCacheController.h"
 #import "Event.h"
+#import "FriendsList.h"
 
 @interface EventDetailsViewController : UIViewController {
     Event* event;
@@ -21,6 +22,7 @@
     RadarCommonController* commonController;
     ImageCacheController* imageCache;
 }
+
 
 -(EventDetailsViewController*) initEventDetailsView:(Event*) e :(ImageCacheController*) imageCache :(NSString*) token :(RadarCommonController*) common;
 
@@ -34,5 +36,8 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* addToLineupButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* locateButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* rsvpButtonOutlet;
+@property (nonatomic, retain) IBOutlet UIView* friendsList;
 
+
+-(IBAction) displayFriendsListView:(id)sender;
 @end

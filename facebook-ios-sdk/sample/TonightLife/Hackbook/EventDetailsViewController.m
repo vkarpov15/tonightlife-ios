@@ -9,9 +9,9 @@
  */
 
 #import "EventDetailsViewController.h"
+#import "FriendsList.h"
 
 @implementation EventDetailsViewController
-
 @synthesize eventTitleOutlet;
 @synthesize imageWrapperOutlet;
 @synthesize eventDescriptionOutlet;
@@ -19,6 +19,9 @@
 @synthesize locateButtonOutlet;
 @synthesize rsvpButtonOutlet;
 @synthesize eventStartTimeOutlet;
+
+
+
 
 - (void) dealloc {
     [eventTitleOutlet release];
@@ -85,6 +88,12 @@
     } else {
         [rsvpButtonOutlet setEnabled:YES];
     }
+
+    
+}
+
+-(IBAction)displayFriendsListView:(id)sender {
+    [[NSBundle mainBundle] loadNibNamed:@"FriendsList" owner:self options:nil];
 }
 
 - (void)viewDidUnload {
