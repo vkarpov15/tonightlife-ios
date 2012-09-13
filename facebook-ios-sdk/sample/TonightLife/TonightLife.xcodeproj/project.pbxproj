@@ -70,8 +70,6 @@
 		9145DE7415EF1EB1003FA9BA /* event_details_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7315EF1EB1003FA9BA /* event_details_background.png */; };
 		9145DE7A15EF2FBC003FA9BA /* location_marker_tiny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */; };
 		9145DE7C15EF3314003FA9BA /* app_icon_ios_retina_real.png in Resources */ = {isa = PBXBuildFile; fileRef = 9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */; };
-		915BB14916017B160097C141 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915BB14816017B160097C141 /* FacebookSDK.framework */; };
-		915BB14C16017B2F0097C141 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 915BB14B16017B2F0097C141 /* FacebookSDKResources.bundle */; };
 		919238CF15FFD292006EC18C /* FriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 919238CD15FFD292006EC18C /* FriendsList.m */; };
 		919238D015FFD292006EC18C /* FriendsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 919238CE15FFD292006EC18C /* FriendsList.xib */; };
 		91AFFBB115F7BA9E002A9536 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 91AFFBB015F7BA9E002A9536 /* refresh.png */; };
@@ -181,8 +179,6 @@
 		9145DE7315EF1EB1003FA9BA /* event_details_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_details_background.png; sourceTree = "<group>"; };
 		9145DE7915EF2FBC003FA9BA /* location_marker_tiny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_marker_tiny.png; sourceTree = "<group>"; };
 		9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ios_retina_real.png; sourceTree = "<group>"; };
-		915BB14816017B160097C141 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		915BB14B16017B2F0097C141 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		919238CC15FFD292006EC18C /* FriendsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsList.h; path = ../FriendsList.h; sourceTree = "<group>"; };
 		919238CD15FFD292006EC18C /* FriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsList.m; path = ../FriendsList.m; sourceTree = "<group>"; };
 		919238CE15FFD292006EC18C /* FriendsList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendsList.xib; path = ../FriendsList.xib; sourceTree = "<group>"; };
@@ -230,7 +226,6 @@
 				30EA735E13F5D21B003DC0D2 /* UIKit.framework in Frameworks */,
 				30EA736013F5D21B003DC0D2 /* Foundation.framework in Frameworks */,
 				30EA736213F5D21B003DC0D2 /* CoreGraphics.framework in Frameworks */,
-				915BB14916017B160097C141 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +269,6 @@
 		30EA735C13F5D21B003DC0D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				915BB14B16017B2F0097C141 /* FacebookSDKResources.bundle */,
-				915BB14816017B160097C141 /* FacebookSDK.framework */,
 				30EA73FB13F5D590003DC0D2 /* CoreLocation.framework */,
 				30EA735D13F5D21B003DC0D2 /* UIKit.framework */,
 				30EA735F13F5D21B003DC0D2 /* Foundation.framework */,
@@ -542,7 +535,6 @@
 				91AFFBB115F7BA9E002A9536 /* refresh.png in Resources */,
 				91AFFBB415F7BAE6002A9536 /* refresh@2x.png in Resources */,
 				919238D015FFD292006EC18C /* FriendsList.xib in Resources */,
-				915BB14C16017B2F0097C141 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
