@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 
+
 @interface HackbookAppDelegate : NSObject <UIApplicationDelegate,UIAlertViewDelegate> {
     Facebook *facebook;
     NSMutableDictionary *userPermissions;
