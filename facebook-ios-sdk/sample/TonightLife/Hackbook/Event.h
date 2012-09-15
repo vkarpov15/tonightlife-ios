@@ -26,6 +26,7 @@
     TonightLifeTime* time;
     bool onRadar;
     NSMutableDictionary* rsvp;
+    NSString* cover;
 }
 
 -(Event*) initEvent :(NSString*) eventId
@@ -40,7 +41,8 @@
                     :(bool) featured
                     :(NSString*) time
                     :(bool) onRadar
-                    :(NSMutableDictionary*) rsvp;
+                    :(NSMutableDictionary*) rsvp
+                    :(NSString*) cover;
 
 -(void) formatTime: (NSString*) time;
 

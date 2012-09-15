@@ -133,7 +133,7 @@
     self.view = view;
     [view release];
     
-    imageCache = [[ImageCacheController alloc] initDefault]; //[[NSMutableDictionary alloc] initWithCapacity:25];
+    imageCache = [[ImageCacheController alloc] initDefault];
     commonController = [[RadarCommonController alloc] initDefault];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -451,6 +451,8 @@
             radarCount = [radarCountStr integerValue];
         }
         
+        NSLog(@"Event val is :: %@", event);
+        
         Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
                                             :[event objectForKey:@"name"]
                                             :[event objectForKey:@"description"]
@@ -463,7 +465,8 @@
                                             :[[event objectForKey:@"featured"] boolValue]
                                             :[event objectForKey:@"start_time"]
                                             :[radarEvents containsObject:[event objectForKey:@"id"]]
-                                            :[event objectForKey:@"rsvp"]];
+                                            :[event objectForKey:@"rsvp"]
+                                            :[event objectForKey:@"cover"]];
         [commonController addEvent:e];
         NSLog(@"RSVP is %@ for %@", [event objectForKey:@"rsvp"], [event objectForKey:@"name"]);
     }

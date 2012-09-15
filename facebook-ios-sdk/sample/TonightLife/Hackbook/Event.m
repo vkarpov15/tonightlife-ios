@@ -14,6 +14,19 @@
 
 @synthesize eventId, name, description, venueName, address, image, time, rsvp;
 
+- (void) dealloc {
+    [eventId release];
+    [name release];
+    [description release];
+    [venueName release];
+    [address release];
+    [image release];
+    [time release];
+    [rsvp release];
+    [cover release];
+    [super dealloc];
+}
+
 -(Event*) initEvent :(NSString*) inEventId
                     :(NSString*) inName
                     :(NSString*) inDescription
@@ -26,7 +39,8 @@
                     :(bool) inFeatured
                     :(NSString*) inTime
                     :(bool) inOnRadar
-                    :(NSMutableDictionary*) inRsvp {
+                    :(NSMutableDictionary*) inRsvp
+                    :(NSString*) inCover {
     self = [super init];
     if (self) {
         eventId = [inEventId retain];
@@ -42,6 +56,7 @@
         [self formatTime:inTime];
         onRadar = inOnRadar;
         rsvp = [inRsvp retain];
+        cover = [inCover retain];
     }
     return self;
 }
