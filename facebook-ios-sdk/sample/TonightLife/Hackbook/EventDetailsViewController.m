@@ -10,6 +10,7 @@
 
 #import "EventDetailsViewController.h"
 #import "FriendsList.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EventDetailsViewController
 @synthesize eventTitleOutlet;
@@ -73,6 +74,8 @@
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
     self.eventCover.text = [event cover];
+    eventCover.layer.cornerRadius = 5.0;
+    eventCover.clipsToBounds = YES;
     
     [self.addToLineupBarItemOutlet setImage:[UIImage imageNamed:(event->onRadar ? @"lineup_button_w.png" : @"lineup_button.png")]];
    
@@ -83,7 +86,7 @@
     //imgView.image = [imageCache objectForKey:[event->image absoluteString]];
     [imageCache setImage:event->image :[[AsyncImageCallback alloc] initWithImageView:imgView]];
     [self.imageWrapperOutlet addSubview:imgView];
-     [self.imageWrapperOutlet addSubview:eventTitleOutlet];
+     [self.imageWrapperOutlet addSubview:eventTitleOutlet];	
     [self.imageWrapperOutlet addSubview:eventCover];
     
        
