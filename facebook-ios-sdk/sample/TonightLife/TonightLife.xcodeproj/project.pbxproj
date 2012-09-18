@@ -32,7 +32,6 @@
 		1FF3E9FE15EC536B00B952CD /* event_table_cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3E9FD15EC536B00B952CD /* event_table_cell_background.png */; };
 		1FF3EA0115EC5B0300B952CD /* app_icon_retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3EA0015EC5B0300B952CD /* app_icon_retina.png */; };
 		1FF3EA0315EC5B0B00B952CD /* app_icon_ios.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3EA0215EC5B0A00B952CD /* app_icon_ios.png */; };
-		3018B43A13F9B94D00F61944 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3018B43813F9B94D00F61944 /* MainWindow-iPad.xib */; };
 		3085CC291415D68A00456CCC /* MenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3085CC281415D68A00456CCC /* MenuButton@2x.png */; };
 		30EA735E13F5D21B003DC0D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA735D13F5D21B003DC0D2 /* UIKit.framework */; };
 		30EA736013F5D21B003DC0D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30EA735F13F5D21B003DC0D2 /* Foundation.framework */; };
@@ -126,7 +125,6 @@
 		1FF3E9FD15EC536B00B952CD /* event_table_cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = event_table_cell_background.png; sourceTree = "<group>"; };
 		1FF3EA0015EC5B0300B952CD /* app_icon_retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_retina.png; sourceTree = "<group>"; };
 		1FF3EA0215EC5B0A00B952CD /* app_icon_ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_ios.png; sourceTree = "<group>"; };
-		3018B43913F9B94D00F61944 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		3085CC281415D68A00456CCC /* MenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuButton@2x.png"; sourceTree = "<group>"; };
 		30EA735913F5D21B003DC0D2 /* TonightLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonightLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EA735D13F5D21B003DC0D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -239,14 +237,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3018B43713F9B94B00F61944 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				3018B43813F9B94D00F61944 /* MainWindow-iPad.xib */,
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		30EA734E13F5D21B003DC0D2 = {
 			isa = PBXGroup;
 			children = (
@@ -290,7 +280,6 @@
 			children = (
 				952C434615FC10B4003CF842 /* Interfaces */,
 				958859AC15E8801F00C307C0 /* Model */,
-				3018B43713F9B94B00F61944 /* iPad */,
 				30EA736C13F5D21B003DC0D2 /* HackbookAppDelegate.h */,
 				30EA736D13F5D21B003DC0D2 /* HackbookAppDelegate.m */,
 				919238CC15FFD292006EC18C /* FriendsList.h */,
@@ -496,7 +485,6 @@
 				30EA739F13F5D372003DC0D2 /* MenuButton.png in Resources */,
 				30EA73CB13F5D502003DC0D2 /* FBConnect.bundle in Resources */,
 				30EA73E813F5D523003DC0D2 /* FBDialog.bundle in Resources */,
-				3018B43A13F9B94D00F61944 /* MainWindow-iPad.xib in Resources */,
 				3085CC291415D68A00456CCC /* MenuButton@2x.png in Resources */,
 				30ED588F14358F9400A226C3 /* Icon@2x.png in Resources */,
 				9588599D15E6FCDB00C307C0 /* EventTableCell.xib in Resources */,
@@ -589,14 +577,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3018B43813F9B94D00F61944 /* MainWindow-iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3018B43913F9B94D00F61944 /* en */,
-			);
-			name = "MainWindow-iPad.xib";
-			sourceTree = "<group>";
-		};
 		30EA736613F5D21B003DC0D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
