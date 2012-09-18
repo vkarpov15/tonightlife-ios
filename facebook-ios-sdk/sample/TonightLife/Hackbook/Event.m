@@ -12,7 +12,7 @@
 
 @implementation Event
 
-@synthesize eventId, name, description, venueName, address, image, time, rsvp;
+@synthesize eventId, name, description, venueName, address, image, time, rsvp, cover;
 
 - (void) dealloc {
     [eventId release];

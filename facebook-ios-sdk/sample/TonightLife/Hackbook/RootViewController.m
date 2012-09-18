@@ -26,6 +26,7 @@
 @synthesize mainMenuItems;
 @synthesize headerView;
 @synthesize imageCache;
+@synthesize eventCover;
 
 - (void)dealloc {
     [permissions release];
@@ -37,6 +38,7 @@
     [commonController release];
     [menuController release];
     [mapViewController release];
+    [eventCover release];
     [super dealloc];
 }
 
@@ -287,6 +289,10 @@
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
     imgView.hidden = YES;
     [cell.imageWrapper addSubview:imgView];
+    [cell.imageWrapper addSubview:eventCover];
+
+   
+
     /*imgView.contentMode = UIViewContentModeCenter;
     imgView.image = [UIImage imageNamed:@"refresh"];*/
     
