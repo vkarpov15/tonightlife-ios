@@ -53,7 +53,7 @@
     tabs = inTabs;
 }
 
-- (void)viewDidLoad {
+-(void) viewDidLoad {
     [super viewDidLoad];
     
     if (nil == selectedEvent) {
@@ -62,9 +62,17 @@
         [mapViewOutlet setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(selectedEvent->lat, selectedEvent->lon), 1 * METERS_PER_MILE, 1 * METERS_PER_MILE)];
     }
     
+    [self loadAnnotations];
+}
+
+-(void) loadAnnotations {
+    while ([[mapViewOutlet annotations] count] > 0) {
+        [mapViewOutlet removeAnnotation:[[mapViewOutlet annotations] objectAtIndex:0]];
+    }
+    
     for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
         Event* e = [[commonController eventsList] objectAtIndex:i];
-        TonightlifeMarker* marker = [[TonightlifeMarker alloc] initWithEvent:e:i];
+        TonightlifeMarker* marker = [[[TonightlifeMarker alloc] initWithEvent:e:i] autorelease];
         [mapViewOutlet addAnnotation:marker];
         if (nil != selectedEvent && e == selectedEvent) {
             NSLog(@"Opening annotation for %@!", [e name]);

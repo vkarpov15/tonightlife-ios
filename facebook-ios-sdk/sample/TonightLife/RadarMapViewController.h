@@ -32,7 +32,9 @@
 
 -(void) setSelectedEvent: (Event*) e;
 
--(void)viewWillAppear: (BOOL)animated;
+-(void) viewWillAppear: (BOOL)animated;
+
+-(void) loadAnnotations;
 
 -(void) onAnnotationClicked: (UIButton*) sender;
 

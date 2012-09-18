@@ -527,6 +527,7 @@
 
 -(void) reloadMainTableView {
     [menuTableView reloadData];
+    [mapViewController loadAnnotations];
     if ([[commonController current] count] == 0) {
         emptyTableView.hidden = NO;
         menuTableView.hidden = YES;
