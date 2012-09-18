@@ -96,6 +96,7 @@
 		95D946BE16082DDF00729391 /* lineup_button_w.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D946BD16082DDF00729391 /* lineup_button_w.png */; };
 		95D946C016082DEF00729391 /* lineup_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D946BF16082DEF00729391 /* lineup_button@2x.png */; };
 		95D946C216082DF600729391 /* lineup_button_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D946C116082DF600729391 /* lineup_button_w@2x.png */; };
+		95D946C41608327100729391 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D946C31608327100729391 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,6 +219,7 @@
 		95D946BD16082DDF00729391 /* lineup_button_w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineup_button_w.png; sourceTree = "<group>"; };
 		95D946BF16082DEF00729391 /* lineup_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_button@2x.png"; sourceTree = "<group>"; };
 		95D946C116082DF600729391 /* lineup_button_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_button_w@2x.png"; sourceTree = "<group>"; };
+		95D946C31608327100729391 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D946C41608327100729391 /* AudioToolbox.framework in Frameworks */,
 				95A8B9A615EDE0C4000E02DF /* MapKit.framework in Frameworks */,
 				30EA73FC13F5D590003DC0D2 /* CoreLocation.framework in Frameworks */,
 				30EA735E13F5D21B003DC0D2 /* UIKit.framework in Frameworks */,
@@ -247,6 +250,7 @@
 		30EA734E13F5D21B003DC0D2 = {
 			isa = PBXGroup;
 			children = (
+				95D946C31608327100729391 /* AudioToolbox.framework */,
 				1F8C047615F03C8000769B46 /* Default@2x.png */,
 				1F8C047415F03C7900769B46 /* Default.png */,
 				9145DE7B15EF3314003FA9BA /* app_icon_ios_retina_real.png */,

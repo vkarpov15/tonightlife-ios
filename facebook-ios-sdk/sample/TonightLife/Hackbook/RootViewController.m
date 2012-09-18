@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+#import <AudioToolbox/AudioToolbox.h>
 #import "RootViewController.h"
 #import "HackbookAppDelegate.h"
 #import "FBConnect.h"
@@ -263,6 +264,7 @@
 - (void)eventClicked:(UITapGestureRecognizer*)tapCallback {
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
+    AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
     EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];
