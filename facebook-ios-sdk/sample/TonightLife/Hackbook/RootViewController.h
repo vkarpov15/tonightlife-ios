@@ -38,6 +38,7 @@ UITabBarDelegate> {
     NSArray* permissions;
 
     UIImageView* backgroundImageView;
+    UIActivityIndicatorView* loadingSpinner;
     UITableView* menuTableView;
     UILabel* emptyTableView;
 

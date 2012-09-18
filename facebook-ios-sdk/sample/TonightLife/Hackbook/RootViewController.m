@@ -149,7 +149,11 @@
     [backgroundImageView setImage:[UIImage imageNamed:@"Default.png"]];
     [self.view addSubview:backgroundImageView];
     
-   
+    // Activity spinner
+    loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [loadingSpinner setFrame:CGRectMake((self.view.bounds.size.width - 40) / 2, self.view.bounds.size.height - 40 - 10, 40, 40)];
+    [self.view addSubview:loadingSpinner];
+    [loadingSpinner startAnimating];
     
     // Main Menu Table
     menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)
