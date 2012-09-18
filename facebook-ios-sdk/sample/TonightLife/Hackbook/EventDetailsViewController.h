@@ -34,6 +34,7 @@
 @property (nonatomic, retain) IBOutlet UITextView* eventDescriptionOutlet;
 @property (nonatomic, retain) IBOutlet UIView* imageWrapperOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* addToLineupButtonOutlet;
+@property (nonatomic, retain) IBOutlet UIBarItem* addToLineupBarItemOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* locateButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* rsvpButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIView* friendsList;

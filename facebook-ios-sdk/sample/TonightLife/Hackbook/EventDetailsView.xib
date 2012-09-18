@@ -156,7 +156,6 @@
 						<string key="NSFrame">{{5, 197}, {310, 210}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -402,6 +401,14 @@
 					<int key="connectionID">105</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">addToLineupBarItemOutlet</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="53811661"/>
+					</object>
+					<int key="connectionID">106</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">displayFriendsListView:</string>
 						<reference key="source" ref="116832910"/>
@@ -551,7 +558,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">105</int>
+			<int key="maxID">106</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -570,6 +577,7 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addToLineupBarItemOutlet">UIBarItem</string>
 						<string key="addToLineupButtonOutlet">UIBarButtonItem</string>
 						<string key="eventCover">UITextView</string>
 						<string key="eventDescriptionOutlet">UITextView</string>
@@ -581,6 +589,10 @@
 						<string key="rsvpButtonOutlet">UIBarButtonItem</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addToLineupBarItemOutlet">
+							<string key="name">addToLineupBarItemOutlet</string>
+							<string key="candidateClassName">UIBarItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="addToLineupButtonOutlet">
 							<string key="name">addToLineupButtonOutlet</string>
 							<string key="candidateClassName">UIBarButtonItem</string>

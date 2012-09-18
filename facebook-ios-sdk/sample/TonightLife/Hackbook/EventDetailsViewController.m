@@ -16,11 +16,11 @@
 @synthesize imageWrapperOutlet;
 @synthesize eventDescriptionOutlet;
 @synthesize addToLineupButtonOutlet;
+@synthesize addToLineupBarItemOutlet;
 @synthesize locateButtonOutlet;
 @synthesize rsvpButtonOutlet;
 @synthesize eventStartTimeOutlet;
 @synthesize eventCover;
-
 
 
 
@@ -29,6 +29,7 @@
     [imageWrapperOutlet release];
     [eventDescriptionOutlet release];
     [addToLineupButtonOutlet release];
+    [addToLineupBarItemOutlet release];
     [locateButtonOutlet release];
     [rsvpButtonOutlet release];
     [eventStartTimeOutlet release];
@@ -72,6 +73,8 @@
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
     self.eventCover.text = [event cover];
+    
+    [self.addToLineupBarItemOutlet setImage:[UIImage imageNamed:(event->onRadar ? @"lineup_button_w.png" : @"lineup_button.png")]];
    
     
     // Initialize the event image
@@ -114,6 +117,9 @@
     NSLog(@"Clicked addtolineup");
     
     if (!event->onRadar && [commonController addToLineup:event]) {
+        // White star image
+        [self.addToLineupBarItemOutlet setImage:[UIImage imageNamed:@"lineup_button_w.png"]];
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // Dispatch "add to radar" request
             NSString* url = [NSString stringWithFormat:@"http://tonight-life.com/mobile/radar/%@.json", [event eventId]];
@@ -128,10 +134,13 @@
             NSDictionary* ret = [NSJSONSerialization JSONObjectWithData:data
                                                         options:kNilOptions
                                                           error:&error];
-        
+            
             NSLog(@"Request done %@", ret);
         });
     } else if (event->onRadar && [commonController removeFromLineup:event]) {
+        // Empty star image
+        [self.addToLineupBarItemOutlet setImage:[UIImage imageNamed:@"lineup_button.png"]];
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             // Dispatch "remove from radar" request
             NSString* url = [NSString stringWithFormat:@"http://tonight-life.com/mobile/radar/%@.json?auth_token=%@", [event eventId], tonightlifeToken];
