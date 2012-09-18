@@ -71,6 +71,7 @@ UITabBarDelegate> {
 @property (nonatomic, retain) UIImageView* backgroundImageView;
 @property (nonatomic, retain) UITableView* menuTableView;
 @property (nonatomic, retain) NSMutableArray* mainMenuItems;
+@property (nonatomic, retain) UILabel* eventCover;
 @property (nonatomic, retain) EventListHeader* headerView;
 @property (nonatomic, retain) ImageCacheController* imageCache;
 

@@ -21,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* eventVenueName;
 @property (nonatomic, retain) IBOutlet UIView* imageWrapper;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* activityIndicatorOutlet;
+@property (nonatomic, retain) IBOutlet UILabel* eventCover;
 
 - (void)setEvent:(Event*) inEvent;
 

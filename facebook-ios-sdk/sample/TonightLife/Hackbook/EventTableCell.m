@@ -18,6 +18,7 @@
 @synthesize imageWrapper;
 @synthesize event;
 @synthesize activityIndicatorOutlet;
+@synthesize eventCover;
 
 - (void) dealloc {
     // DO NOT release event here
@@ -26,6 +27,7 @@
     [eventVenueName release];
     [imageWrapper release];
     [activityIndicatorOutlet release];
+    [eventCover release];
     [super dealloc];
 }
 
@@ -41,6 +43,7 @@
     eventName.text = [event name];
     eventStartTime.text = [[event time] makeYourTime];
     eventVenueName.text = [event venueName];
+    eventCover.text= [event cover];
 }
 
 // Configure the view for the selected state

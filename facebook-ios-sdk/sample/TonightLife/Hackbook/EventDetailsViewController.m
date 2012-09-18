@@ -19,6 +19,7 @@
 @synthesize locateButtonOutlet;
 @synthesize rsvpButtonOutlet;
 @synthesize eventStartTimeOutlet;
+@synthesize eventCover;
 
 
 
@@ -31,6 +32,7 @@
     [locateButtonOutlet release];
     [rsvpButtonOutlet release];
     [eventStartTimeOutlet release];
+    [eventCover release];
     
     [super dealloc];
 }
@@ -69,6 +71,7 @@
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
+    self.eventCover.text = [event cover];
    
     
     // Initialize the event image
@@ -78,6 +81,7 @@
     [imageCache setImage:event->image :[[AsyncImageCallback alloc] initWithImageView:imgView]];
     [self.imageWrapperOutlet addSubview:imgView];
      [self.imageWrapperOutlet addSubview:eventTitleOutlet];
+    [self.imageWrapperOutlet addSubview:eventCover];
     
        
     // Handle lineup button clicks

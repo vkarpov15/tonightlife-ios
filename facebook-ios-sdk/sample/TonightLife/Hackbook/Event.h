@@ -57,5 +57,6 @@
 @property (nonatomic,retain,readonly) NSURL* image;
 @property (nonatomic,retain,readonly) TonightLifeTime* time;
 @property (nonatomic,retain,readonly) NSMutableDictionary* rsvp;
+@property (nonatomic,retain,readonly) NSString* cover;
 
 @end

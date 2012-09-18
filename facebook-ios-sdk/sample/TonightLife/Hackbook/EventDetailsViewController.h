@@ -37,6 +37,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* locateButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* rsvpButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIView* friendsList;
+@property (nonatomic, retain) IBOutlet UITextView* eventCover;
 
 
 -(IBAction) displayFriendsListView:(id)sender;
