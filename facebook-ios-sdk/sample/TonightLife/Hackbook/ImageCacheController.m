@@ -60,6 +60,8 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"Download failed!");
+    // Try to reload the damn thing
+    [self loadImageAsync:[[connection currentRequest] URL]];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
