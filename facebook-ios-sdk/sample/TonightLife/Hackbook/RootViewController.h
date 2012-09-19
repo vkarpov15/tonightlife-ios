@@ -57,11 +57,15 @@ UITabBarDelegate> {
     
     NSString* tonightlifeToken;
     bool loggedIn;
+    
+    TonightLifeTime* lastUpdate;
 }
 
 
 -(IBAction) prefButtonPressed;
 -(void)request:(FBRequest *)request didLoad:(id)result;
+
+-(void) forceReload;
 
 -(void) reloadMainTableView;
 

@@ -67,7 +67,7 @@
     // done adding callbacks
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString* url = [[[connection currentRequest] URL] absoluteString];
-        NSLog(@"Loaded image %@", url);
+        //NSLog(@"Loaded image %@", url);
         UIImage* img = [[UIImage alloc] initWithData:[outstandingCalls objectForKey:url]];
         [urlToImage setObject:img forKey:url];
         NSMutableArray* callbacks = [urlToCallbacks objectForKey:url];

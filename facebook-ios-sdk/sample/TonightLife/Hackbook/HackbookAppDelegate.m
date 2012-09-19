@@ -37,7 +37,7 @@ static NSString* kAppId = @"217386331697217";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Setup view controllers
-    RootViewController *rootViewController = [[RootViewController alloc] init];
+    rootViewController = [[RootViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     [navController.navigationBar setTintColor:[UIColor colorWithRed:51.0/255.0
                                                               green:51.0/255.0
@@ -127,6 +127,7 @@ static NSString* kAppId = @"217386331697217";
     // This gives apps that seldom make api calls a higher chance of having a non expired
     // access token.
     [[self facebook] extendAccessTokenIfNeeded];
+    [rootViewController forceReload];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {

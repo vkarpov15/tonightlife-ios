@@ -14,6 +14,10 @@
 
 @synthesize date;
 
+- (void) dealloc {
+    [date release];
+}
+
 - (TonightLifeTime*) initWithNsDate: (NSDate*) d {
     self = [super init];
     if (self) {
@@ -32,6 +36,10 @@
 
 - (NSComparisonResult) compare: (TonightLifeTime*)other {
     return [date compare:[other date]];
+}
+
+- (NSTimeInterval) secondsUntil: (TonightLifeTime*) other {
+    return [[other date] timeIntervalSinceDate:[self date]];
 }
 
 @end

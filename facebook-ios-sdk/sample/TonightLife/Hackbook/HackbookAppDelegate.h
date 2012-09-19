@@ -16,10 +16,12 @@
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
+#import "RootViewController.h"
 
 
 @interface HackbookAppDelegate : NSObject <UIApplicationDelegate,UIAlertViewDelegate> {
     Facebook *facebook;
+    RootViewController* rootViewController;
     NSMutableDictionary *userPermissions;
 }
 

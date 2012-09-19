@@ -40,6 +40,9 @@
     [menuController release];
     [mapViewController release];
     [eventCover release];
+    if (nil != lastUpdate) {
+        [lastUpdate release];
+    }
     [super dealloc];
 }
 
@@ -128,7 +131,7 @@
 #pragma mark - View lifecycle
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-    NSLog(@"I'm loading my view!");
+    lastUpdate = nil;
     loggedIn = NO;
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen
                                                   mainScreen].applicationFrame];
@@ -224,7 +227,7 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
+    NSLog(@"LOADED!");
     if (loggedIn) {
         // Reload common controller data since it may have changed, but only if we're logged in
         // otherwise, no point, and causes the emptyTableView to show up
@@ -235,6 +238,18 @@
         [self.view addSubview:tabBar];
     }
     
+}
+
+- (void) forceReload {
+    if (nil != lastUpdate && [lastUpdate secondsUntil:[[[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]] autorelease]] >= 2 * 60 * 60) {
+        NSLog(@"Updating! %f", [lastUpdate secondsUntil:[[[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]] autorelease]]);
+        self.menuTableView.hidden = YES;
+        self.headerView.hidden = YES;
+        tabBar.hidden = YES;
+        backgroundImageView.hidden = NO;
+        loadingSpinner.hidden = NO;
+        [self loadEventsFromServer];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -454,8 +469,6 @@
             radarCount = [radarCountStr integerValue];
         }
         
-        NSLog(@"Event val is :: %@", event);
-        
         Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
                                             :[event objectForKey:@"name"]
                                             :[event objectForKey:@"description"]
@@ -471,9 +484,10 @@
                                             :[event objectForKey:@"rsvp"]
                                             :[event objectForKey:@"cover"]];
         [commonController addEvent:e];
-        NSLog(@"RSVP is %@ for %@", [event objectForKey:@"rsvp"], [event objectForKey:@"name"]);
     }
     [commonController order];
+    lastUpdate = [[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]];
+    NSLog(@"last update set to %@", [lastUpdate makeYourTime]);
     
     //NSLog(@"Got my events! %@", eventList);
     dispatch_async(dispatch_get_main_queue(), ^{

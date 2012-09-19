@@ -53,6 +53,7 @@
     [radarIds addObject:[e eventId]];
     [radarList addObject:e];
     e->onRadar = YES;
+    [radarList sortUsingSelector:@selector(compareTimes:)];
     return YES;
 }
 

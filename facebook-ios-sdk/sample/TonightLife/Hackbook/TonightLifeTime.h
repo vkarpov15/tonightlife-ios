@@ -14,11 +14,15 @@
     NSDate* date;
 }
 
+- (void) dealloc;
+
 - (TonightLifeTime*) initWithNsDate: (NSDate*) d;
 
 - (NSString*) makeYourTime;
 
-- (NSComparisonResult) compare: (TonightLifeTime*)other;
+- (NSComparisonResult) compare: (TonightLifeTime*) other;
+
+- (NSTimeInterval) secondsUntil: (TonightLifeTime*) other;
 
 @property (nonatomic,retain) NSDate* date;
 
