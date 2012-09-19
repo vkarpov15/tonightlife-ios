@@ -9,6 +9,7 @@
  */
 
 #import "EventTableCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EventTableCell
 
@@ -46,7 +47,11 @@
     eventStartTime.text = [[event time] makeYourTime];
     eventVenueName.text = [event venueName];
     eventCover.text = [event cover];
+    eventCover.layer.cornerRadius = 5.0;
+    eventCover.clipsToBounds = YES;
+    
 }
+
 
 // Configure the view for the selected state
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -101,10 +101,10 @@
 										<bool key="IBUIUserInteractionEnabled">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									</object>
-									<object class="IBUILabel" id="509789827">
+									<object class="IBUILabel" id="865135666">
 										<reference key="NSNextResponder" ref="646542479"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{11, 13}, {69, 27}}</string>
+										<string key="NSFrame">{{232, 15}, {69, 27}}</string>
 										<reference key="NSSuperview" ref="646542479"/>
 										<reference key="NSWindow"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -299,7 +299,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">eventCover</string>
 						<reference key="source" ref="175734988"/>
-						<reference key="destination" ref="509789827"/>
+						<reference key="destination" ref="865135666"/>
 					</object>
 					<int key="connectionID">36</int>
 				</object>
@@ -347,7 +347,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="578661881"/>
 							<reference ref="591800917"/>
-							<reference ref="509789827"/>
+							<reference ref="865135666"/>
 						</array>
 						<reference key="parent" ref="175734988"/>
 						<string key="objectName">myView</string>
@@ -383,7 +383,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">35</int>
-						<reference key="object" ref="509789827"/>
+						<reference key="object" ref="865135666"/>
 						<reference key="parent" ref="646542479"/>
 					</object>
 				</array>
