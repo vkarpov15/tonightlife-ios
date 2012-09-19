@@ -86,8 +86,8 @@
     //imgView.image = [imageCache objectForKey:[event->image absoluteString]];
     [imageCache setImage:event->image :[[AsyncImageCallback alloc] initWithImageView:imgView]];
     [self.imageWrapperOutlet addSubview:imgView];
-     [self.imageWrapperOutlet addSubview:eventTitleOutlet];	
-    [self.imageWrapperOutlet addSubview:eventCover];
+    [self.imageWrapperOutlet bringSubviewToFront:eventTitleOutlet];	
+    [self.imageWrapperOutlet bringSubviewToFront:eventCover];
     
        
     // Handle lineup button clicks

@@ -19,6 +19,7 @@
 @synthesize event;
 @synthesize activityIndicatorOutlet;
 @synthesize eventCover;
+@synthesize eventImageOutlet;
 
 - (void) dealloc {
     // DO NOT release event here
@@ -28,6 +29,7 @@
     [imageWrapper release];
     [activityIndicatorOutlet release];
     [eventCover release];
+    [eventImageOutlet release];
     [super dealloc];
 }
 
@@ -43,13 +45,13 @@
     eventName.text = [event name];
     eventStartTime.text = [[event time] makeYourTime];
     eventVenueName.text = [event venueName];
-    eventCover.text= [event cover];
+    eventCover.text = [event cover];
 }
 
 // Configure the view for the selected state
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    self.backgroundColor = [UIColor clearColor];
+    //self.backgroundColor = [UIColor clearColor];
 }
 
 

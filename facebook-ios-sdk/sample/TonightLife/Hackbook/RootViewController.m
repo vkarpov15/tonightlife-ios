@@ -288,18 +288,9 @@
     
     [[cell activityIndicatorOutlet] startAnimating];
     
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 310, 124)];
-    imgView.hidden = YES;
-    [cell.imageWrapper addSubview:imgView];
-    [cell.imageWrapper addSubview:eventCover];
-
-   
-
-    /*imgView.contentMode = UIViewContentModeCenter;
-    imgView.image = [UIImage imageNamed:@"refresh"];*/
-    
-    
-    AsyncImageCallback* callback = [[AsyncImageCallback alloc] initWithImageView:imgView];
+    [cell eventImageOutlet].hidden = YES;
+    AsyncImageCallback* callback = [[AsyncImageCallback alloc] initWithImageView:[cell eventImageOutlet]];
+    [callback setActivityIndicator:[cell activityIndicatorOutlet]];
     [imageCache setImage: e->image: callback];
 
     UITapGestureRecognizer* tapCallback = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(eventClicked:)];
