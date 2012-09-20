@@ -73,7 +73,11 @@
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
-    self.eventCover.text = [event cover];
+    if (0 == [[event cover] length]) {
+        self.eventCover.text = @"Free";
+    } else {
+        self.eventCover.text = [event cover];
+    }
     eventCover.layer.cornerRadius = 5.0;
     eventCover.clipsToBounds = YES;
     

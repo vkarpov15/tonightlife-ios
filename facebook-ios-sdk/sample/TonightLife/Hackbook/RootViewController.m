@@ -281,7 +281,7 @@
     EventTableCell* cell = [tapCallback view]; // FIXME Could be a simple casting error
     Event* e = [cell event];
     [cell setSelected:YES animated:YES];
-    AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
+    //AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
     EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
     [self.navigationController pushViewController:detailsViewController animated:YES];
     [detailsViewController release];

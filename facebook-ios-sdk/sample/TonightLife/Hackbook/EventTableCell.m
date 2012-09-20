@@ -46,7 +46,11 @@
     eventName.text = [event name];
     eventStartTime.text = [[event time] makeYourTime];
     eventVenueName.text = [event venueName];
-    eventCover.text = [event cover];
+    if (0 == [[event cover] length]) {
+        eventCover.text = @"Free";
+    } else {
+        eventCover.text = [event cover];
+    }
     eventCover.layer.cornerRadius = 5.0;
     eventCover.clipsToBounds = YES;
     
