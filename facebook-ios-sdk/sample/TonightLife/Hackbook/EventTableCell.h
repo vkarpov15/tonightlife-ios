@@ -26,4 +26,6 @@
 
 - (void)setEvent:(Event*) inEvent;
 
+- (void) unselect;
+
 @end

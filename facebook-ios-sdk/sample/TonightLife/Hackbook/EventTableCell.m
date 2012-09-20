@@ -56,7 +56,16 @@
 // Configure the view for the selected state
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-    //self.backgroundColor = [UIColor clearColor];
+    if (selected) {
+        self.backgroundColor = [UIColor colorWithRed:60.0/255.0 green:60.0/255.0 blue:60.0/255.0 alpha:1.0];
+        [self performSelector:@selector(unselect) withObject:nil afterDelay:0.3];
+    } else {
+        self.backgroundColor = [UIColor clearColor];
+    }
+}
+
+- (void) unselect {
+    self.backgroundColor = [UIColor clearColor];
 }
 
 
