@@ -15,7 +15,7 @@
 - (AsyncImageCallback*) initWithImageView: (UIImageView*) imgView {
     self = [super init];
     if (self) {
-        imageView = imgView;
+        imageView = [imgView retain];
         activityIndicator = nil;
     }
     return self;
@@ -31,7 +31,7 @@
 }
 
 - (void) setActivityIndicator: (UIActivityIndicatorView*) indicator {
-    activityIndicator = indicator;
+    activityIndicator = [indicator retain];
 }
 
 @end
