@@ -282,9 +282,11 @@
     Event* e = [cell event];
     [cell setSelected:YES animated:YES];
     //AudioServicesPlaySystemSound (kSystemSoundID_Vibrate);
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
-    [self.navigationController pushViewController:detailsViewController animated:YES];
-    [detailsViewController release];
+    //EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
+    NSLog(@"Index is %d", [commonController getEventIndex:e]);
+    EventDetailsPageViewController* pageViewController = [[EventDetailsPageViewController alloc] initEventDetailsPageView: [commonController getEventIndex:e] :imageCache :tonightlifeToken :commonController];
+    [self.navigationController pushViewController:pageViewController animated:YES];
+    [pageViewController release];
     NSLog(@"%@", [e name]);
 }
 

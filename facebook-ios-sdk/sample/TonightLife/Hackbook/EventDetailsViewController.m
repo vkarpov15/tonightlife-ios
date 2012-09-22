@@ -60,15 +60,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	self.navigationItem.title = @"Event Details";
-    
-    self.navigationItem.backBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil] autorelease];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"ios_app_header.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
- 
-    
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+	
 
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];

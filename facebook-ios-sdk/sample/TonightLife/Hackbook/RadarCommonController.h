@@ -36,6 +36,8 @@
 -(BOOL) addToLineup: (Event*) e;
 -(BOOL) removeFromLineup: (Event*) e;
 
+-(NSUInteger) getEventIndex: (Event*) e;
+
 -(void) clearAll;
 
 -(void) setCurrentToFeaturedList;

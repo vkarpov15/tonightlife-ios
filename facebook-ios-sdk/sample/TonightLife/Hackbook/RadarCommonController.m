@@ -67,6 +67,15 @@
     return YES;
 }
 
+-(NSUInteger) getEventIndex: (Event*) e {
+    for (NSUInteger i = 0; i < [eventsList count]; ++i) {
+        if (e == [eventsList objectAtIndex:i]) {
+            return i;
+        }
+    }
+    return 0;
+}
+
 -(void) clearAll {
     [eventIdToEventMap removeAllObjects];
     [eventsList removeAllObjects];

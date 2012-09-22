@@ -14,6 +14,7 @@
 #import "RadarCommonController.h"
 #import "TonightlifeMarker.h"
 #import "EventDetailsViewController.h"
+#import "EventDetailsPageViewController.h"
 #import "ImageCacheController.h"
 
 @interface RadarMapViewController : UIViewController <MKMapViewDelegate> {

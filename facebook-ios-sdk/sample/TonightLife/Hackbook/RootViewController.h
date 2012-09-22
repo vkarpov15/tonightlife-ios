@@ -23,6 +23,7 @@
 #import "EventDetailsViewController.h"
 #import "RadarMapViewController.h"
 #import "PreferencesMenuViewController.h"
+#import "EventDetailsPageViewController.h"
 #import "AsyncImageCallback.h"
 #import "ImageCacheController.h"
 

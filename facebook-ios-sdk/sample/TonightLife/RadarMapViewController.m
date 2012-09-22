@@ -152,9 +152,10 @@
 
 - (void) onAnnotationClicked:(UIButton*) sender {
     Event* e = [[commonController eventsList] objectAtIndex:[sender tag]];
-    EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
-    [self.navigationController pushViewController:detailsViewController animated:YES];
-    [detailsViewController release];
+    //EventDetailsViewController* detailsViewController = [[EventDetailsViewController alloc] initEventDetailsView: e: imageCache: tonightlifeToken: commonController];
+    EventDetailsPageViewController* pageViewController = [[EventDetailsPageViewController alloc] initEventDetailsPageView: [commonController getEventIndex:e] :imageCache :tonightlifeToken :commonController];
+    [self.navigationController pushViewController:pageViewController animated:YES];
+    [pageViewController release];
 }
 
 @end
