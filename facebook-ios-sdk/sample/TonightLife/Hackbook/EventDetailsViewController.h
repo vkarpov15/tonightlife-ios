@@ -9,6 +9,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "MapViewLauncherDelegate.h"
 #import "RadarCommonController.h"
 #import "RadarMapViewController.h"
 #import "ImageCacheController.h"
@@ -21,10 +22,11 @@
     NSString* tonightlifeToken;
     RadarCommonController* commonController;
     ImageCacheController* imageCache;
+    id <MapViewLauncherDelegate> mapViewLauncher;
 }
 
 
--(EventDetailsViewController*) initEventDetailsView:(Event*) e :(ImageCacheController*) imageCache :(NSString*) token :(RadarCommonController*) common;
+-(EventDetailsViewController*) initEventDetailsView:(Event*) e :(ImageCacheController*) imageCache :(NSString*) token :(RadarCommonController*) common: (id <MapViewLauncherDelegate>) delegate;
 
 -(void) onLocateClicked:(id) sender;
 -(void) onRsvpClicked:(id) sender;

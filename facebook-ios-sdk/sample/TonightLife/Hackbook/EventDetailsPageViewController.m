@@ -22,6 +22,7 @@
         }
     }
     [eventDetailsViews release];
+    [super dealloc];
 }
 
 - (EventDetailsPageViewController*) initEventDetailsPageView:(NSUInteger) eventIndex :(ImageCacheController*) cache :(NSString *)token :(RadarCommonController*) common {
@@ -34,7 +35,7 @@
         
         eventDetailsViews = [[NSMutableArray alloc] initWithCapacity:25];
         for (NSUInteger i = 0; i < [[commonController eventsList] count]; ++i) {
-            [eventDetailsViews addObject:[[EventDetailsViewController alloc] initEventDetailsView:[[commonController eventsList] objectAtIndex:i] :imageCache :tonightlifeToken :commonController]];
+            [eventDetailsViews addObject:[[EventDetailsViewController alloc] initEventDetailsView:[[commonController eventsList] objectAtIndex:i] :imageCache :tonightlifeToken :commonController :self]];
         }
     }
     return self;
@@ -121,6 +122,13 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void) launchMapViewWithEvent: (Event*) e {
+    RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
+    [mapViewController setSelectedEvent:e];
+    [self.navigationController pushViewController:mapViewController animated:NO];
+    [mapViewController release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

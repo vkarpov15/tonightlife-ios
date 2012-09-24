@@ -46,13 +46,14 @@
     return self;
 }
 
-- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(ImageCacheController*) cache :(NSString *)token :(RadarCommonController*) common {
+- (EventDetailsViewController*) initEventDetailsView:(Event *)e :(ImageCacheController*) cache :(NSString *)token :(RadarCommonController*) common: (id <MapViewLauncherDelegate>) delegate {
     self = [super initWithNibName:@"EventDetailsView" bundle:[NSBundle mainBundle]];
     if (self) {
         event = e;
         imageCache = cache;
         tonightlifeToken = token;
         commonController = common;
+        mapViewLauncher = delegate;
     }
     return self;
 }
@@ -160,10 +161,7 @@
 }
 
 -(void) onLocateClicked:(id) sender {
-    RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
-    [mapViewController setSelectedEvent:event];
-    [self.navigationController pushViewController:mapViewController animated:NO];
-    [mapViewController release];
+    [mapViewLauncher launchMapViewWithEvent:event];
 }
 
 -(void) onRsvpClicked:(id) sender {

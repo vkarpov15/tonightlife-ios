@@ -11,8 +11,9 @@
 #import "RadarMapViewController.h"
 #import "ImageCacheController.h"
 #import "Event.h"
+#import "MapViewLauncherDelegate.h"
 
-@interface EventDetailsPageViewController : UIViewController <UIScrollViewDelegate> {
+@interface EventDetailsPageViewController : UIViewController <UIScrollViewDelegate, MapViewLauncherDelegate> {
     ImageCacheController* imageCache;
     RadarCommonController* commonController;
     NSString* tonightlifeToken;
@@ -25,6 +26,8 @@
 - (void) dealloc;
 
 - (EventDetailsPageViewController*) initEventDetailsPageView:(NSUInteger) eventIndex :(ImageCacheController*) cache :(NSString*)token :(RadarCommonController*) common;
+
+- (void) launchMapViewWithEvent: (Event*) e;
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) IBOutlet UIPageControl* pageControl;
