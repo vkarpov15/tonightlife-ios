@@ -77,7 +77,7 @@
 		95273AB315F6DFAF0066CFF2 /* ImageCacheController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB215F6DFAF0066CFF2 /* ImageCacheController.m */; };
 		95273ABA15F6E0C80066CFF2 /* AsyncImageCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */; };
 		9543A320160D511300D6EF45 /* EventDetailsPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9543A31E160D511200D6EF45 /* EventDetailsPageViewController.m */; };
-		9543A321160D511300D6EF45 /* EventDetailsPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9543A31F160D511200D6EF45 /* EventDetailsPageViewController.xib */; };
+		9543A321160D511300D6EF45 /* EventDetailsPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9543A31F160D511200D6EF45 /* EventDetailsPageView.xib */; };
 		9552183A15EC89AE00A3E4AC /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */; };
 		9552183F15ED9ABC00A3E4AC /* EventDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9584FF4515EC51AA0082B08E /* EventDetailsView.xib */; };
 		9552184215EDDA4A00A3E4AC /* RadarMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9552184115EDDA4A00A3E4AC /* RadarMapView.xib */; };
@@ -194,7 +194,7 @@
 		95273AB915F6E0C80066CFF2 /* AsyncImageCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageCallback.m; sourceTree = "<group>"; };
 		9543A31D160D511200D6EF45 /* EventDetailsPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsPageViewController.h; sourceTree = "<group>"; };
 		9543A31E160D511200D6EF45 /* EventDetailsPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsPageViewController.m; sourceTree = "<group>"; };
-		9543A31F160D511200D6EF45 /* EventDetailsPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsPageViewController.xib; sourceTree = "<group>"; };
+		9543A31F160D511200D6EF45 /* EventDetailsPageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailsPageView.xib; sourceTree = "<group>"; };
 		9552184115EDDA4A00A3E4AC /* RadarMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RadarMapView.xib; path = ../RadarMapView.xib; sourceTree = "<group>"; };
 		9552184315EDDAB100A3E4AC /* RadarMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadarMapViewController.h; path = ../RadarMapViewController.h; sourceTree = "<group>"; };
 		9552184415EDDAB100A3E4AC /* RadarMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadarMapViewController.m; path = ../RadarMapViewController.m; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 				9584FF4715EC51AA0082B08E /* EventDetailsViewController.m */,
 				9543A31D160D511200D6EF45 /* EventDetailsPageViewController.h */,
 				9543A31E160D511200D6EF45 /* EventDetailsPageViewController.m */,
-				9543A31F160D511200D6EF45 /* EventDetailsPageViewController.xib */,
+				9543A31F160D511200D6EF45 /* EventDetailsPageView.xib */,
 				9584FF3715EB1CDF0082B08E /* BottomTabs.xib */,
 				958859A215E8797600C307C0 /* EventListHeader.xib */,
 				958859A415E87A2800C307C0 /* EventListHeader.h */,
@@ -543,7 +543,7 @@
 				95D946BE16082DDF00729391 /* lineup_button_w.png in Resources */,
 				95D946C016082DEF00729391 /* lineup_button@2x.png in Resources */,
 				95D946C216082DF600729391 /* lineup_button_w@2x.png in Resources */,
-				9543A321160D511300D6EF45 /* EventDetailsPageViewController.xib in Resources */,
+				9543A321160D511300D6EF45 /* EventDetailsPageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
