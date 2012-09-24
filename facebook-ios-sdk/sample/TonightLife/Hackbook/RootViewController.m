@@ -175,10 +175,11 @@
     
     emptyTableView = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
     emptyTableView.hidden = YES;
-    [emptyTableView setBackgroundColor:[UIColor colorWithRed:0/255 green: 0/255 blue: 0/255 alpha: 1.0]];
+    [emptyTableView setBackgroundColor:[UIColor colorWithRed:255/255 green: 255/255 blue: 255/255 alpha: 1.0]];
     [emptyTableView setTextColor:[UIColor whiteColor]];
     [emptyTableView setTextAlignment:UITextAlignmentCenter];
-    emptyTableView.text = @"No Events To Show";
+    emptyTableView.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"noEvents.png"]];
+    
     
     
     // Table header
