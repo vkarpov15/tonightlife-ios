@@ -24,7 +24,7 @@
         [self setEvent:e];
         self.index = ind;
         self->title = [e name];
-        self->subtitle = [[[e time] makeYourTime] copy];
+        self->subtitle = [e address]; //[[[e time] makeYourTime] copy];
         self->coordinate = CLLocationCoordinate2DMake(e->lat, e->lon);
     }
     return self;

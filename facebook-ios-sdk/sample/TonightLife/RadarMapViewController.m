@@ -76,7 +76,7 @@
         [mapViewOutlet addAnnotation:marker];
         if (nil != selectedEvent && e == selectedEvent) {
             NSLog(@"Opening annotation for %@!", [e name]);
-            [mapViewOutlet selectAnnotation:marker animated:YES];
+            [mapViewOutlet selectAnnotation:marker animated:NO];
         }
     }
 }
@@ -136,7 +136,8 @@
         annotationView.enabled = YES;
         annotationView.canShowCallout = YES;
         annotationView.image = [UIImage imageNamed:@"marker.png"];
-        annotationView.centerOffset = CGPointMake(0, -5);
+        annotationView.centerOffset = CGPointMake(0, 0);
+        annotationView.calloutOffset = CGPointMake(0, 0);
         
         UIButton* rightButton = [UIButton buttonWithType:
                                  UIButtonTypeDetailDisclosure];
