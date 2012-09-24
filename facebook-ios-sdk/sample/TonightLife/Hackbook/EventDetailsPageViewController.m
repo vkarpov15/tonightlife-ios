@@ -63,7 +63,15 @@
     scrollView.delegate = self;
     pageControlUsed = NO;
     
-    [self changePage:self];
+    if (initPage > 0) {
+        [self loadScrollViewWithPage:initPage - 1];
+    }
+    [self loadScrollViewWithPage:initPage];
+    [self loadScrollViewWithPage:initPage + 1];
+    CGRect frame = scrollView.frame;
+    frame.origin.x = frame.size.width * initPage;
+    frame.origin.y = 0;
+    [scrollView scrollRectToVisible:frame animated:NO];
 }
 
 - (void)loadScrollViewWithPage:(NSUInteger)page {
