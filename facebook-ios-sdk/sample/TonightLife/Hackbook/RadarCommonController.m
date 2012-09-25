@@ -98,7 +98,7 @@
 
 -(void) order {
     [featuredList sortUsingSelector:@selector(compareRadarCounts:)];
-    [eventsList sortUsingSelector:@selector(compareTimes:)];
+    [eventsList sortUsingSelector:@selector(compareRadarCounts:)];
     [radarList sortUsingSelector:@selector(compareTimes:)];
 }
 

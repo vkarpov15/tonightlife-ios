@@ -32,7 +32,16 @@
             [delegate loadEventsFromServer];
             break;
         case 1: {
-                NSURL* toOpen = [NSURL URLWithString:[[NSString alloc] initWithFormat:@"mailto:founders@tonight-life.com?subject=TonightLife%20iPhone%20Feedback"]];
+                /* create mail subject */
+                NSString *subject = [NSString stringWithFormat:@"TonightLife for iPhone Feedback"];
+            
+                /* define email address */
+                NSString *mail = [NSString stringWithFormat:@"founders@tonight-life.com"];
+            
+                /* create the URL */
+                NSURL *toOpen = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto:?to=%@&subject=%@", 
+                                                        [mail stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding], 
+                                                        [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
                 if ([[UIApplication sharedApplication] canOpenURL:toOpen]) {
                     [[UIApplication sharedApplication] openURL:toOpen];
                 } else {
@@ -44,7 +53,7 @@
                     [alert show];
                     [alert release];
                 }
-            
+                [toOpen release];
             }
             break;
         case 2:
