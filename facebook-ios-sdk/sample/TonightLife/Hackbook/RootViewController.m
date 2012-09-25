@@ -180,7 +180,12 @@
     [emptyTableView setTextAlignment:UITextAlignmentCenter];
     emptyTableView.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"noEvents.png"]];
     
-    
+    noEventsOnLineupView = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)];
+    noEventsOnLineupView.hidden = YES;
+    [noEventsOnLineupView setBackgroundColor:[UIColor colorWithRed:0/255 green: 0/255 blue: 0/255 alpha: 1.0]];
+    [noEventsOnLineupView setTextColor:[UIColor whiteColor]];
+    [noEventsOnLineupView setTextAlignment:UITextAlignmentCenter];
+    noEventsOnLineupView.text = @"No Events To Show";
     
     // Table header
     NSArray* nib = [[NSBundle mainBundle] loadNibNamed:@"EventListHeader" owner:self options:nil];
@@ -205,6 +210,7 @@
     [self.view addSubview:headerView];
     [self.view addSubview:menuTableView];
     [self.view addSubview:emptyTableView];
+    [self.view addSubview:noEventsOnLineupView];
     [self.view addSubview:tabBar];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -551,11 +557,17 @@
 -(void) reloadMainTableView {
     [menuTableView reloadData];
     [mapViewController loadAnnotations];
-    if ([[commonController current] count] == 0) {
+    if ([commonController current] == [commonController radarList] && [[commonController radarList] count] == 0) {
+        noEventsOnLineupView.hidden = NO;
+        emptyTableView.hidden = YES;
+        menuTableView.hidden = YES;
+    } else if ([[commonController current] count] == 0) {
         emptyTableView.hidden = NO;
+        noEventsOnLineupView.hidden = YES;
         menuTableView.hidden = YES;
     } else {
         emptyTableView.hidden = YES;
+        noEventsOnLineupView.hidden = YES;
         menuTableView.hidden = NO;
     }
     

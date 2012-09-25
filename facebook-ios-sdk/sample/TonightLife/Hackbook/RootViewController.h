@@ -42,6 +42,7 @@ UITabBarDelegate> {
     UIActivityIndicatorView* loadingSpinner;
     UITableView* menuTableView;
     UILabel* emptyTableView;
+    UILabel* noEventsOnLineupView;
 
     UITabBar* tabBar;
     
