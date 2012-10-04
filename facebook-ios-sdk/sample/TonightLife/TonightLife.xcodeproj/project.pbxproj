@@ -91,6 +91,7 @@
 		958859A315E8797600C307C0 /* EventListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 958859A215E8797600C307C0 /* EventListHeader.xib */; };
 		958859A615E87A2900C307C0 /* EventListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859A515E87A2900C307C0 /* EventListHeader.m */; };
 		958859B815E9961000C307C0 /* RadarCommonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 958859B715E9961000C307C0 /* RadarCommonController.m */; };
+		958DC768161E460100DB39D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958DC767161E460100DB39D9 /* AVFoundation.framework */; };
 		95A8B9A615EDE0C4000E02DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A8B9A515EDE0C4000E02DF /* MapKit.framework */; };
 		95A8B9BE15F18D40000E02DF /* TonightlifeMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */; };
 		95A8B9C215F33DA7000E02DF /* TonightLifeTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A8B9C115F33DA6000E02DF /* TonightLifeTime.m */; };
@@ -216,6 +217,7 @@
 		958859A515E87A2900C307C0 /* EventListHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListHeader.m; sourceTree = "<group>"; };
 		958859B615E9961000C307C0 /* RadarCommonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarCommonController.h; sourceTree = "<group>"; };
 		958859B715E9961000C307C0 /* RadarCommonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarCommonController.m; sourceTree = "<group>"; };
+		958DC767161E460100DB39D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		95A8B9A515EDE0C4000E02DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		95A8B9BC15F18D3F000E02DF /* TonightlifeMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TonightlifeMarker.h; sourceTree = "<group>"; };
 		95A8B9BD15F18D3F000E02DF /* TonightlifeMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TonightlifeMarker.m; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958DC768161E460100DB39D9 /* AVFoundation.framework in Frameworks */,
 				95D946C41608327100729391 /* AudioToolbox.framework in Frameworks */,
 				95A8B9A615EDE0C4000E02DF /* MapKit.framework in Frameworks */,
 				30EA73FC13F5D590003DC0D2 /* CoreLocation.framework in Frameworks */,
@@ -250,6 +253,7 @@
 		30EA734E13F5D21B003DC0D2 = {
 			isa = PBXGroup;
 			children = (
+				958DC767161E460100DB39D9 /* AVFoundation.framework */,
 				95D946C31608327100729391 /* AudioToolbox.framework */,
 				1F8C047615F03C8000769B46 /* Default@2x.png */,
 				1F8C047415F03C7900769B46 /* Default.png */,

@@ -9,6 +9,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "MapViewLauncherDelegate.h"
 #import "RadarCommonController.h"
 #import "RadarMapViewController.h"

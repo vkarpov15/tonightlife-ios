@@ -12,7 +12,7 @@
 
 @implementation Event
 
-@synthesize eventId, name, description, venueName, address, image, time, rsvp, cover;
+@synthesize eventId, name, description, venueName, address, image, time, rsvp, cover, audio;
 
 - (void) dealloc {
     [eventId release];
@@ -24,6 +24,7 @@
     [time release];
     [rsvp release];
     [cover release];
+    [audio release];
     [super dealloc];
 }
 
@@ -40,7 +41,8 @@
                     :(NSString*) inTime
                     :(bool) inOnRadar
                     :(NSMutableDictionary*) inRsvp
-                    :(NSString*) inCover {
+                    :(NSString*) inCover
+                    :(NSMutableDictionary*) inAudio {
     self = [super init];
     if (self) {
         eventId = [inEventId retain];
@@ -57,6 +59,7 @@
         onRadar = inOnRadar;
         rsvp = [inRsvp retain];
         cover = [inCover retain];
+        audio = [inAudio retain];
     }
     return self;
 }

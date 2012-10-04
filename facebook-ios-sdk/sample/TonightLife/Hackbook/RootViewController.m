@@ -494,7 +494,8 @@
                                             :[event objectForKey:@"start_time"]
                                             :[radarEvents containsObject:[event objectForKey:@"id"]]
                                             :[event objectForKey:@"rsvp"]
-                                            :[event objectForKey:@"cover"]];
+                                            :[event objectForKey:@"cover"]
+                                            :[event objectForKey:@"audio"]];
         [commonController addEvent:e];
     }
     [commonController order];

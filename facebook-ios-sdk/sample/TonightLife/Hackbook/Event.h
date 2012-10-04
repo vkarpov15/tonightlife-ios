@@ -27,6 +27,7 @@
     bool onRadar;
     NSMutableDictionary* rsvp;
     NSString* cover;
+    NSMutableDictionary* audio;
 }
 
 -(Event*) initEvent :(NSString*) eventId
@@ -42,7 +43,8 @@
                     :(NSString*) time
                     :(bool) onRadar
                     :(NSMutableDictionary*) rsvp
-                    :(NSString*) cover;
+                    :(NSString*) cover
+                    :(NSMutableDictionary*) audio;
 
 -(void) formatTime: (NSString*) time;
 
@@ -58,5 +60,6 @@
 @property (nonatomic,retain,readonly) TonightLifeTime* time;
 @property (nonatomic,retain,readonly) NSMutableDictionary* rsvp;
 @property (nonatomic,retain,readonly) NSString* cover;
+@property (nonatomic,retain,readonly) NSMutableDictionary* audio;
 
 @end
