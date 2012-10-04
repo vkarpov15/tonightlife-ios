@@ -24,6 +24,10 @@
     RadarCommonController* commonController;
     ImageCacheController* imageCache;
     id <MapViewLauncherDelegate> mapViewLauncher;
+    
+    AVAudioPlayer* audioPlayer;
+    bool playing;
+    bool readyToPlay;
 }
 
 
@@ -42,7 +46,11 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* rsvpButtonOutlet;
 @property (nonatomic, retain) IBOutlet UIView* friendsList;
 @property (nonatomic, retain) IBOutlet UILabel* eventCover;
+@property (nonatomic, retain) IBOutlet UIButton* playButtonOutlet;
 
 
 -(IBAction) displayFriendsListView:(id)sender;
+
+-(IBAction) playPauseBtnClicked:(id) sender;
+
 @end

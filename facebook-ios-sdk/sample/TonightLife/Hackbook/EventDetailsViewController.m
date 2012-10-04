@@ -54,6 +54,27 @@
         tonightlifeToken = token;
         commonController = common;
         mapViewLauncher = delegate;
+        playing = NO;
+        readyToPlay = NO;
+        
+        if ([[event audio] count] > 0) {
+            NSLog(@"SHOWING!");
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSURL* crockett = [[NSURL alloc] initWithString:@"http://api.soundcloud.com/tracks/18951694/stream?client_id=33cc81d646623d460ba86b112badf67b"];
+                NSData* data = [NSData dataWithContentsOfURL:crockett];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    NSError* err = nil;
+                    audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&err];
+                    [audioPlayer prepareToPlay];
+                    if (playing) {
+                        [audioPlayer play];
+                    }
+                    readyToPlay = YES;
+                });
+                
+            });
+        }
     }
     return self;
 }
@@ -61,8 +82,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-	
-
+    if ([[event audio] count] == 0) {
+        self.playButtonOutlet.hidden = YES;
+    }
+    
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
     self.eventDescriptionOutlet.text = [event description];
@@ -188,6 +211,22 @@
         [mailto release];
     } else {
         return;
+    }
+}
+
+-(IBAction) playPauseBtnClicked:(id) sender {
+    if (playing) {
+        [[self playButtonOutlet] setTitle:@"Play" forState:UIControlStateNormal];
+        playing = NO;
+        if (readyToPlay) {
+            [audioPlayer pause];
+        }
+    } else {
+        [[self playButtonOutlet] setTitle:@"Pause" forState:UIControlStateNormal];
+        playing = YES;
+        if (readyToPlay) {
+            [audioPlayer play];
+        }
     }
 }
 
