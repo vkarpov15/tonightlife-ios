@@ -115,6 +115,7 @@
 - (void)login {
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (![[delegate facebook] isSessionValid]) {
+        NSLog(@"Requesting permissions %@", permissions);
         [[delegate facebook] authorize:permissions];
     } else {
         [self apiFQLIMe];
@@ -146,7 +147,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     // Initialize permissions
-    permissions = [[NSArray alloc] initWithObjects:@"offline_access", nil];
+    permissions = [[NSArray alloc] initWithObjects:@"email", nil];
     
     // Background Image
     backgroundImageView = [[UIImageView alloc]
@@ -346,11 +347,12 @@
     [self apiFQLIMe];
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"EXPIRATION DATE IS %@", [[delegate facebook] expirationDate]);
     [self storeAuthData:[[delegate facebook] accessToken] expiresAt:[[delegate facebook] expirationDate]];
 }
 
 -(void)fbDidExtendToken:(NSString *)accessToken expiresAt:(NSDate *)expiresAt {
-    NSLog(@"token extended");
+    NSLog(@"token extended to %@", expiresAt);
     [self storeAuthData:accessToken expiresAt:expiresAt];
 }
 
@@ -440,6 +442,11 @@
             NSDictionary* ret = [NSJSONSerialization JSONObjectWithData:data
                                                      options:kNilOptions
                                                        error:&error];
+            
+            NSString* str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"Data is %@", str);
+            NSLog(@"Ret size is %d", [ret count]);
+            
             
             tonightlifeToken = [ret objectForKey:@"token"];
             NSLog(@"Tonightlife Token=%@", tonightlifeToken);
