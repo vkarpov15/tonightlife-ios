@@ -58,18 +58,22 @@
 /**
  * Make a Graph API Call to get information about the current logged in user.
  */
-- (void)apiFQLIMe {
-    // Using the "pic" picture since this currently has a maximum width of 100 pixels
-    // and since the minimum profile picture size is 180 pixels wide we should be able
-    // to get a 100 pixel wide version of the profile picture
+- (BOOL)apiFQLIMe {
+    TonightLifeTime* now = [[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]];
+    if ([lastFbUserLoad secondsUntil:now] >= 72 * 60 * 60) {
+        return NO;
+    }
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    @"SELECT uid, name, first_name, last_name FROM user WHERE uid=me()", @"query",
                                    nil];
+    [loadingText setText:@"Loading Facebook user info..."];
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     [[delegate facebook] requestWithMethodName:@"fql.query"
                                      andParams:params
                                  andHttpMethod:@"POST"
                                    andDelegate:self];
+    return YES;
 }
 
 - (void)apiGraphUserPermissions {
@@ -87,6 +91,8 @@
 - (void)showLoggedIn {
     
     self.backgroundImageView.hidden = YES;
+    loadingSpinner.hidden = YES;
+    loadingText.hidden = YES;
     self.menuTableView.hidden = NO;
     self.headerView.hidden = NO;
     tabBar.hidden = NO;
@@ -115,10 +121,13 @@
 - (void)login {
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     if (![[delegate facebook] isSessionValid]) {
+        [loadingText setText:@"Logging in with Facebook..."];
         NSLog(@"Requesting permissions %@", permissions);
         [[delegate facebook] authorize:permissions];
     } else {
-        [self apiFQLIMe];
+        if (![self apiFQLIMe]) {
+            [self forceReload];
+        }
     }
 }
 
@@ -134,6 +143,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
     lastUpdate = nil;
+    lastFbUserLoad = nil;
     loggedIn = NO;
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen
                                                   mainScreen].applicationFrame];
@@ -159,9 +169,15 @@
     
     // Activity spinner
     loadingSpinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [loadingSpinner setFrame:CGRectMake((self.view.bounds.size.width - 40) / 2, self.view.bounds.size.height - 40 - 10, 40, 40)];
+    [loadingSpinner setFrame:CGRectMake((self.view.bounds.size.width - 40) / 2, self.view.bounds.size.height - 40 - 15, 40, 40)];
     [self.view addSubview:loadingSpinner];
     [loadingSpinner startAnimating];
+    
+    loadingText = [[UILabel alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 240) / 2, self.view.bounds.size.height - 14, 240, 12)];
+    [loadingText setBackgroundColor:[UIColor clearColor]];
+    [loadingText setTextColor:[UIColor whiteColor]];
+    [loadingText setText:@"Loading..."];
+    [self.view addSubview:loadingText];
     
     // Main Menu Table
     menuTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - 100)
@@ -221,7 +237,9 @@
     if (![[delegate facebook] isSessionValid]) {
         [self login];
     } else {
-        [self apiFQLIMe];
+        if (![self apiFQLIMe]) {
+            [self forceReload];
+        }
     }
     
 }
@@ -232,7 +250,7 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+-(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -249,16 +267,28 @@
     
 }
 
-- (void) forceReload {
-    if (nil != lastUpdate && [lastUpdate secondsUntil:[[[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]] autorelease]] >= 2 * 60 * 60) {
-        NSLog(@"Updating! %f", [lastUpdate secondsUntil:[[[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]] autorelease]]);
+-(void) forceReload {
+    TonightLifeTime* now = [[TonightLifeTime alloc] initWithNsDate:[[NSDate alloc] init]];
+    if (nil != lastUpdate && [lastUpdate secondsUntil:now] >= 2 * 60 * 60) {
+        NSLog(@"Updating! %f", [lastUpdate secondsUntil:now]);
         self.menuTableView.hidden = YES;
         self.headerView.hidden = YES;
         tabBar.hidden = YES;
         backgroundImageView.hidden = NO;
         loadingSpinner.hidden = NO;
+        loadingText.hidden = NO;
         [self loadEventsFromServer];
+    } else if (nil != lastUpdate && [lastUpdate beforeNoon]) {
+        // Re-login at start of day
+        self.menuTableView.hidden = YES;
+        self.headerView.hidden = YES;
+        tabBar.hidden = YES;
+        backgroundImageView.hidden = NO;
+        loadingSpinner.hidden = NO;
+        loadingText.hidden = NO;
+        [self login];
     }
+    [now release];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -344,7 +374,9 @@
  * Called when the user has logged in successfully.
  */
 - (void)fbDidLogin {
-    [self apiFQLIMe];
+    if (![self apiFQLIMe]) {
+        [self forceReload];
+    }
     
     HackbookAppDelegate *delegate = (HackbookAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSLog(@"EXPIRATION DATE IS %@", [[delegate facebook] expirationDate]);
@@ -463,6 +495,7 @@
 }
 
 - (void) loadEventsFromServer {
+    [loadingText setText:@"Beaming events from mothership..."];
     NSString* eventUrl = [NSString stringWithFormat:@"http://tonight-life.com/mobile/all.json?auth_token=%@", tonightlifeToken];
     NSError* error;
     NSData* eventData = [NSData dataWithContentsOfURL:

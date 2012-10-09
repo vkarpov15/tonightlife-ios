@@ -23,6 +23,7 @@
 - (NSComparisonResult) compare: (TonightLifeTime*) other;
 
 - (NSTimeInterval) secondsUntil: (TonightLifeTime*) other;
+- (BOOL) beforeNoon;
 
 @property (nonatomic,retain) NSDate* date;
 
