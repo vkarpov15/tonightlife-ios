@@ -248,6 +248,7 @@
             timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
             //maximum value of slider to duration
             aSlider.maximumValue= audioPlayer.duration;
+            [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
             //set valueChanged target
             
             [aSlider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
