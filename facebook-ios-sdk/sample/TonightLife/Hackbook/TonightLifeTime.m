@@ -16,6 +16,7 @@
 
 - (void) dealloc {
     [date release];
+    [super dealloc];
 }
 
 - (TonightLifeTime*) initWithNsDate: (NSDate*) d {
@@ -40,6 +41,21 @@
 
 - (NSTimeInterval) secondsUntil: (TonightLifeTime*) other {
     return [[other date] timeIntervalSinceDate:[self date]];
+}
+
+- (BOOL) beforeNoon {
+    NSDate* now = [[NSDate alloc] init];
+    
+    NSCalendar* cal = [NSCalendar currentCalendar];
+    [cal setTimeZone:[NSTimeZone localTimeZone]];
+    [cal setLocale:[NSLocale currentLocale]];
+    NSDateComponents* timeComponents = [cal components:( NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit) fromDate:now];
+    
+    if (timeComponents.hour < 12) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end
