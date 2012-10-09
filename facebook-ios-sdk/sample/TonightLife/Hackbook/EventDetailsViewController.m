@@ -22,6 +22,8 @@
 @synthesize rsvpButtonOutlet;
 @synthesize eventStartTimeOutlet;
 @synthesize eventCover;
+@synthesize aSlider;
+@synthesize timer;
 
 
 
@@ -35,6 +37,7 @@
     [rsvpButtonOutlet release];
     [eventStartTimeOutlet release];
     [eventCover release];
+    [aSlider release];
     
     [super dealloc];
 }
@@ -68,6 +71,7 @@
                     audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&err];
                     [audioPlayer prepareToPlay];
                     if (playing) {
+
                         [audioPlayer play];
                     }
                     readyToPlay = YES;
@@ -85,6 +89,8 @@
     if ([[event audio] count] == 0) {
         self.playButtonOutlet.hidden = YES;
     }
+    
+    aSlider.value=(0);
     
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
@@ -214,19 +220,40 @@
     }
 }
 
+- (IBAction)slide {
+    audioPlayer.currentTime = aSlider.value;
+}
+
+
+-(void)updateSlider {
+    aSlider.value=audioPlayer.currentTime;
+}
+
+
+
+
 -(IBAction) playPauseBtnClicked:(id) sender {
     if (playing) {
         [[self playButtonOutlet] setTitle:@"Play" forState:UIControlStateNormal];
         playing = NO;
         if (readyToPlay) {
             [audioPlayer pause];
+       
         }
     } else {
         [[self playButtonOutlet] setTitle:@"Pause" forState:UIControlStateNormal];
         playing = YES;
         if (readyToPlay) {
+            //set timer which gets current music time every second
+            timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+            //maximum value of slider to duration
+            aSlider.maximumValue= audioPlayer.duration;
+            //set valueChanged target
+            
+            [aSlider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
             [audioPlayer play];
-        }
+            
+                    }
     }
 }
 

@@ -47,10 +47,16 @@
 @property (nonatomic, retain) IBOutlet UIView* friendsList;
 @property (nonatomic, retain) IBOutlet UILabel* eventCover;
 @property (nonatomic, retain) IBOutlet UIButton* playButtonOutlet;
+@property (nonatomic, retain) IBOutlet UISlider* aSlider;
+@property (nonatomic, retain) NSTimer* timer;
+
+//@property (nonatomic, retain) IBOutlet UILabel* sliderTimer;
 
 
 -(IBAction) displayFriendsListView:(id)sender;
 
 -(IBAction) playPauseBtnClicked:(id) sender;
+
+-(IBAction)slide:(id)sender;
 
 @end
