@@ -82,9 +82,9 @@
 
 -(NSComparisonResult) compareRadarCounts:(Event*) other {
     if (radarCount > other->radarCount) {
-        return NSOrderedDescending;
-    } else if (radarCount < other->radarCount) {
         return NSOrderedAscending;
+    } else if (radarCount < other->radarCount) {
+        return NSOrderedDescending;
     }
     return NSOrderedSame;
 }

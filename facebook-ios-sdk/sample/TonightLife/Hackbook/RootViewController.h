@@ -40,6 +40,7 @@ UITabBarDelegate> {
 
     UIImageView* backgroundImageView;
     UIActivityIndicatorView* loadingSpinner;
+    UILabel* loadingText;
     UITableView* menuTableView;
     UILabel* emptyTableView;
     UILabel* noEventsOnLineupView;
@@ -61,6 +62,7 @@ UITabBarDelegate> {
     bool loggedIn;
     
     TonightLifeTime* lastUpdate;
+    TonightLifeTime* lastFbUserLoad;
 }
 
 
