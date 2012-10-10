@@ -24,6 +24,7 @@
 @synthesize eventCover;
 @synthesize aSlider;
 @synthesize timer;
+@synthesize songTime;
 
 
 
@@ -235,10 +236,12 @@
     //maximum value of slider to duration
     aSlider.maximumValue= audioPlayer.duration;
     //set valueChanged target
-    
     [aSlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
     [audioPlayer prepareToPlay];
     [audioPlayer play];
+    
+   
+
 }
 
 - (IBAction)slide {
@@ -248,6 +251,8 @@
 
 -(void)updateSlider {
     aSlider.value=audioPlayer.currentTime;
+    int progress= (int)roundf(audioPlayer.currentTime);
+    songTime.text=[NSString stringWithFormat:@"%d", progress];
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
