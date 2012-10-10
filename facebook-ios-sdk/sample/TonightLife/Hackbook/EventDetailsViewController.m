@@ -91,6 +91,8 @@
     }
     
     aSlider.value=(0);
+    [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
+
     
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
@@ -229,7 +231,13 @@
     aSlider.value=audioPlayer.currentTime;
 }
 
-
+- (IBAction)sliderChanged:(UISlider *)sender {
+    // Fast skip the music when user scroll the UISlide
+    [audioPlayer stop];
+    [audioPlayer setCurrentTime:aSlider.value];
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+}
 
 
 -(IBAction) playPauseBtnClicked:(id) sender {
@@ -248,7 +256,6 @@
             timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
             //maximum value of slider to duration
             aSlider.maximumValue= audioPlayer.duration;
-            [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
             //set valueChanged target
             
             [aSlider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];

@@ -124,6 +124,10 @@
     // e.g. self.myOutlet = nil;
 }
 
+
+
+
+
 - (void) launchMapViewWithEvent: (Event*) e {
     RadarMapViewController* mapViewController = [[RadarMapViewController alloc] initWithCommonController:commonController: tonightlifeToken: imageCache];
     [mapViewController setSelectedEvent:e];

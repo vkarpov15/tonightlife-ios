@@ -50,6 +50,7 @@
 @property (nonatomic, retain) IBOutlet UISlider* aSlider;
 @property (nonatomic, retain) NSTimer* timer;
 
+
 //@property (nonatomic, retain) IBOutlet UILabel* sliderTimer;
 
 
