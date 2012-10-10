@@ -201,8 +201,16 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     } else if (nil != [[event rsvp] objectForKey:@"email"]) {
         NSString* email = [[event rsvp] objectForKey:@"email"];
-        NSString* mailto = [[NSString alloc] initWithFormat:@"mailto:%@", email];
-        NSURL* url = [NSURL URLWithString:mailto];
+        /* create mail subject */
+        NSString* subject = [NSString stringWithFormat:@"TonightLife RSVP Request for %@", [event name]];
+        
+        /* define email address */
+        NSString* mail = [[event rsvp] objectForKey:@"email"];
+        
+        /* create the URL */
+        NSURL* url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"mailto:?to=%@&subject=%@",
+                                                       [mail stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding],
+                                                       [subject stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]]];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             [[UIApplication sharedApplication] openURL:url];
         } else {
