@@ -224,7 +224,7 @@
             [alert release];
             [msg release];
         }
-        [mailto release];
+        [url release];
     } else {
         return;
     }
