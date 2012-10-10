@@ -69,10 +69,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSError* err = nil;
                     audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&err];
-                    [audioPlayer prepareToPlay];
                     if (playing) {
-
-                        [audioPlayer play];
+                        [self startPlaying];
                     }
                     readyToPlay = YES;
                 });
@@ -92,6 +90,7 @@
     
     aSlider.value=(0);
     [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
+    [aSlider setContinuous:YES];
 
     
     self.eventTitleOutlet.text = [event name];
@@ -230,6 +229,18 @@
     }
 }
 
+-(void) startPlaying {
+    //set timer which gets current music time every second
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
+    //maximum value of slider to duration
+    aSlider.maximumValue= audioPlayer.duration;
+    //set valueChanged target
+    
+    [aSlider addTarget:self action:@selector(sliderChanged:) forControlEvents:UIControlEventValueChanged];
+    [audioPlayer prepareToPlay];
+    [audioPlayer play];
+}
+
 - (IBAction)slide {
     audioPlayer.currentTime = aSlider.value;
 }
@@ -260,16 +271,8 @@
         [[self playButtonOutlet] setTitle:@"Pause" forState:UIControlStateNormal];
         playing = YES;
         if (readyToPlay) {
-            //set timer which gets current music time every second
-            timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateSlider) userInfo:nil repeats:YES];
-            //maximum value of slider to duration
-            aSlider.maximumValue= audioPlayer.duration;
-            //set valueChanged target
-            
-            [aSlider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventValueChanged];
-            [audioPlayer play];
-            
-                    }
+            [self startPlaying];
+        }
     }
 }
 

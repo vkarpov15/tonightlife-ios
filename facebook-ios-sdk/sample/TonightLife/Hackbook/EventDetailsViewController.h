@@ -35,6 +35,7 @@
 
 -(void) onLocateClicked:(id) sender;
 -(void) onRsvpClicked:(id) sender;
+-(void) startPlaying;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventStartTimeOutlet;
@@ -59,5 +60,7 @@
 -(IBAction) playPauseBtnClicked:(id) sender;
 
 -(IBAction)slide:(id)sender;
+
+- (IBAction)sliderChanged:(UISlider *)sender;
 
 @end
