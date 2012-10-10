@@ -92,7 +92,8 @@
     aSlider.value=(0);
     [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
     [aSlider setContinuous:YES];
-
+    
+    songTime.text=@"00:00:00";
     
     self.eventTitleOutlet.text = [event name];
     self.eventStartTimeOutlet.text=[[event time] makeYourTime];
@@ -252,7 +253,11 @@
 -(void)updateSlider {
     aSlider.value=audioPlayer.currentTime;
     int progress= (int)roundf(audioPlayer.currentTime);
-    songTime.text=[NSString stringWithFormat:@"%d", progress];
+    int hours =  progress / 3600;
+    int minutes= (progress % 3600)/60;
+    int seconds= progress % 60;
+    
+    songTime.text=[NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
 
 - (IBAction)sliderChanged:(UISlider *)sender {
