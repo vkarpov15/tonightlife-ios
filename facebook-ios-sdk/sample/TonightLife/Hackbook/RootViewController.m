@@ -130,8 +130,6 @@
 #pragma mark - View lifecycle
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-  lastUpdate = nil;
-  lastFbUserLoad = nil;
   loggedIn = NO;
   UIView *view = [[UIView alloc] initWithFrame:[UIScreen
                                                 mainScreen].applicationFrame];
