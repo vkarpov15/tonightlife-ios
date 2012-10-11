@@ -74,7 +74,17 @@
     audioPlayer = nil;
     
     if ([[event audio] count] > 0) {
-      NSLog(@"SHOWING!");
+      NSMutableDictionary* audioDict;
+      NSString* audioName;
+      for (NSMutableDictionary* el in [event audio]) {
+        // For now only care about the first
+        audioDict = el;
+        for (NSString* key in [el allKeys]) {
+          audioName = key;
+        }
+        break;
+      }
+      NSLog(@"SHOWING! %@", audioName);
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL* crockett = [[NSURL alloc] initWithString:@"http://api.soundcloud.com/tracks/18951694/stream?client_id=33cc81d646623d460ba86b112badf67b"];
         NSData* data = [NSData dataWithContentsOfURL:crockett];
@@ -102,10 +112,14 @@
   self.songTime.hidden = YES;
   
   if ([[event audio] count] == 0) {
-    self.listenButtonOutlet.hidden=YES;
+    self.listenButtonOutlet.hidden = YES;
+    [self.eventDescriptionOutlet setFrame:CGRectMake(self.eventDescriptionOutlet.frame.origin.x,
+                                                     self.eventDescriptionOutlet.frame.origin.y - self.listenButtonOutlet.frame.size.height,
+                                                     self.eventDescriptionOutlet.frame.size.width,
+                                                     self.eventDescriptionOutlet.frame.size.height + self.listenButtonOutlet.frame.size.height)];
   }
   
-  aSlider.value=(0);
+  aSlider.value = 0;
   [aSlider setThumbImage:[UIImage imageNamed:@"knob.png"] forState:UIControlStateNormal];
   [aSlider setContinuous:YES];
   

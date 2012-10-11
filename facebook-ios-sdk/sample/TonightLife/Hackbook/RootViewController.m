@@ -502,6 +502,8 @@
       radarCount = [radarCountStr integerValue];
     }
     
+    NSLog(@"Event is %@", event);
+    
     Event* e = [[Event alloc] initEvent :[event objectForKey:@"id"]
                                         :[event objectForKey:@"name"]
                                         :[event objectForKey:@"description"]
