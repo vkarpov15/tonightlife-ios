@@ -87,6 +87,9 @@
 
     if ([[event audio] count] == 0) {
         self.playButtonOutlet.hidden = YES;
+        self.aSlider.hidden= YES;
+        self.songTime.hidden=YES;
+
     }
     
     aSlider.value=(0);
