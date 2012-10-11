@@ -241,6 +241,9 @@
     [audioPlayer prepareToPlay];
     [audioPlayer play];
     
+     [_playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal]; 
+    
+       
    
 
 }
@@ -274,6 +277,8 @@
         [[self playButtonOutlet] setTitle:@"Play" forState:UIControlStateNormal];
         playing = NO;
         if (readyToPlay) {
+            [_playButtonOutlet setImage:[UIImage imageNamed:@"Play-icon2.png"] forState:UIControlStateNormal];
+            
             [audioPlayer pause];
        
         }
@@ -282,6 +287,7 @@
         playing = YES;
         if (readyToPlay) {
             [self startPlaying];
+            [_playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal]; 
         }
     }
 }
