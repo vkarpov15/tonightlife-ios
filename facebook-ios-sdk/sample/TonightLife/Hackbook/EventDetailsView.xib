@@ -46,6 +46,7 @@
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{322, 418}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="240774126"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -66,6 +67,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{0, 79}, {310, 43}}</string>
 								<reference key="NSSuperview" ref="240774126"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="375312805"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
@@ -109,6 +111,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{221, 6}, {69, 27}}</string>
 								<reference key="NSSuperview" ref="240774126"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="949175785"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<reference key="IBUIBackgroundColor" ref="1006100317"/>
@@ -140,6 +143,7 @@
 						</array>
 						<string key="NSFrame">{{5, -1}, {310, 122}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="272131498"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -157,6 +161,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{5, 255}, {310, 152}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="824595497"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -187,6 +192,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{3, 121}, {312, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="851290566"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -246,6 +252,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{126, 165}, {73, 28}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="39857007"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -271,8 +278,9 @@
 					<object class="IBUIButton" id="39857007">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{146, 191}, {27, 27}}</string>
+						<string key="NSFrame">{{79, 194}, {27, 27}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="794318741"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -308,6 +316,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{77, 219}, {168, 23}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="766485874"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -325,6 +334,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{79, 237}, {93, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="295928794"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -336,7 +346,7 @@
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
-							<object class="NSColorSpace" key="NSCustomColorSpace">
+							<object class="NSColorSpace" key="NSCustomColorSpace" id="760616205">
 								<int key="NSID">1</int>
 							</object>
 						</object>
@@ -358,6 +368,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{96, 208}, {130, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -391,9 +402,44 @@
 						<reference key="IBUIFontDescription" ref="490800909"/>
 						<reference key="IBUIFont" ref="871696668"/>
 					</object>
+					<object class="IBUILabel" id="201305943">
+						<reference key="NSNextResponder" ref="191373211"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{114, 194}, {129, 27}}</string>
+						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="IBUIText">Crockett's Theme</string>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MSAxIDEAA</bytes>
+							<reference key="NSCustomColorSpace" ref="760616205"/>
+						</object>
+						<nil key="IBUIHighlightedColor"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<int key="IBUINumberOfLines">2</int>
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">12</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">12</double>
+							<int key="NSfFlags">16</int>
+						</object>
+						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
+						<double key="preferredMaxLayoutWidth">129</double>
+					</object>
 				</array>
 				<string key="NSFrame">{{0, 64}, {320, 416}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="856295066"/>
 				<reference key="IBUIBackgroundColor" ref="253053870"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
@@ -538,6 +584,14 @@
 					<int key="connectionID">128</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">audioTitleLabelOutlet</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="201305943"/>
+					</object>
+					<int key="connectionID">130</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">playPauseBtnClicked:</string>
 						<reference key="source" ref="39857007"/>
@@ -593,10 +647,11 @@
 							<reference ref="766485874"/>
 							<reference ref="851290566"/>
 							<reference ref="856295066"/>
-							<reference ref="39857007"/>
 							<reference ref="794318741"/>
 							<reference ref="824595497"/>
 							<reference ref="295928794"/>
+							<reference ref="201305943"/>
+							<reference ref="39857007"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -698,6 +753,12 @@
 						<reference key="object" ref="295928794"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">129</int>
+						<reference key="object" ref="201305943"/>
+						<reference key="parent" ref="191373211"/>
+						<string key="objectName">audioTitleLabel</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -713,6 +774,7 @@
 				<string key="120.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="125.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="125.IBUIButtonInspectorSelectedEdgeInsetMetadataKey"/>
+				<string key="129.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="49.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="52.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -729,9 +791,133 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">128</int>
+			<int key="maxID">130</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">EventDetailsViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="displayFriendsListView:">id</string>
+						<string key="hideListenButton">id</string>
+						<string key="playPauseBtnClicked:">id</string>
+						<string key="showPlayer">id</string>
+						<string key="slide:">id</string>
+						<string key="sliderChanged:">UISlider</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="displayFriendsListView:">
+							<string key="name">displayFriendsListView:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="hideListenButton">
+							<string key="name">hideListenButton</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="playPauseBtnClicked:">
+							<string key="name">playPauseBtnClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showPlayer">
+							<string key="name">showPlayer</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="slide:">
+							<string key="name">slide:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="sliderChanged:">
+							<string key="name">sliderChanged:</string>
+							<string key="candidateClassName">UISlider</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="aSlider">UISlider</string>
+						<string key="addToLineupBarItemOutlet">UIBarItem</string>
+						<string key="addToLineupButtonOutlet">UIBarButtonItem</string>
+						<string key="audioTitleLabelOutlet">UILabel</string>
+						<string key="eventCover">UILabel</string>
+						<string key="eventDescriptionOutlet">UITextView</string>
+						<string key="eventStartTimeOutlet">UITextView</string>
+						<string key="eventTitleOutlet">UITextView</string>
+						<string key="friendsList">UIView</string>
+						<string key="imageWrapperOutlet">UIView</string>
+						<string key="listenButtonOutlet">UIButton</string>
+						<string key="locateButtonOutlet">UIBarButtonItem</string>
+						<string key="playButtonOutlet">UIButton</string>
+						<string key="rsvpButtonOutlet">UIBarButtonItem</string>
+						<string key="songTime">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="aSlider">
+							<string key="name">aSlider</string>
+							<string key="candidateClassName">UISlider</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="addToLineupBarItemOutlet">
+							<string key="name">addToLineupBarItemOutlet</string>
+							<string key="candidateClassName">UIBarItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="addToLineupButtonOutlet">
+							<string key="name">addToLineupButtonOutlet</string>
+							<string key="candidateClassName">UIBarButtonItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="audioTitleLabelOutlet">
+							<string key="name">audioTitleLabelOutlet</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="eventCover">
+							<string key="name">eventCover</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="eventDescriptionOutlet">
+							<string key="name">eventDescriptionOutlet</string>
+							<string key="candidateClassName">UITextView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="eventStartTimeOutlet">
+							<string key="name">eventStartTimeOutlet</string>
+							<string key="candidateClassName">UITextView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="eventTitleOutlet">
+							<string key="name">eventTitleOutlet</string>
+							<string key="candidateClassName">UITextView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="friendsList">
+							<string key="name">friendsList</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="imageWrapperOutlet">
+							<string key="name">imageWrapperOutlet</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="listenButtonOutlet">
+							<string key="name">listenButtonOutlet</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="locateButtonOutlet">
+							<string key="name">locateButtonOutlet</string>
+							<string key="candidateClassName">UIBarButtonItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="playButtonOutlet">
+							<string key="name">playButtonOutlet</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="rsvpButtonOutlet">
+							<string key="name">rsvpButtonOutlet</string>
+							<string key="candidateClassName">UIBarButtonItem</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="songTime">
+							<string key="name">songTime</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/EventDetailsViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

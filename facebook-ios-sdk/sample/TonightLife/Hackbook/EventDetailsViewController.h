@@ -57,6 +57,7 @@
 @property (nonatomic, retain) IBOutlet UILabel* songTime;
 @property (nonatomic, retain) IBOutlet UIButton* listenButtonOutlet;
 @property (nonatomic, retain) AVAudioPlayer* audioPlayer;
+@property (nonatomic, retain) IBOutlet UILabel* audioTitleLabelOutlet;
 
 - (IBAction)displayFriendsListView:(id)sender;
 

@@ -74,17 +74,6 @@
     audioPlayer = nil;
     
     if ([[event audio] count] > 0) {
-      NSMutableDictionary* audioDict;
-      NSString* audioName;
-      for (NSMutableDictionary* el in [event audio]) {
-        // For now only care about the first
-        audioDict = el;
-        for (NSString* key in [el allKeys]) {
-          audioName = key;
-        }
-        break;
-      }
-      NSLog(@"SHOWING! %@", audioName);
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL* crockett = [[NSURL alloc] initWithString:@"http://api.soundcloud.com/tracks/18951694/stream?client_id=33cc81d646623d460ba86b112badf67b"];
         NSData* data = [NSData dataWithContentsOfURL:crockett];
@@ -107,16 +96,32 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.audioTitleLabelOutlet.hidden = YES;
   self.playButtonOutlet.hidden = YES;
   self.aSlider.hidden = YES;
   self.songTime.hidden = YES;
   
   if ([[event audio] count] == 0) {
+    // No audio - hide everything to do with it and grow
+    // eventDescriptionOutlet
     self.listenButtonOutlet.hidden = YES;
     [self.eventDescriptionOutlet setFrame:CGRectMake(self.eventDescriptionOutlet.frame.origin.x,
                                                      self.eventDescriptionOutlet.frame.origin.y - self.listenButtonOutlet.frame.size.height,
                                                      self.eventDescriptionOutlet.frame.size.width,
                                                      self.eventDescriptionOutlet.frame.size.height + self.listenButtonOutlet.frame.size.height)];
+  } else {
+    // Have audio - pull audio name and show it
+    NSMutableDictionary* audioDict;
+    NSString* audioName;
+    for (NSMutableDictionary* el in [event audio]) {
+      // For now only care about the first
+      audioDict = el;
+      for (NSString* key in [el allKeys]) {
+        audioName = key;
+      }
+      break;
+    }
+    [self.audioTitleLabelOutlet setText:audioName];
   }
   
   aSlider.value = 0;
@@ -293,8 +298,9 @@
 
 - (IBAction)showPlayer {
   [self hideListenButton];
+  self.audioTitleLabelOutlet.hidden = NO;
   self.playButtonOutlet.hidden = NO;
-  self.aSlider.hidden= NO;
+  self.aSlider.hidden = NO;
   self.songTime.hidden = NO;
 }
 
