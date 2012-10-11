@@ -51,6 +51,7 @@
 @property (nonatomic, retain) IBOutlet UISlider* aSlider;
 @property (nonatomic, retain) NSTimer* timer;
 @property (nonatomic, retain) IBOutlet UILabel* songTime;
+@property (nonatomic, retain) IBOutlet UIButton* listenButtonOutlet;
 
 
 //@property (nonatomic, retain) IBOutlet UILabel* sliderTimer;
@@ -63,5 +64,9 @@
 -(IBAction)slide:(id)sender;
 
 - (IBAction)sliderChanged:(UISlider *)sender;
+
+-(IBAction) showPlayer;
+
+-(IBAction) hideListenButton;
 
 @end

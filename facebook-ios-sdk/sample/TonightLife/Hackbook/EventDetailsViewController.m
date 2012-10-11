@@ -25,7 +25,7 @@
 @synthesize aSlider;
 @synthesize timer;
 @synthesize songTime;
-
+@synthesize listenButtonOutlet;
 
 
 - (void) dealloc {
@@ -39,6 +39,7 @@
     [eventStartTimeOutlet release];
     [eventCover release];
     [aSlider release];
+    [listenButtonOutlet release];
     
     [super dealloc];
 }
@@ -84,12 +85,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.playButtonOutlet.hidden = YES;
+    self.aSlider.hidden= YES;
+    self.songTime.hidden=YES;
 
+    if (aSlider.hidden==NO) {
+        self.listenButtonOutlet.hidden=YES;
+    }
     if ([[event audio] count] == 0) {
-        self.playButtonOutlet.hidden = YES;
-        self.aSlider.hidden= YES;
-        self.songTime.hidden=YES;
-
+        self.listenButtonOutlet.hidden=YES;
     }
     
     aSlider.value=(0);
@@ -254,6 +259,16 @@
 - (IBAction)slide {
     audioPlayer.currentTime = aSlider.value;
 }
+-(IBAction)hideListenButton{
+    self.listenButtonOutlet.hidden=YES;
+}
+
+-(IBAction)showPlayer {
+    self.playButtonOutlet.hidden = NO;
+    self.aSlider.hidden= NO;
+    self.songTime.hidden=NO;
+}
+
 
 
 -(void)updateSlider {
