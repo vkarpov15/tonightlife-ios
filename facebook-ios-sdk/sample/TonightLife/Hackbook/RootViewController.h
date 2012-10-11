@@ -28,52 +28,50 @@
 #import "ImageCacheController.h"
 
 
-@interface RootViewController : UIViewController
-<FBRequestDelegate,
-FBDialogDelegate,
-FBSessionDelegate,
-PreferencesMenuDelegate,
-UITableViewDataSource,
-UITableViewDelegate,
-UITabBarDelegate> {
-    NSArray* permissions;
+@interface RootViewController : UIViewController <FBRequestDelegate,
+                                                  FBDialogDelegate,
+                                                  FBSessionDelegate,
+                                                  PreferencesMenuDelegate,
+                                                  UITableViewDataSource,
+                                                  UITableViewDelegate,
+                                                  UITabBarDelegate> {
+ @private
+  NSArray* permissions;
 
-    UIImageView* backgroundImageView;
-    UIActivityIndicatorView* loadingSpinner;
-    UILabel* loadingText;
-    UITableView* menuTableView;
-    UILabel* emptyTableView;
-    UILabel* noEventsOnLineupView;
+  UIImageView* backgroundImageView;
+  UIActivityIndicatorView* loadingSpinner;
+  UILabel* loadingText;
+  UITableView* menuTableView;
+  UILabel* emptyTableView;
+  UILabel* noEventsOnLineupView;
+  UITabBar* tabBar;
+    
+  NSMutableArray* mainMenuItems;
 
-    UITabBar* tabBar;
+  EventListHeader* headerView;
+  PreferencesMenuViewController* menuController;
     
-    NSMutableArray* mainMenuItems;
-
-    EventListHeader* headerView;
-    PreferencesMenuViewController* menuController;
+  RadarCommonController* commonController;
     
-    RadarCommonController* commonController;
+  ImageCacheController* imageCache;
+  RadarMapViewController* mapViewController;
     
-    //NSMutableDictionary* imageCache;
-    ImageCacheController* imageCache;
-    RadarMapViewController* mapViewController;
+  NSString* tonightlifeToken;
+  bool loggedIn;
     
-    NSString* tonightlifeToken;
-    bool loggedIn;
-    
-    TonightLifeTime* lastUpdate;
-    TonightLifeTime* lastFbUserLoad;
+  TonightLifeTime* lastUpdate;
+  TonightLifeTime* lastFbUserLoad;
 }
 
 
--(IBAction) prefButtonPressed;
--(void)request:(FBRequest *)request didLoad:(id)result;
+- (IBAction)prefButtonPressed;
+- (void)request:(FBRequest *)request didLoad:(id)result;
 
--(void) forceReload;
+- (void)forceReload;
 
--(void) reloadMainTableView;
+- (void)reloadMainTableView;
 
--(void) loadEventsFromServer;
+- (void)loadEventsFromServer;
 
 @property (nonatomic, retain) NSArray* permissions;
 @property (nonatomic, retain) UIImageView* backgroundImageView;
@@ -82,6 +80,5 @@ UITabBarDelegate> {
 @property (nonatomic, retain) UILabel* eventCover;
 @property (nonatomic, retain) EventListHeader* headerView;
 @property (nonatomic, retain) ImageCacheController* imageCache;
-
 
 @end

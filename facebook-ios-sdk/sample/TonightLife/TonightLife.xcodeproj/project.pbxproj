@@ -108,6 +108,7 @@
 		95D946C016082DEF00729391 /* lineup_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D946BF16082DEF00729391 /* lineup_button@2x.png */; };
 		95D946C216082DF600729391 /* lineup_button_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 95D946C116082DF600729391 /* lineup_button_w@2x.png */; };
 		95D946C41608327100729391 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D946C31608327100729391 /* AudioToolbox.framework */; };
+		95EE52E61627398000F1AEEA /* TLStreamingAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EE52E51627398000F1AEEA /* TLStreamingAudio.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,7 +150,7 @@
 		30EA736C13F5D21B003DC0D2 /* HackbookAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HackbookAppDelegate.h; sourceTree = "<group>"; };
 		30EA736D13F5D21B003DC0D2 /* HackbookAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HackbookAppDelegate.m; sourceTree = "<group>"; };
 		30EA737013F5D21B003DC0D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		30EA737213F5D21B003DC0D2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		30EA737213F5D21B003DC0D2 /* RootViewController.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; tabWidth = 2; };
 		30EA737313F5D21B003DC0D2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		30EA739613F5D372003DC0D2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		30EA739713F5D372003DC0D2 /* MenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButton.png; sourceTree = "<group>"; };
@@ -244,6 +245,8 @@
 		95D946BF16082DEF00729391 /* lineup_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_button@2x.png"; sourceTree = "<group>"; };
 		95D946C116082DF600729391 /* lineup_button_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lineup_button_w@2x.png"; sourceTree = "<group>"; };
 		95D946C31608327100729391 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		95EE52E41627398000F1AEEA /* TLStreamingAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLStreamingAudio.h; sourceTree = "<group>"; };
+		95EE52E51627398000F1AEEA /* TLStreamingAudio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLStreamingAudio.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,7 +285,9 @@
 				30EA735C13F5D21B003DC0D2 /* Frameworks */,
 				30EA735A13F5D21B003DC0D2 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		30EA735A13F5D21B003DC0D2 /* Products */ = {
 			isa = PBXGroup;
@@ -306,6 +311,7 @@
 		30EA736313F5D21B003DC0D2 /* TonightLife */ = {
 			isa = PBXGroup;
 			children = (
+				95EE52E21627393B00F1AEEA /* Audio */,
 				952C434615FC10B4003CF842 /* Interfaces */,
 				958859AC15E8801F00C307C0 /* Model */,
 				30EA736C13F5D21B003DC0D2 /* HackbookAppDelegate.h */,
@@ -469,6 +475,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		95EE52E21627393B00F1AEEA /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				95EE52E41627398000F1AEEA /* TLStreamingAudio.h */,
+				95EE52E51627398000F1AEEA /* TLStreamingAudio.m */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,6 +638,7 @@
 				95273ABA15F6E0C80066CFF2 /* AsyncImageCallback.m in Sources */,
 				919238CF15FFD292006EC18C /* FriendsList.m in Sources */,
 				9543A320160D511300D6EF45 /* EventDetailsPageViewController.m in Sources */,
+				95EE52E61627398000F1AEEA /* TLStreamingAudio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
