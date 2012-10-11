@@ -18,22 +18,26 @@
 #import "FriendsList.h"
 
 @interface EventDetailsViewController : UIViewController {
-    Event* event;
-    UIImageView* imgView;
-    NSString* tonightlifeToken;
-    RadarCommonController* commonController;
-    ImageCacheController* imageCache;
-    id <MapViewLauncherDelegate> mapViewLauncher;
-    
-    bool playing;
-    bool readyToPlay;
+  Event* event;
+  UIImageView* imgView;
+  NSString* tonightlifeToken;
+  RadarCommonController* commonController;
+  ImageCacheController* imageCache;
+  id <MapViewLauncherDelegate> mapViewLauncher;
+  
+  bool playing;
+  bool readyToPlay;
 }
 
 
--(EventDetailsViewController*) initEventDetailsView:(Event*) e :(ImageCacheController*) imageCache :(NSString*) token :(RadarCommonController*) common: (id <MapViewLauncherDelegate>) delegate;
+- (EventDetailsViewController *)initEventDetailsView:(Event*) e
+                                                    :(ImageCacheController*) imageCache
+                                                    :(NSString*) token
+                                                    :(RadarCommonController*) common
+                                                    :(id <MapViewLauncherDelegate>) delegate;
 
--(void) onLocateClicked:(id) sender;
--(void) onRsvpClicked:(id) sender;
+-(void) onLocateClicked:(id)sender;
+-(void) onRsvpClicked:(id)sender;
 -(void) startPlaying;
 -(void) stopPlaying;
 
@@ -54,20 +58,16 @@
 @property (nonatomic, retain) IBOutlet UIButton* listenButtonOutlet;
 @property (nonatomic, retain) AVAudioPlayer* audioPlayer;
 
+- (IBAction)displayFriendsListView:(id)sender;
 
-//@property (nonatomic, retain) IBOutlet UILabel* sliderTimer;
+- (IBAction)playPauseBtnClicked:(id)sender;
 
-
--(IBAction) displayFriendsListView:(id)sender;
-
--(IBAction) playPauseBtnClicked:(id) sender;
-
--(IBAction)slide:(id)sender;
+- (IBAction)slide:(id)sender;
 
 - (IBAction)sliderChanged:(UISlider *)sender;
 
--(IBAction) showPlayer;
+- (IBAction)showPlayer;
 
--(IBAction) hideListenButton;
+- (IBAction)hideListenButton;
 
 @end
