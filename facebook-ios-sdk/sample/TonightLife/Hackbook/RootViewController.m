@@ -37,10 +37,12 @@
   [mainMenuItems release];
   [headerView release];
   [imageCache release];
+  [eventCover release];
+  
   [commonController release];
   [menuController release];
   [mapViewController release];
-  [eventCover release];
+  
   if (nil != lastUpdate) {
     [lastUpdate release];
   }

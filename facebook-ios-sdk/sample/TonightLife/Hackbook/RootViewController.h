@@ -29,12 +29,12 @@
 
 
 @interface RootViewController : UIViewController <FBRequestDelegate,
-                                                  FBDialogDelegate,
-                                                  FBSessionDelegate,
-                                                  PreferencesMenuDelegate,
-                                                  UITableViewDataSource,
-                                                  UITableViewDelegate,
-                                                  UITabBarDelegate> {
+FBDialogDelegate,
+FBSessionDelegate,
+PreferencesMenuDelegate,
+UITableViewDataSource,
+UITableViewDelegate,
+UITabBarDelegate> {
  @private
   NSArray* permissions;
 
@@ -45,17 +45,16 @@
   UILabel* emptyTableView;
   UILabel* noEventsOnLineupView;
   UITabBar* tabBar;
-    
+  
   NSMutableArray* mainMenuItems;
 
   EventListHeader* headerView;
-  PreferencesMenuViewController* menuController;
-    
-  RadarCommonController* commonController;
-    
+  
   ImageCacheController* imageCache;
+  
+  RadarCommonController* commonController;
+  PreferencesMenuViewController* menuController;
   RadarMapViewController* mapViewController;
-    
   NSString* tonightlifeToken;
   bool loggedIn;
     
