@@ -26,9 +26,14 @@
 @synthesize timer;
 @synthesize songTime;
 @synthesize listenButtonOutlet;
+@synthesize audioPlayer;
 
 
 - (void) dealloc {
+    if (nil != audioPlayer) {
+        [audioPlayer release];
+    }
+    
     [eventTitleOutlet release];
     [imageWrapperOutlet release];
     [eventDescriptionOutlet release];
@@ -61,6 +66,7 @@
         mapViewLauncher = delegate;
         playing = NO;
         readyToPlay = NO;
+        audioPlayer = nil;
         
         if ([[event audio] count] > 0) {
             NSLog(@"SHOWING!");
@@ -144,6 +150,13 @@
 - (void)viewDidUnload {
     [super viewDidUnload];
     [imgView release];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    if (nil != audioPlayer) {
+        [self stopPlaying];
+    }
+    [super viewWillDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -249,6 +262,11 @@
      [self.playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }
 
+-(void) stopPlaying {
+    [audioPlayer pause];
+    [self.playButtonOutlet setImage:[UIImage imageNamed:@"Play-icon2.png"] forState:UIControlStateNormal];
+}
+
 - (IBAction)slide {
     audioPlayer.currentTime = aSlider.value;
 }
@@ -275,6 +293,7 @@
 
 - (IBAction)sliderChanged:(UISlider *)sender {
     // Fast skip the music when user scroll the UISlide
+    NSLog(@"Slider changed");
     [audioPlayer stop];
     [audioPlayer setCurrentTime:aSlider.value];
     [audioPlayer prepareToPlay];
@@ -287,9 +306,7 @@
         [[self playButtonOutlet] setTitle:@"Play" forState:UIControlStateNormal];
         playing = NO;
         if (readyToPlay) {
-            [_playButtonOutlet setImage:[UIImage imageNamed:@"Play-icon2.png"] forState:UIControlStateNormal];
-            
-            [audioPlayer pause];
+            [self stopPlaying];
        
         }
     } else {
@@ -297,7 +314,6 @@
         playing = YES;
         if (readyToPlay) {
             [self startPlaying];
-            [_playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal]; 
         }
     }
 }

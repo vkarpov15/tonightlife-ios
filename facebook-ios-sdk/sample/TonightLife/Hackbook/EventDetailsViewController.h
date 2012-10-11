@@ -25,7 +25,6 @@
     ImageCacheController* imageCache;
     id <MapViewLauncherDelegate> mapViewLauncher;
     
-    AVAudioPlayer* audioPlayer;
     bool playing;
     bool readyToPlay;
 }
@@ -36,6 +35,7 @@
 -(void) onLocateClicked:(id) sender;
 -(void) onRsvpClicked:(id) sender;
 -(void) startPlaying;
+-(void) stopPlaying;
 
 @property (nonatomic, retain) IBOutlet UITextView* eventTitleOutlet;
 @property (nonatomic, retain) IBOutlet UITextView* eventStartTimeOutlet;
@@ -52,6 +52,7 @@
 @property (nonatomic, retain) NSTimer* timer;
 @property (nonatomic, retain) IBOutlet UILabel* songTime;
 @property (nonatomic, retain) IBOutlet UIButton* listenButtonOutlet;
+@property (nonatomic, retain) AVAudioPlayer* audioPlayer;
 
 
 //@property (nonatomic, retain) IBOutlet UILabel* sliderTimer;
