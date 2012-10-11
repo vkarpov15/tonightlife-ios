@@ -87,12 +87,9 @@
     [super viewDidLoad];
     
     self.playButtonOutlet.hidden = YES;
-    self.aSlider.hidden= YES;
-    self.songTime.hidden=YES;
+    self.aSlider.hidden = YES;
+    self.songTime.hidden = YES;
 
-    if (aSlider.hidden==NO) {
-        self.listenButtonOutlet.hidden=YES;
-    }
     if ([[event audio] count] == 0) {
         self.listenButtonOutlet.hidden=YES;
     }
@@ -249,27 +246,22 @@
     [audioPlayer prepareToPlay];
     [audioPlayer play];
     
-     [_playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal]; 
-    
-       
-   
-
+     [self.playButtonOutlet setImage:[UIImage imageNamed:@"pauseButton.png"] forState:UIControlStateNormal];
 }
 
 - (IBAction)slide {
     audioPlayer.currentTime = aSlider.value;
 }
 -(IBAction)hideListenButton{
-    self.listenButtonOutlet.hidden=YES;
+    [self.listenButtonOutlet setHidden:YES];
 }
 
 -(IBAction)showPlayer {
+    [self hideListenButton];
     self.playButtonOutlet.hidden = NO;
     self.aSlider.hidden= NO;
-    self.songTime.hidden=NO;
+    self.songTime.hidden = NO;
 }
-
-
 
 -(void)updateSlider {
     aSlider.value=audioPlayer.currentTime;
