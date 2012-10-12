@@ -83,6 +83,8 @@
           audioPlayer = [[AVAudioPlayer alloc] initWithData:data error:&err];
           if (playing) {
             [self startPlaying];
+            [self.audioLoadingIndicatorOutlet stopAnimating];
+            [self.audioLoadingIndicatorOutlet setHidden:YES];
           }
           readyToPlay = YES;
         });
@@ -100,6 +102,7 @@
   self.playButtonOutlet.hidden = YES;
   self.aSlider.hidden = YES;
   self.songTime.hidden = YES;
+  self.audioLoadingIndicatorOutlet.hidden = YES;
   
   if ([[event audio] count] == 0) {
     // No audio - hide everything to do with it and grow
@@ -331,13 +334,15 @@
     playing = NO;
     if (readyToPlay) {
       [self stopPlaying];
-      
     }
   } else {
     [[self playButtonOutlet] setTitle:@"Pause" forState:UIControlStateNormal];
     playing = YES;
     if (readyToPlay) {
       [self startPlaying];
+    } else {
+      [self.audioLoadingIndicatorOutlet startAnimating];
+      [self.audioLoadingIndicatorOutlet setHidden:NO];
     }
   }
 }
