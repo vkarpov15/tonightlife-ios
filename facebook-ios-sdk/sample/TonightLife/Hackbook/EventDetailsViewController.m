@@ -122,6 +122,7 @@
       break;
     }
     [self.audioTitleLabelOutlet setText:audioName];
+    [self showPlayer];
   }
   
   aSlider.value = 0;
@@ -153,7 +154,7 @@
   [self.imageWrapperOutlet bringSubviewToFront:eventCover];
   
   
-  // Handle lineup button clicks
+  // Handle toolbar button clicks
   [addToLineupButtonOutlet setAction:@selector(addToLineupClicked:)];
   [locateButtonOutlet setAction:@selector(onLocateClicked:)];
   [rsvpButtonOutlet setAction:@selector(onRsvpClicked:)];
