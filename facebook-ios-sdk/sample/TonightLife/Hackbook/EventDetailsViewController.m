@@ -27,6 +27,7 @@
 @synthesize songTime;
 @synthesize listenButtonOutlet;
 @synthesize audioPlayer;
+@synthesize songTotalTime;
 
 
 - (void)dealloc {
@@ -133,6 +134,9 @@
   [aSlider setContinuous:YES];
   
   songTime.text=@"00:00:00";
+ 
+  
+
   
   self.eventTitleOutlet.text = [event name];
   self.eventStartTimeOutlet.text=[[event time] makeYourTime];
@@ -316,7 +320,18 @@
   int seconds= progress % 60;
   
   songTime.text=[NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+  
+  int totalTime= (int)roundf(audioPlayer.duration);
+  
+  int hours2 =  totalTime / 3600;
+  int minutes2= ( totalTime % 3600)/60;
+  int seconds2=  totalTime % 60;
+  
+  songTotalTime.text=[NSString stringWithFormat:@"%02d:%02d:%02d", hours2, minutes2, seconds2];
+
 }
+
+ 
 
 - (IBAction)sliderChanged:(UISlider *)sender {
   // Fast skip the music when user scroll the UISlide
