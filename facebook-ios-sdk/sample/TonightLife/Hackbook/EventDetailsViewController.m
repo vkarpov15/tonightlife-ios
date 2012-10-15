@@ -75,9 +75,20 @@
     audioPlayer = nil;
     
     if ([[event audio] count] > 0) {
+      NSMutableDictionary* audioDict;
+      for (NSMutableDictionary* el in [event audio]) {
+        // For now only care about the first
+        audioDict = el;
+        for (NSString* key in [el allKeys]) {
+          audioName = key;
+          break;
+        }
+        break;
+      }
+      
       dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSURL* crockett = [[NSURL alloc] initWithString:@"http://api.soundcloud.com/tracks/18951694/stream?client_id=33cc81d646623d460ba86b112badf67b"];
-        NSData* data = [NSData dataWithContentsOfURL:crockett];
+        NSURL* sound = [[NSURL alloc] initWithString:[audioDict objectForKey:audioName]];
+        NSData* data = [NSData dataWithContentsOfURL:sound];
         
         dispatch_async(dispatch_get_main_queue(), ^{
           NSError* err = nil;
@@ -104,6 +115,7 @@
   self.aSlider.hidden = YES;
   self.songTime.hidden = YES;
   self.audioLoadingIndicatorOutlet.hidden = YES;
+  self.songTotalTime.hidden = YES;
   
   if ([[event audio] count] == 0) {
     // No audio - hide everything to do with it and grow
@@ -115,16 +127,6 @@
                                                      self.eventDescriptionOutlet.frame.size.height + self.listenButtonOutlet.frame.size.height)];
   } else {
     // Have audio - pull audio name and show it
-    NSMutableDictionary* audioDict;
-    NSString* audioName;
-    for (NSMutableDictionary* el in [event audio]) {
-      // For now only care about the first
-      audioDict = el;
-      for (NSString* key in [el allKeys]) {
-        audioName = key;
-      }
-      break;
-    }
     [self.audioTitleLabelOutlet setText:audioName];
     [self showPlayer];
   }
@@ -134,9 +136,6 @@
   [aSlider setContinuous:YES];
   
   songTime.text=@"00:00:00";
- 
-  
-
   
   self.eventTitleOutlet.text = [event name];
   self.eventStartTimeOutlet.text=[[event time] makeYourTime];
@@ -310,6 +309,7 @@
   self.playButtonOutlet.hidden = NO;
   self.aSlider.hidden = NO;
   self.songTime.hidden = NO;
+  self.songTotalTime.hidden = NO;
 }
 
 - (void)updateSlider {

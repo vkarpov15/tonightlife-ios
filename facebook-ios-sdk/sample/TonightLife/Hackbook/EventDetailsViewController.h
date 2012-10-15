@@ -25,6 +25,8 @@
   ImageCacheController* imageCache;
   id <MapViewLauncherDelegate> mapViewLauncher;
   
+  NSString* audioName;
+  
   bool playing;
   bool readyToPlay;
 }
