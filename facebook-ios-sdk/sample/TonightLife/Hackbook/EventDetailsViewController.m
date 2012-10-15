@@ -47,6 +47,7 @@
   [aSlider release];
   [listenButtonOutlet release];
   
+  
   [super dealloc];
 }
 
@@ -110,6 +111,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  
+  
   self.audioTitleLabelOutlet.hidden = YES;
   self.playButtonOutlet.hidden = YES;
   self.aSlider.hidden = YES;
@@ -128,7 +131,7 @@
   } else {
     // Have audio - pull audio name and show it
     [self.audioTitleLabelOutlet setText:audioName];
-    [self showPlayer];
+    
   }
   
   aSlider.value = 0;
@@ -301,6 +304,7 @@
 
 - (IBAction)hideListenButton{
   [self.listenButtonOutlet setHidden:YES];
+  [self.listenLabel setHidden:YES];
 }
 
 - (IBAction)showPlayer {
