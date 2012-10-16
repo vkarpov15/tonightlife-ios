@@ -161,7 +161,8 @@
   [self.view addSubview:loadingSpinner];
   [loadingSpinner startAnimating];
   
-  loadingText = [[UILabel alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 240) / 2, self.view.bounds.size.height - 14, 240, 12)];
+  loadingText = [[UILabel alloc] initWithFrame:CGRectMake((self.view.bounds.size.width - 300) / 2, self.view.bounds.size.height - 14, 300, 12)];
+  [loadingText setTextAlignment:NSTextAlignmentCenter];
   [loadingText setBackgroundColor:[UIColor clearColor]];
   [loadingText setTextColor:[UIColor whiteColor]];
   [loadingText setText:@"Loading..."];
@@ -441,8 +442,10 @@
     // Send off Tabbie Login req
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString* fbToken = [defaults objectForKey:@"FBAccessTokenKey"];
+    [loadingText setText:@"Connecting to TonightLife Mothership..."];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
       NSLog(@"Dispatching tabbie login %@", fbToken);
+      
       // Send Tabbie login request - synchronous within separate thread
       NSMutableURLRequest* req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://tonight-life.com/mobile/auth.json"]];
       NSString* params = [NSString stringWithFormat:@"fb_token=%@", fbToken];
@@ -466,6 +469,9 @@
       [defaults setObject:tonightlifeToken forKey:@"TonightlifeToken"];
       
       // Now that we have token, load events
+      dispatch_async(dispatch_get_main_queue(), ^{
+        [loadingText setText:@"Beaming events from mothership..."];
+      });
       [self loadEventsFromServer];
     });
   } else {
@@ -476,7 +482,6 @@
 }
 
 - (void)loadEventsFromServer {
-  [loadingText setText:@"Beaming events from mothership..."];
   NSString* eventUrl = [NSString stringWithFormat:@"http://tonight-life.com/mobile/all.json?auth_token=%@", tonightlifeToken];
   NSError* error;
   NSData* eventData = [NSData dataWithContentsOfURL:

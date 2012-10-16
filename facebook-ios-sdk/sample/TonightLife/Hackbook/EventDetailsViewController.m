@@ -28,6 +28,7 @@
 @synthesize listenButtonOutlet;
 @synthesize audioPlayer;
 @synthesize songTotalTime;
+@synthesize verticalSpacerOutlet;
 
 
 - (void)dealloc {
@@ -46,7 +47,7 @@
   [eventCover release];
   [aSlider release];
   [listenButtonOutlet release];
-  
+  [verticalSpacerOutlet release];
   
   [super dealloc];
 }
@@ -125,9 +126,9 @@
     // eventDescriptionOutlet
     self.listenButtonOutlet.hidden = YES;
     [self.eventDescriptionOutlet setFrame:CGRectMake(self.eventDescriptionOutlet.frame.origin.x,
-                                                     self.eventDescriptionOutlet.frame.origin.y - self.listenButtonOutlet.frame.size.height,
+                                                     self.eventDescriptionOutlet.frame.origin.y - self.verticalSpacerOutlet.frame.size.height,
                                                      self.eventDescriptionOutlet.frame.size.width,
-                                                     self.eventDescriptionOutlet.frame.size.height + self.listenButtonOutlet.frame.size.height)];
+                                                     self.eventDescriptionOutlet.frame.size.height + self.verticalSpacerOutlet.frame.size.height)];
   } else {
     // Have audio - pull audio name and show it
     [self.audioTitleLabelOutlet setText:audioName];

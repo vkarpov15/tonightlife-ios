@@ -63,6 +63,7 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* audioLoadingIndicatorOutlet;
 @property (nonatomic, retain) IBOutlet UILabel* songTotalTime;
 @property (nonatomic, retain) IBOutlet UILabel* listenLabel;
+@property (nonatomic, retain) IBOutlet UIView* verticalSpacerOutlet;
 
 - (IBAction)displayFriendsListView:(id)sender;
 
