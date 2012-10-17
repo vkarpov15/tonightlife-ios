@@ -112,8 +112,6 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  
-  
   self.audioTitleLabelOutlet.hidden = YES;
   self.playButtonOutlet.hidden = YES;
   self.aSlider.hidden = YES;
@@ -124,7 +122,8 @@
   if ([[event audio] count] == 0) {
     // No audio - hide everything to do with it and grow
     // eventDescriptionOutlet
-    self.listenButtonOutlet.hidden = YES;
+    //self.listenButtonOutlet.hidden = YES;
+    //self.listenLabel.hidden = YES;
     [self.eventDescriptionOutlet setFrame:CGRectMake(self.eventDescriptionOutlet.frame.origin.x,
                                                      self.eventDescriptionOutlet.frame.origin.y - self.verticalSpacerOutlet.frame.size.height,
                                                      self.eventDescriptionOutlet.frame.size.width,
@@ -132,7 +131,7 @@
   } else {
     // Have audio - pull audio name and show it
     [self.audioTitleLabelOutlet setText:audioName];
-    
+    [self showPlayer];
   }
   
   aSlider.value = 0;
@@ -304,8 +303,8 @@
 }
 
 - (IBAction)hideListenButton{
-  [self.listenButtonOutlet setHidden:YES];
-  [self.listenLabel setHidden:YES];
+  //[self.listenButtonOutlet setHidden:YES];
+  //[self.listenLabel setHidden:YES];
 }
 
 - (IBAction)showPlayer {
